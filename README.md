@@ -5,4 +5,4 @@ should see some test data appear on screen. Once it's started, you can run the f
 
 To run the front end, in a separate terminal (leave the terminal running the backend open) cd into
 the frontend directory and type npm start. This will start the react server on port 3000. If you 
-navigate to localhost:3000, you will see the frontende server running with data from the backend.
+navigate to localhost:3000, you will see the frontend server running with data from the backend.

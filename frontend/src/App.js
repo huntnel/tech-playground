@@ -1,37 +1,30 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate
+} from "react-router-dom";
+import CodeEditor from "./components/CodeEditor";
+import Home from "./components/Home";
 import './App.css';
 
 function App() {
 
-  const [backendData, setBackendData] = useState([{}])
-
-  useEffect(() => {
-    fetch("/api").then(
-      response => response.json()
-    ).then(
-      data => {
-        setBackendData(data)
-      }
-    )
-  }, [])
-
   return (
-    <div>
-      <h1 class='center'>Welcome to the Code Adventure Tech Playground!</h1>
-    
-      {(typeof backendData.users === 'undefined') ? (
-        <p>Loading...</p>
-      ):(
-        <div>
-          <p>Here is some test data from the backend</p>
-          <ul>
-            {backendData.users.map((user, i) =>(
-            <li key={i}>{user}</li>
-          ))}
-          </ul>
-        </div>
-      )}
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='codeEditor' element={<CodeEditor />} />
+          {/* If any route mismatches the upper 
+          route endpoints then, redirect triggers 
+          and redirects app to home component with to="/" */}
+          {/* <Redirect to="/" /> */}
+          <Route path="*" element={<Navigate to="/" />}/>
+        </Routes>
+      </Router>      
+    </>
   )
 }
 

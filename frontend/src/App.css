@@ -43,7 +43,10 @@
 }
 
 .background {
-  background-image: url('../public/img/EditorBackground.jpg');
+  background-image:  url('../public/img/EditorBackground.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+    
 }
 
 .white-background {

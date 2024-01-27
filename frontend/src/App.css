@@ -4,7 +4,7 @@
 
 .console-log {
   background-color: black;
-  color: limegreen;
+  color: white;
   font-family: 'Courier New', Courier, monospace;
   padding: 10px;
   margin: 10px;
@@ -12,3 +12,67 @@
   overflow-y: scroll;
   white-space: pre-wrap;
 }
+
+.code-editor {
+  width: 75%;
+  margin: auto;
+}
+
+.center-text{
+  text-align: center;
+}
+
+.wizard {
+  width: 50%;
+  height: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 8px solid #327C81;
+  border-image: 
+    url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 0H8v4H4v4H0v8h4v4h4v4h8v-4h4v-4h4V8h-4V4h-4V0zm0 4v4h4v8h-4v4H8v-4H4V8h4V4h8z' fill='%23327C81'/%3E%3C/svg%3E")
+    8 stretch;
+}
+
+.logo-color {
+  color: #83c5be;
+}
+
+.logo-orange {
+  color:#FD5C51;
+}
+
+.background {
+  background-image: url('../public/img/EditorBackground.jpg');
+}
+
+.white-background {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1%;
+  margin: 5%;
+}
+
+/* body {
+  margin: 0;
+  height: 100vh; 
+  background-color: #fff;
+  background-image: linear-gradient(
+      45deg,
+      #F9F6EE 25%,
+      transparent 25%,
+      transparent 75%,
+      #F9F6EE 75%,
+      #F9F6EE
+    ),
+    linear-gradient(
+      -45deg,
+      #F9F6EE 25%,
+      transparent 25%,
+      transparent 75%,
+      #F9F6EE 75%,
+      #F9F6EE
+    );
+  background-size: 15px 15px;
+  background-repeat: repeat;
+} */

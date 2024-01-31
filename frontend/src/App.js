@@ -15,7 +15,7 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<CodeEditor />} />
           <Route path='codeEditor' element={<CodeEditor />} />
           {/* If any route mismatches the upper 
           route endpoints then, redirect triggers 

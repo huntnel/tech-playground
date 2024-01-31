@@ -6,7 +6,6 @@ import ConsoleLog from './ConsoleLog';
 import axios from 'axios';
 
 function CodeEditor() {
-  // const baseUrl = 'http://18.223.170.227:2358';
   const baseUrl = 'https://vorrlgg23auln4chzzlnhk44g40taebi.lambda-url.us-west-1.on.aws/';
   const [value, setValue] = React.useState("\"\"\"\nFirst, please print your wizard name to the console!\n\"\"\"");
   const [output, setOutput] = React.useState([]);

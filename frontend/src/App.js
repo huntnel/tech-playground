@@ -6,8 +6,10 @@ import {
   Navigate
 } from "react-router-dom";
 import CodeEditor from "./components/CodeEditor";
+import Task from "./components/Task";
 import Home from "./components/Home";
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
 
@@ -17,6 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element={<CodeEditor />} />
           <Route path='codeEditor' element={<CodeEditor />} />
+          <Route path='task' element={<Task />} />
           {/* If any route mismatches the upper 
           route endpoints then, redirect triggers 
           and redirects app to home component with to="/" */}

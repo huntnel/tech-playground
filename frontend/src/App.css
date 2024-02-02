@@ -10,6 +10,7 @@
   margin: 10px;
   overflow-y: scroll;
   white-space: pre-wrap;
+  height: 15vh;
 }
 
 .code-editor {
@@ -22,9 +23,9 @@
 }
 
 .wizard {
-  width: 50%;
-  height: 50%;
-  display: block;
+  width: 100%;
+  height: 100%;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
   border: 8px solid #327C81;
@@ -68,26 +69,45 @@
   overflow: hidden;
 }
 
-/* body {
-  margin: 0;
-  height: 100vh; 
-  background-color: #fff;
-  background-image: linear-gradient(
-      45deg,
-      #F9F6EE 25%,
-      transparent 25%,
-      transparent 75%,
-      #F9F6EE 75%,
-      #F9F6EE
-    ),
-    linear-gradient(
-      -45deg,
-      #F9F6EE 25%,
-      transparent 25%,
-      transparent 75%,
-      #F9F6EE 75%,
-      #F9F6EE
-    );
-  background-size: 15px 15px;
-  background-repeat: repeat;
-} */
+.level-progress {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1%;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 0px;
+  border-image: url('../public/img/pixelLine.png') 2 repeat;
+  /* border-image: 
+    url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 0H8v4H4v4H0v8h4v4h4v4h8v-4h4v-4h4V8h-4V4h-4V0zm0 4v4h4v8h-4v4H8v-4H4V8h4V4h8z' fill='%23327C81'/%3E%3C/svg%3E")
+    8 stretch; */
+}
+
+.filled {
+  background-color: #327C81; /* Filled circle color */
+}
+
+.open {
+  border: 2px solid #327C81; /* Open circle border color */
+}
+
+.line {
+  height: 2px;
+  width: 50px; /* Adjust as needed */
+  background-color: #327C81; /* Line color */
+  margin: 0 0px;
+}
+
+.level-progress-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.level-progress-container > * {
+  margin: 0 10px; /* Adjust the margin as needed */
+}

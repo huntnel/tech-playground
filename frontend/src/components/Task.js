@@ -94,20 +94,11 @@ function Task() {
           </Row>
         </Col>
         <div className="level-progress-container">
-          <Button style={{ backgroundColor:"#327C81" }}>Home</Button>
+          <Button style={{ backgroundColor:"#327C81", marginBottom: "5px" }}>Home</Button>
           <LevelIndicator totalLevels={4} currentLevel={3} onCircleClick={handleCircleClick} />
-          <Button style={{ backgroundColor:"#327C81" }}>Next</Button>
+          <Button style={{ backgroundColor:"#327C81", marginBottom: "5px" }}>Next</Button>
         </div>
       </Row>
-      {/* <Row>
-        <div style={{ position: 'relative', bottom: 5, width: '100%' }}>
-          <div className="level-progress-container">
-            <LevelIndicator totalLevels={4} currentLevel={3} onCircleClick={handleCircleClick} />
-          </div>
-
-        </div>
-        
-      </Row> */}
     </Container>
   );
 }

@@ -76,7 +76,7 @@ function Task() {
             <Col xs={{xs:12}} md={6} className="flex-fill">
               {/* Content for the first row in the second column */}
               <CodeMirror height='40vh' style={{ overflowY: 'auto' }} onSubmit={handleButtonClick} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
-              <Button className='mt-2' style={{ backgroundColor:"#327C81" }} onClick={() => handleButtonClick(value)}>Run</Button>
+              <Button className='mt-2' style={{ backgroundColor:"#327C81", border: "2px solid #327C81" }} onClick={() => handleButtonClick(value)}>Run</Button>
             </Col>
           </Row>
 
@@ -93,10 +93,11 @@ function Task() {
             </Col>
           </Row>
         </Col>
+        <h4 className='center level-headings logo-orange'>Levels</h4>
         <div className="level-progress-container">
-          <Button style={{ backgroundColor:"#327C81", marginBottom: "5px" }}>Home</Button>
+          <Button style={{ backgroundColor:"#327C81", marginBottom: "5px", border: "2px solid #327C81" }}>Home</Button>
           <LevelIndicator totalLevels={4} currentLevel={3} onCircleClick={handleCircleClick} />
-          <Button style={{ backgroundColor:"#327C81", marginBottom: "5px" }}>Next</Button>
+          <Button style={{ backgroundColor:"#327C81", marginBottom: "5px", border: "2px solid #327C81" }}>Next</Button>
         </div>
       </Row>
     </Container>

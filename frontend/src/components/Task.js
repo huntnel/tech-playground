@@ -75,7 +75,7 @@ function Task() {
           <Row className="flex-fill align-items-center justify-content-center">
             <Col xs={{xs:12}} md={6} className="flex-fill">
               {/* Content for the first row in the second column */}
-              <CodeMirror height='30vh' style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleButtonClick} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
+              <CodeMirror height='35vh' style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleButtonClick} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
               <Button className='mt-2 custom-btn w-100' onClick={() => handleButtonClick(value)}>Run Code</Button>
             </Col>
           </Row>

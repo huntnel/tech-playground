@@ -5,7 +5,7 @@ const ConsoleLog = ({ logs }) => {
         <div className="console-log" style={{ overflowY: 'auto', flexGrow: 1 }}>
             {logs.map((log, index) => (
                 <>
-                    <pre key={index}>{log}</pre>
+                    <pre className="console-text" key={index}>{log}</pre>
                 </>
             ))}
         </div>

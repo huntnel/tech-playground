@@ -43,7 +43,7 @@ function Task() {
     };
 
   return (
-    <Container style={{ height: '100vh', overflow: 'auto' }} fluid>
+    <Container className="background" style={{ height: '100vh', overflow: 'auto' }} fluid>
       <Row style={{ height: '100vh' }}>
         {/* First Column */}
         <Col xs={6} className="d-flex flex-column">
@@ -51,13 +51,13 @@ function Task() {
           <Row className="flex-fill align-items-center justify-content-center">
             <Col xs={{xs:12}} md={6}>
               {/* Content for the first row in the first column */}
-              <img className='wizard' src='img/Wizard.jpg' alt='Challenge' />
+              <img className='img-container' src='img/Wizard.jpg' alt='Challenge' />
             </Col>
           </Row>
           
           {/* Second Row in the First Column */}
           <Row className="flex-fill align-items-center justify-content-center">
-            <Col xs={{xs:12}} md={6} className="flex-fill">
+            <Col xs={{xs:12}} md={6} className="flex-fill white-background">
               {/* Content for the second row in the first column */}
               <p>Legend has it
                 that thousands of years ago, an acient wizard learned the secrets to becoming a CODING GURU. This powerful knowledge has kept him 
@@ -75,8 +75,8 @@ function Task() {
           <Row className="flex-fill align-items-center justify-content-center">
             <Col xs={{xs:12}} md={6} className="flex-fill">
               {/* Content for the first row in the second column */}
-              <CodeMirror height='40vh' style={{ overflowY: 'auto' }} onSubmit={handleButtonClick} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
-              <Button className='mt-2' style={{ backgroundColor:"#327C81" }} onClick={() => handleButtonClick(value)}>Run</Button>
+              <CodeMirror height='30vh' style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleButtonClick} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
+              <Button className='mt-2 custom-btn w-100' onClick={() => handleButtonClick(value)}>Run Code</Button>
             </Col>
           </Row>
 
@@ -90,13 +90,14 @@ function Task() {
                 ) : (
                 <span></span>
                 )}
+                <Button className='mt-2 custom-btn-red w-100' onClick={() => setOutput([])}>Clear Console</Button>
             </Col>
           </Row>
         </Col>
         <div className="level-progress-container">
-          <Button style={{ backgroundColor:"#327C81", marginBottom: "5px" }}>Home</Button>
+          <Button className='custom-btn' style={{ marginBottom: "5px" }}>Home</Button>
           <LevelIndicator totalLevels={4} currentLevel={3} onCircleClick={handleCircleClick} />
-          <Button style={{ backgroundColor:"#327C81", marginBottom: "5px" }}>Next</Button>
+          <Button className='custom-btn' style={{ marginBottom: "5px" }}>Next</Button>
         </div>
       </Row>
     </Container>

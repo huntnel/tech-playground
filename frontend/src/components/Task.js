@@ -1,7 +1,4 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import { Button } from 'react-bootstrap';
+import {Container, Row, Col, Button} from 'react-bootstrap';
 import CodeMirror from '@uiw/react-codemirror';
 import React from 'react';
 import { andromeda } from '@uiw/codemirror-theme-andromeda';
@@ -9,35 +6,54 @@ import { langs } from '@uiw/codemirror-extensions-langs';
 import ConsoleLog from './ConsoleLog';
 import LevelIndicator from './LevelIndicator';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Task(props) {
-    const baseUrl = 'https://vorrlgg23auln4chzzlnhk44g40taebi.lambda-url.us-west-1.on.aws/';
-    const [value, setValue] = React.useState(props.initialComment);
-    const [output, setOutput] = React.useState([]);
-    const onChange = React.useCallback((val) => {
-      setValue(val);
-    }, []);
-  
-    const handleButtonClick = (code) => {
-      const requestBody = {
-        "code": code,
-      };
-  
-      axios.post(baseUrl, requestBody)
-      .then((result) => {
-        const newArray = [...output, result.data.result];
-        setOutput(newArray);
-      }).catch((error) => {
-        console.error('error: ' + JSON.stringify(error.response.data));
-        const newArray = [...output, error.response.data];
-        setOutput(newArray);
-      });
-    };
+  const baseUrl = 'https://vorrlgg23auln4chzzlnhk44g40taebi.lambda-url.us-west-1.on.aws/';
+  const navigate = useNavigate();
+  const [value, setValue] = React.useState(props.initialComment);
+  const [output, setOutput] = React.useState([]);
+  const onChange = React.useCallback((val) => {
+    setValue(val);
+  }, []);
 
-    const handleCircleClick = (level) => {
-      // Render a different component based on the clicked level
-      props.changeTask(level);
+  React.useEffect(() => {
+    setValue(props.initialComment);
+  }, [props.initialComment]);
+
+  const handleButtonClick = (code) => {
+    const requestBody = {
+      "code": code,
     };
+  
+    axios.post(baseUrl, requestBody)
+    .then((result) => {
+      const newArray = [...output, result.data.result];
+      setOutput(newArray);
+    }).catch((error) => {
+      console.error('error: ' + JSON.stringify(error.response.data));
+      const newArray = [...output, error.response.data];
+      setOutput(newArray);
+    });
+  };
+
+  const handleCircleClick = (level) => {
+    // Render a different component based on the clicked level
+    props.changeTask(level);
+  };
+
+  const navigateHome = () => {
+    navigate('/modules');
+  }
+
+  const nextTask = (task) => {
+    if(task > props.totalLevels) {
+      navigateHome();
+    }
+    console.log('next task: ' + task);
+    props.changeTask(task);
+  }
+
 
   return (
     <Container className="background" style={{ height: '100vh', overflow: 'auto' }} fluid>
@@ -88,9 +104,9 @@ function Task(props) {
         </Col>
         <h4 className='center level-headings'>Levels</h4>
         <div className="level-progress-container">
-          <Button className='custom-btn' style={{ marginBottom: "5px" }}>Home</Button>
+          <Button className='custom-btn' style={{ marginBottom: "5px" }} onClick={() => navigateHome()}>Home</Button>
           <LevelIndicator totalLevels={props.totalLevels} currentLevel={props.currentLevel} onCircleClick={handleCircleClick} />
-          <Button className='custom-btn' style={{ marginBottom: "5px" }}>Next</Button>
+          <Button className='custom-btn' style={{ marginBottom: "5px" }} onClick={() => nextTask(parseInt(props.currentLevel) + 1)}>Next</Button>
         </div>
       </Row>
     </Container>

@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Home = lazy(() => import('./components/Home'));
 const Task = lazy(() => import('./components/Task'));
 const CodeEditor = lazy(() => import('./components/CodeEditor'));
+const Module = lazy(() => import('./components/Module'));
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='codeEditor' element={<CodeEditor />} />
             <Route path='task' element={<Task />} />
+            <Route path='module' element={<Module />} />
             {/* If any route mismatches the upper 
             route endpoints then, redirect triggers 
             and redirects app to home component with to="/" */}

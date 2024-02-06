@@ -21,15 +21,6 @@ const LevelIndicator = ({ currentLevel, totalLevels, onCircleClick }) => {
       if (i < totalLevels) {
         circles.push(<div key={`line${i}`} className="line"></div>);
       }
-      
-      
-      // circles.push(<Badge pill variant="primary" className="mt-1">{i}</Badge>);
-    }
-
-    // console.log('circles: ' + circles);
-
-    for(const object in circles) {
-      console.log(JSON.stringify(object))
     }
   
     return <div className="level-progress">{circles}</div>;

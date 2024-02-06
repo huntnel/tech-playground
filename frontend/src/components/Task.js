@@ -10,9 +10,9 @@ import ConsoleLog from './ConsoleLog';
 import LevelIndicator from './LevelIndicator';
 import axios from 'axios';
 
-function Task() {
+function Task(props) {
     const baseUrl = 'https://vorrlgg23auln4chzzlnhk44g40taebi.lambda-url.us-west-1.on.aws/';
-    const [value, setValue] = React.useState("\"\"\"\nFirst, please print your wizard name to the console!\n\"\"\"");
+    const [value, setValue] = React.useState(props.initialComment);
     const [output, setOutput] = React.useState([]);
     const onChange = React.useCallback((val) => {
       setValue(val);
@@ -25,7 +25,6 @@ function Task() {
   
       axios.post(baseUrl, requestBody)
       .then((result) => {
-        // console.log('result: ' + JSON.stringify(result));
         const newArray = [...output, result.data.result];
         setOutput(newArray);
       }).catch((error) => {
@@ -37,9 +36,7 @@ function Task() {
 
     const handleCircleClick = (level) => {
       // Render a different component based on the clicked level
-      console.log(`Clicked on level ${level}`);
-      // You can use state management or routing to render different components
-      // Here, we'll just log the clicked level for demonstration purposes
+      props.changeTask(level);
     };
 
   return (
@@ -51,7 +48,7 @@ function Task() {
           <Row className="flex-fill align-items-center justify-content-center">
             <Col xs={{xs:12}} md={6}>
               {/* Content for the first row in the first column */}
-              <img className='img-container' src='img/Wizard.jpg' alt='Challenge' />
+              <img className='img-container' src={props.image} alt='Challenge' />
             </Col>
           </Row>
           
@@ -59,12 +56,7 @@ function Task() {
           <Row className="flex-fill align-items-center justify-content-center">
             <Col xs={{xs:12}} md={6} className="flex-fill white-background">
               {/* Content for the second row in the first column */}
-              <p>Legend has it
-                that thousands of years ago, an acient wizard learned the secrets to becoming a CODING GURU. This powerful knowledge has kept him 
-                alive for thousands of years, but nobody knows where he is. However, if found, the wizard will instruct you on becoming a coding GURU. 
-                You, realizing how much power this knowledge will give you, have decided to embark on an epic quest to find this wizard, obtain his 
-                hidden knowledge, and become the <span className='logo-color'>MOST POWERFUL CODING GURU</span>.
-              </p>
+              <p>{props.message}</p>
             </Col>
           </Row>
         </Col>
@@ -97,7 +89,7 @@ function Task() {
         <h4 className='center level-headings'>Levels</h4>
         <div className="level-progress-container">
           <Button className='custom-btn' style={{ marginBottom: "5px" }}>Home</Button>
-          <LevelIndicator totalLevels={4} currentLevel={3} onCircleClick={handleCircleClick} />
+          <LevelIndicator totalLevels={props.totalLevels} currentLevel={props.currentLevel} onCircleClick={handleCircleClick} />
           <Button className='custom-btn' style={{ marginBottom: "5px" }}>Next</Button>
         </div>
       </Row>

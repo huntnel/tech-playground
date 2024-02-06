@@ -14,10 +14,7 @@ const LevelIndicator = ({ currentLevel, totalLevels, onCircleClick }) => {
       const isFilled = i <= currentLevel;
       circles.push(
         <Button key={i} 
-                style={{border: "2px solid #327C81", 
-                        borderRadius: "50%", 
-                        color: `${isFilled ? "white" : "#327C81"}`, 
-                        backgroundColor: `${isFilled ? "#327C81" : "white"}`}} 
+                className={`${isFilled ? "custom-btn-round" : "custom-btn-transparent"}`}
                 onClick={() => handleCircleClick(i)}
         >{i}</Button>
       );

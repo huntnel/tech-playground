@@ -76,7 +76,7 @@ function Task() {
             <Col xs={{xs:12}} md={6} className="flex-fill">
               {/* Content for the first row in the second column */}
               <CodeMirror height='35vh' style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleButtonClick} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
-              <Button className='mt-2 custom-btn w-100' onClick={() => handleButtonClick(value)}>Run Code</Button>
+              <Button className='mt-2 custom-btn-orange w-100' onClick={() => handleButtonClick(value)}>Run Code</Button>
             </Col>
           </Row>
 
@@ -90,11 +90,11 @@ function Task() {
                 ) : (
                 <span></span>
                 )}
-                <Button className='mt-2 custom-btn-red w-100' onClick={() => setOutput([])}>Clear Console</Button>
+                <Button className='mt-2 custom-btn w-100' onClick={() => setOutput([])}>Clear Console</Button>
             </Col>
           </Row>
         </Col>
-        <h4 className='center level-headings logo-orange'>Levels</h4>
+        <h4 className='center level-headings'>Levels</h4>
         <div className="level-progress-container">
           <Button className='custom-btn' style={{ marginBottom: "5px" }}>Home</Button>
           <LevelIndicator totalLevels={4} currentLevel={3} onCircleClick={handleCircleClick} />

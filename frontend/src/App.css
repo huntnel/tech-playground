@@ -5,6 +5,7 @@
 .level-headings {
   margin-bottom: 0;
   padding-bottom: 0%;
+  color: white;
 }
 
 .console-log {
@@ -130,15 +131,39 @@
   border-color: #285A5C !important; /* Optional: change border color on hover */
 }
 
-.custom-btn-red {
-  background-color: #64171E !important;
-  border: 2px solid #64171E !important; /* Example border color */
+.custom-btn-orange {
+  background-color: #FD5C51 !important;
+  border: 2px solid #FD5C51 !important; /* Example border color */
   transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
 }
 
-.custom-btn-red:hover {
-  background-color: #4B131A !important; /* Darker shade for hover */
-  border-color: #4B131A !important; /* Optional: change border color on hover */
+.custom-btn-orange:hover {
+  background-color: #72302C !important; /* Darker shade for hover */
+  border-color: #72302C !important; /* Optional: change border color on hover */
+}
+
+.custom-btn-transparent {
+  background-color: transparent !important;
+  border: 2px solid #327C81 !important; /* Example border color */
+  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
+  border-radius: 50% !important;
+}
+
+.custom-btn-transparent:hover {
+  background-color: #285A5C !important; /* Darker shade for hover */
+  border-color: #285A5C !important; /* Optional: change border color on hover */
+}
+
+.custom-btn-round {
+  background-color: #327C81 !important;
+  border: 2px solid #327C81 !important; /* Example border color */
+  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
+  border-radius: 50% !important;
+}
+
+.custom-btn-round:hover {
+  background-color: #285A5C !important; /* Darker shade for hover */
+  border-color: #285A5C !important; /* Optional: change border color on hover */
 }
 
 

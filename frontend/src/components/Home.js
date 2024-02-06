@@ -35,7 +35,7 @@ function Home() {
     </li>
     <li>
         {/* Endpoint to route to About component */}
-        <Link to="/codeEditor">Code Editor</Link>
+        <Link to="/task">Tech Playground</Link>
     </li>
   </ul>
   </div>;

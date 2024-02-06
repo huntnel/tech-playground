@@ -27,7 +27,7 @@ function Home() {
     //     </div>
     //     );
     
-  return <div><h1 class='center'>Welcome to the Code Adventure Tech Playground!</h1>
+  return <div><h1 className='center'>Welcome to the Code Adventure Tech Playground!</h1>
   <ul>
     <li>
         {/* Endpoint to route to Home component */}

@@ -1,24 +1,24 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const LevelIndicator = ({ currentLevel, totalLevels, onCircleClick }) => {
+const LevelIndicator = ({ currentLevel, totalTasks, onTaskClick }) => {
     const circles = [];
 
-    const handleCircleClick = (level) => {
-        if (onCircleClick) {
-          onCircleClick(level);
+    const handleTaskClick = (level) => {
+        if (onTaskClick) {
+          onTaskClick(level);
         }
     };
   
-    for (let i = 1; i <= totalLevels; i++) {
+    for (let i = 1; i <= totalTasks; i++) {
       const isFilled = i <= currentLevel;
       circles.push(
         <Button key={i} 
                 className={`${isFilled ? "custom-btn-round" : "custom-btn-transparent"}`}
-                onClick={() => handleCircleClick(i)}
+                onClick={() => handleTaskClick(i)}
         >{i}</Button>
       );
-      if (i < totalLevels) {
+      if (i < totalTasks) {
         circles.push(<div key={`line${i}`} className="line"></div>);
       }
     }

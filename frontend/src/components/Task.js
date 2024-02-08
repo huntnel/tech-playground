@@ -1,6 +1,6 @@
-import {Container, Row, Col, Button} from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import CodeMirror from '@uiw/react-codemirror';
-import React from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { andromeda } from '@uiw/codemirror-theme-andromeda';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import ConsoleLog from './ConsoleLog';
@@ -8,109 +8,93 @@ import LevelIndicator from './LevelIndicator';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function Task(props) {
-  const baseUrl = 'https://vorrlgg23auln4chzzlnhk44g40taebi.lambda-url.us-west-1.on.aws/';
+const baseUrl = 'https://vorrlgg23auln4chzzlnhk44g40taebi.lambda-url.us-west-1.on.aws/';
+
+const Task = React.memo((props) => {
+  const { totalTasks, changeTask, moduleNumber, currentTask, initialComment, image, message } = props;
   const navigate = useNavigate();
-  const [value, setValue] = React.useState(props.initialComment);
-  const [output, setOutput] = React.useState([]);
-  const onChange = React.useCallback((val) => {
+  const [value, setValue] = useState(initialComment);
+  const [output, setOutput] = useState([]);
+  const [taskComplete, setTaskComplete] = useState(false);
+
+  useEffect(() => {
+    setValue(initialComment);
+  }, [initialComment]);
+
+  const onChange = useCallback((val) => {
     setValue(val);
   }, []);
 
-  React.useEffect(() => {
-    setValue(props.initialComment);
-  }, [props.initialComment]);
+  const handleCodeSubmission = useCallback((code) => {
+    axios.post(baseUrl, { code, module: moduleNumber, task: currentTask })
+      .then((result) => {
+        const newArray = [...output, result.data.pythonResult];
+        if (result.data.taskResult.success) {
+          setTaskComplete(true);
+        }
+        if (result.data.taskResult.message) {
+          newArray.push(result.data.taskResult.message);
+        }
+        setOutput(newArray);
+      })
+      .catch((error) => {
+        console.error('error: ', error.response ? error.response.data : error.message);
+        setOutput([...output, error.response ? error.response.data : error.message]);
+      });
+  }, [output, moduleNumber, currentTask]);
 
-  const handleButtonClick = (code) => {
-    const requestBody = {
-      "code": code,
-    };
   
-    axios.post(baseUrl, requestBody)
-    .then((result) => {
-      const newArray = [...output, result.data.result];
-      setOutput(newArray);
-    }).catch((error) => {
-      console.error('error: ' + JSON.stringify(error.response.data));
-      const newArray = [...output, error.response.data];
-      setOutput(newArray);
-    });
-  };
 
-  const handleCircleClick = (level) => {
-    // Render a different component based on the clicked level
-    props.changeTask(level);
-  };
-
-  const navigateHome = () => {
-    navigate('/modules');
-  }
-
-  const nextTask = (task) => {
-    if(task > props.totalLevels) {
-      navigateHome();
+  const handleTaskChange = useCallback((task) => {
+    if (task > totalTasks) {
+      navigate('/modules');
     }
-    console.log('next task: ' + task);
-    props.changeTask(task);
-  }
-
+    setOutput([]);
+    changeTask(task);
+  }, [navigate, totalTasks, changeTask]);
 
   return (
     <Container className="background" style={{ height: '100vh', overflow: 'auto' }} fluid>
       <Row style={{ height: '100vh' }}>
-        {/* First Column */}
         <Col xs={6} className="d-flex flex-column">
-          {/* First Row in the First Column */}
           <Row className="flex-fill align-items-center justify-content-center">
-            <Col xs={{xs:12}} md={6}>
-              {/* Content for the first row in the first column */}
-              <img className='img-container' src={props.image} alt='Challenge' />
+            <Col xs={{ xs: 12 }} md={6}>
+              <img className='img-container' src={image} alt='Challenge' />
             </Col>
           </Row>
-          
-          {/* Second Row in the First Column */}
           <Row className="flex-fill align-items-center justify-content-center">
-            <Col xs={{xs:12}} md={6} className="flex-fill white-background">
-              {/* Content for the second row in the first column */}
-              <p>{props.message}</p>
+            <Col xs={{ xs: 12 }} md={6} className="flex-fill white-background">
+              <p>{message}</p>
             </Col>
           </Row>
         </Col>
-
-        {/* Second Column */}
         <Col xs={6} className="d-flex flex-column">
-          {/* First Row in the Second Column */}
           <Row className="flex-fill align-items-center justify-content-center">
-            <Col xs={{xs:12}} md={6} className="flex-fill">
-              {/* Content for the first row in the second column */}
-              <CodeMirror height='35vh' style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleButtonClick} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
-              <Button className='mt-2 custom-btn-orange w-100' onClick={() => handleButtonClick(value)}>Run Code</Button>
+            <Col xs={{ xs: 12 }} md={6} className="flex-fill">
+              <CodeMirror height='35vh' style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleCodeSubmission} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
+              <Button className='mt-2 custom-btn-orange w-100' onClick={() => handleCodeSubmission(value)}>Run Code</Button>
             </Col>
           </Row>
-
-          {/* Second Row in the Second Column */}
           <Row className="flex-fill align-items-center justify-content-center">
-            <Col xs={{xs:12}} md={6} className="flex-fill">
-              {/* Content for the second row in the second column */}
-              {/* Display the data once it is available */}
+            <Col xs={{ xs: 12 }} md={6} className="flex-fill">
               {output !== null ? (
-                <ConsoleLog logs={output} />
-                ) : (
+                <ConsoleLog module={moduleNumber} task={currentTask} logs={output} />
+              ) : (
                 <span></span>
-                )}
-                <Button className='mt-2 custom-btn w-100' onClick={() => setOutput([])}>Clear Console</Button>
+              )}
+              <Button className='mt-2 custom-btn w-100' onClick={() => setOutput([])}>Clear Console</Button>
             </Col>
           </Row>
         </Col>
-        <h4 className='center level-headings'>Levels</h4>
-        <div className="level-progress-container">
-          <Button className='custom-btn' style={{ marginBottom: "5px" }} onClick={() => navigateHome()}>Home</Button>
-          <LevelIndicator totalLevels={props.totalLevels} currentLevel={props.currentLevel} onCircleClick={handleCircleClick} />
-          <Button className='custom-btn' style={{ marginBottom: "5px" }} onClick={() => nextTask(parseInt(props.currentLevel) + 1)}>Next</Button>
-        </div>
       </Row>
+      <h4 className='center level-headings'>Levels</h4>
+      <div className="level-progress-container">
+        <Button className='custom-btn' style={{ marginBottom: "5px" }} onClick={() => navigate('/modules')}>Home</Button>
+        <LevelIndicator totalTasks={totalTasks} currentLevel={currentTask} onTaskClick={handleTaskChange} />
+        <Button className='custom-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) + 1)}>{taskComplete ? "Next Level" : "Skip"}</Button>
+      </div>
     </Container>
   );
-}
+});
 
 export default Task;

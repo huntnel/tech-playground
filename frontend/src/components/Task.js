@@ -1,6 +1,6 @@
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import CodeMirror from '@uiw/react-codemirror';
-import React, { useCallback, useState, useEffect } from 'react';
+import { useCallback, useState, useEffect, memo } from 'react';
 import { andromeda } from '@uiw/codemirror-theme-andromeda';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import ConsoleLog from './ConsoleLog';
@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 const baseUrl = 'https://vorrlgg23auln4chzzlnhk44g40taebi.lambda-url.us-west-1.on.aws/';
 
-const Task = React.memo((props) => {
+const Task = memo((props) => {
   const { totalTasks, changeTask, moduleNumber, currentTask, initialComment, image, message } = props;
   const navigate = useNavigate();
   const [value, setValue] = useState(initialComment);

@@ -137,7 +137,7 @@ function module4() {
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment],
-        images: ["img/module4/Griffin.jpg", "img/module4/Werewolf.png", "img/module1/Goblin.jpg", "img/module4/Vampire.jpg"],
+        images: ["img/module4/Griffin.jpg", "img/module4/Werewolf.png", "img/module4/Fairy.png", "img/module4/Vampire.png"],
     };
 }
 

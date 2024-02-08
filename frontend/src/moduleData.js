@@ -105,7 +105,7 @@ function module3() {
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment],
-        images: ["img/module1/Wizard.jpg", "img/module1/Wizard2.jpg", "img/module1/Goblin.jpg", "img/module1/Dragon.jpg"],
+        images: ["img/module3/Knight.png", "img/module3/Minotaur.png", "img/module3/Witch.png", "img/module3/Gorgon.png"],
     };
 }
 
@@ -137,7 +137,7 @@ function module4() {
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment],
-        images: ["img/module1/Wizard.jpg", "img/module1/Wizard2.jpg", "img/module1/Goblin.jpg", "img/module1/Dragon.jpg"],
+        images: ["img/module4/Griffin.jpg", "img/module4/Werewolf.png", "img/module1/Goblin.jpg", "img/module4/Vampire.jpg"],
     };
 }
 

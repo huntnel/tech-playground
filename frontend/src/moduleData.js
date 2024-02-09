@@ -21,12 +21,12 @@ function module1() {
     );
     const secondMessage = (
         <span>
-            Module one Level Two
+            To help you on this journey, you have the help of two master coding magicians! First up is Magnus Blackthorn. In his prime days as a wizard, Magnus was famous for being able to create such complex coding algorithms that even artificial intelligence couldn't understand them! He also learned the secrets of transmutation, which allowed him to cast spells that could turn any object into gold!
         </span>
     );
     const thirdMessage = (
         <span>
-            Module one Level Three
+            Now that you've worked with Magnus, you next meet Elowen Mistwood. A master witch, she is capable of writing code and spells that could hack the pentagon and turn her enemies into a frog at the same time! Fortunately for you, her days of converting people to toads are long gone. Now she specializes in sharing her knowledge with others!
         </span>
     );
     const fourthMessage = (
@@ -35,13 +35,13 @@ function module1() {
         </span>
     );
     const firstComment = "\"\"\"\nFirst, please print your wizard name to the console!\n\"\"\"";
-    const secondComment = "\"\"\"\nlevel two\n\"\"\""; 
-    const thirdComment = "\"\"\"\nlevel three\n\"\"\""; 
+    const secondComment = "\"\"\"\nMagnus wants you to learn the different data types in\nprogramming! Create a variable of the following dataypes:\n\nBoolean, Integer, String, Float\n\nOnce you have created them, print each of their types\nto the console.\n\"\"\""; 
+    const thirdComment = "\"\"\"\nElowen wants you to learn how to write conditional coding\nstatements. Write an if statement that will cast either the \nspell Hackius Computerus, or the spell Frogiation Convertium,\ndepending on the type of enemy you encounter!\n\"\"\""; 
     const fourthComment = "\"\"\"\nlevel four\n\"\"\"";
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment],
-        images: ["img/module1/Wizard.jpg", "img/module1/Wizard2.jpg", "img/module1/Goblin.jpg", "img/module1/Dragon.jpg"],
+        images: ["img/module1/Wizard.jpg", "img/module1/Wizard2.jpg", "img/module3/Witch.png", "img/module1/Dragon.jpg"],
     };
 }
 

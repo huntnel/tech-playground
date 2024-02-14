@@ -16,12 +16,12 @@ function getModuleData(moduleNumber){
 function module1() {
     const firstMessage = (
         <span>
-            Legend has it that thousands of years ago, an ancient wizard learned the secrets to becoming a CODING GURU. This powerful knowledge has kept him alive for thousands of years, but nobody knows where he is. However, if found, the wizard will instruct you on becoming a coding GURU. You, realizing how much power this knowledge will give you, have decided to embark on an epic quest to find this wizard, obtain his hidden knowledge, and become the <span className='logo-color'>MOST POWERFUL CODING GURU</span>.
+            In order to access the library, you must tell the guardian your wizard name.
         </span>
     );
     const secondMessage = (
         <span>
-            To help you on this journey, you have the help of two master coding magicians! First up is Magnus Blackthorn. In his prime days as a wizard, Magnus was famous for being able to create such complex coding algorithms that even artificial intelligence couldn't understand them! He also learned the secrets of transmutation, which allowed him to cast spells that could turn any object into gold!
+            In order to access the library, you must tell the guardian your wizard name.
         </span>
     );
     const thirdMessage = (
@@ -31,17 +31,25 @@ function module1() {
     );
     const fourthMessage = (
         <span>
-            Module one Level Four
+            Nice job on your training! Just as you were about to pack up your wand and computer, you hear a strange noise coming from the sky. Suddenly, a DRAGON appears! It lets out a might roar and starts to set the ground around you on fire!
         </span>
     );
-    const firstComment = "\"\"\"\nFirst, please print your wizard name to the console!\n\"\"\"";
-    const secondComment = "\"\"\"\nMagnus wants you to learn the different data types in\nprogramming! Create a variable of the following dataypes:\n\nBoolean, Integer, String, Float\n\nOnce you have created them, print each of their types\nto the console.\n\"\"\""; 
-    const thirdComment = "\"\"\"\nElowen wants you to learn how to write conditional coding\nstatements. Write an if statement that will cast either the \nspell Hackius Computerus, or the spell Frogiation Convertium,\ndepending on the type of enemy you encounter!\n\"\"\""; 
-    const fourthComment = "\"\"\"\nlevel four\n\"\"\"";
+    const firstComment = "\"\"\"\nUse a print statement to output your wizard name!\n\"\"\"\ndef taskOne():";
+    const secondComment = "\"\"\"\nMagnus wants you to learn the different data types in\nprogramming! Create a variable of the following dataypes in order:\n\nBoolean, Integer, String, Float\n\nOnce you have created them, print each of their types\nto the console.\n\"\"\""; 
+    const thirdComment = "\"\"\"\nElowen wants you to learn how to write conditional coding\nstatements. Write an if statement that will cast either the \nspell Hackius Computerus, or the spell Frogiation Convertium,\ndepending on the type of enemy you encounter!\n\"\"\"\ndef logicalStatements(enemyType):"; 
+    const fourthComment = "\"\"\"\nQuick! Write an if statement that divides the number of flames by two. If that number \n\"\"\"";
+
+    const firstEvaluationFunction = null;
+    const secondEvaluationFunction = null;
+    const thirdEvaluationFunction = (string) => {
+
+    };
+    const fourthEvaluationFunction = null;
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment],
         images: ["img/module1/Wizard.jpg", "img/module1/Wizard2.jpg", "img/module3/Witch.png", "img/module1/Dragon.jpg"],
+        evaluationFunctions: [firstEvaluationFunction, secondEvaluationFunction, thirdEvaluationFunction, fourthEvaluationFunction],
     };
 }
 

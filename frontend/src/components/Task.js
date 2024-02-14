@@ -26,19 +26,27 @@ const Task = memo((props) => {
   }, []);
 
   const handleCodeSubmission = useCallback((code) => {
-    axios.post(baseUrl, { code, module: moduleNumber, task: currentTask })
+    const requestBody = {
+      "code": code, 
+      "module": moduleNumber,
+      "task": currentTask,
+    };
+
+    axios.post(baseUrl, requestBody)
       .then((result) => {
-        const newArray = [...output, result.data.pythonResult];
-        if (result.data.taskResult.success) {
+        const newArray = [...output, result.data.result];
+        console.log('result: ' + JSON.stringify(result));
+        if (result.data.taskComplete) {
           setTaskComplete(true);
         }
-        if (result.data.taskResult.message) {
-          newArray.push(result.data.taskResult.message);
+        if (result.data.taskComplete && result.data.consoleMessage) {
+          newArray.push(result.data.consoleMessage);
         }
         setOutput(newArray);
       })
       .catch((error) => {
-        console.error('error: ', error.response ? error.response.data : error.message);
+        console.error('fullError: ' + error);
+        // console.error('error: ', error.response ? error.response.data : error.message);
         setOutput([...output, error.response ? error.response.data : error.message]);
       });
   }, [output, moduleNumber, currentTask]);

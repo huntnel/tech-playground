@@ -65,6 +65,7 @@ const Task = memo((props) => {
     <Container className="background" style={{ height: '100vh', overflow: 'auto' }} fluid>
       <Row style={{ height: '100vh' }}>
         <Col xs={6} className="d-flex flex-column">
+          
           <Row className="flex-fill align-items-center justify-content-center">
             <Col xs={{ xs: 12 }} md={6}>
               <img className='img-container' src={image} alt='Challenge' />
@@ -75,11 +76,21 @@ const Task = memo((props) => {
               <p>{message}</p>
             </Col>
           </Row>
+          <Row className="align-items-center justify-content-center">
+            <Col xs={{ xs: 12 }} md={6} className="flex-fill">
+              <h4 className='center level-headings'>Levels</h4>
+              <div className="level-progress-container">
+                <Button className='custom-btn' style={{ marginBottom: "5px" }} onClick={() => navigate('/modules')}>Home</Button>
+                <LevelIndicator totalTasks={totalTasks} currentLevel={currentTask} onTaskClick={handleTaskChange} />
+                <Button className='custom-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) + 1)}>{taskComplete ? "Next Level" : "Skip"}</Button>
+              </div>
+            </Col>
+          </Row>
         </Col>
         <Col xs={6} className="d-flex flex-column">
           <Row className="flex-fill align-items-center justify-content-center">
             <Col xs={{ xs: 12 }} md={6} className="flex-fill">
-              <CodeMirror height='35vh' style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleCodeSubmission} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
+              <CodeMirror height='50vh' style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleCodeSubmission} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
               <Button className='mt-2 custom-btn-orange w-100' onClick={() => handleCodeSubmission(value)}>Run Code</Button>
             </Col>
           </Row>

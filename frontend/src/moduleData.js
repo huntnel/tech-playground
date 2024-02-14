@@ -16,32 +16,40 @@ function getModuleData(moduleNumber){
 function module1() {
     const firstMessage = (
         <span>
-            Legend has it that thousands of years ago, an ancient wizard learned the secrets to becoming a CODING GURU. This powerful knowledge has kept him alive for thousands of years, but nobody knows where he is. However, if found, the wizard will instruct you on becoming a coding GURU. You, realizing how much power this knowledge will give you, have decided to embark on an epic quest to find this wizard, obtain his hidden knowledge, and become the <span className='logo-color'>MOST POWERFUL CODING GURU</span>.
+            In order to access the library, you must tell the guardian your wizard name.
         </span>
     );
     const secondMessage = (
         <span>
-            Module one Level Two
+            In order to access the library, you must tell the guardian your wizard name.
         </span>
     );
     const thirdMessage = (
         <span>
-            Module one Level Three
+            Now that you've worked with Magnus, you next meet Elowen Mistwood. A master witch, she is capable of writing code and spells that could hack the pentagon and turn her enemies into a frog at the same time! Fortunately for you, her days of converting people to toads are long gone. Now she specializes in sharing her knowledge with others!
         </span>
     );
     const fourthMessage = (
         <span>
-            Module one Level Four
+            Nice job on your training! Just as you were about to pack up your wand and computer, you hear a strange noise coming from the sky. Suddenly, a DRAGON appears! It lets out a might roar and starts to set the ground around you on fire!
         </span>
     );
-    const firstComment = "\"\"\"\nFirst, please print your wizard name to the console!\n\"\"\"";
-    const secondComment = "\"\"\"\nlevel two\n\"\"\""; 
-    const thirdComment = "\"\"\"\nlevel three\n\"\"\""; 
-    const fourthComment = "\"\"\"\nlevel four\n\"\"\"";
+    const firstComment = "\"\"\"\nUse a print statement to output your wizard name!\n\"\"\"\ndef taskOne():";
+    const secondComment = "\"\"\"\nMagnus wants you to learn the different data types in\nprogramming! Create a variable of the following dataypes in order:\n\nBoolean, Integer, String, Float\n\nOnce you have created them, print each of their types\nto the console.\n\"\"\""; 
+    const thirdComment = "\"\"\"\nElowen wants you to learn how to write conditional coding\nstatements. Write an if statement that will cast either the \nspell Hackius Computerus, or the spell Frogiation Convertium,\ndepending on the type of enemy you encounter!\n\"\"\"\ndef logicalStatements(enemyType):"; 
+    const fourthComment = "\"\"\"\nQuick! Write an if statement that divides the number of flames by two. If that number \n\"\"\"";
+
+    const firstEvaluationFunction = null;
+    const secondEvaluationFunction = null;
+    const thirdEvaluationFunction = (string) => {
+
+    };
+    const fourthEvaluationFunction = null;
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment],
-        images: ["img/module1/Wizard.jpg", "img/module1/Wizard2.jpg", "img/module1/Goblin.jpg", "img/module1/Dragon.jpg"],
+        images: ["img/module1/Wizard.jpg", "img/module1/Wizard2.jpg", "img/module3/Witch.png", "img/module1/Dragon.jpg"],
+        evaluationFunctions: [firstEvaluationFunction, secondEvaluationFunction, thirdEvaluationFunction, fourthEvaluationFunction],
     };
 }
 
@@ -105,7 +113,7 @@ function module3() {
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment],
-        images: ["img/module1/Wizard.jpg", "img/module1/Wizard2.jpg", "img/module1/Goblin.jpg", "img/module1/Dragon.jpg"],
+        images: ["img/module3/Knight.png", "img/module3/Minotaur.png", "img/module3/Witch.png", "img/module3/Gorgon.png"],
     };
 }
 
@@ -137,7 +145,7 @@ function module4() {
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment],
-        images: ["img/module1/Wizard.jpg", "img/module1/Wizard2.jpg", "img/module1/Goblin.jpg", "img/module1/Dragon.jpg"],
+        images: ["img/module4/Griffin.jpg", "img/module4/Werewolf.png", "img/module4/Fairy.png", "img/module4/Vampire.png"],
     };
 }
 

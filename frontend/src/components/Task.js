@@ -65,6 +65,7 @@ const Task = memo((props) => {
     <Container className="background" style={{ height: '100vh', overflow: 'auto' }} fluid>
       <Row style={{ height: '100vh' }}>
         <Col xs={6} className="d-flex flex-column">
+          
           <Row className="flex-fill align-items-center justify-content-center">
             <Col xs={{ xs: 12 }} md={6}>
               <img className='img-container' src={image} alt='Challenge' />
@@ -75,7 +76,7 @@ const Task = memo((props) => {
               <p>{message}</p>
             </Col>
           </Row>
-          <Row className="flex-fill align-items-center justify-content-center">
+          <Row className="align-items-center justify-content-center">
             <Col xs={{ xs: 12 }} md={6} className="flex-fill">
               <h4 className='center level-headings'>Levels</h4>
               <div className="level-progress-container">

@@ -31,25 +31,31 @@ function module1() {
     );
     const fourthMessage = (
         <span>
-            Nice job on your training! Just as you were about to pack up your wand and computer, you hear a strange noise coming from the sky. Suddenly, a DRAGON appears! It lets out a might roar and starts to set the ground around you on fire!
+            With your new knowledge of spells, practice lighting the fireplace in the library.
+        </span>
+    );
+    const fifthMessage = (
+        <span>
+            You decide you don't want to have to type out the full spell each time. Let's use a variable to cast a fire spell and a water spell.
+        </span>
+    );
+    const sixthMessage = (
+        <span>
+            You want to be able to sneak around in the library. You found the invisibility spell but you need to specify who or what will become invisible.
         </span>
     );
     const firstComment = "\"\"\"\nUse a print statement to output your wizard name!\n\"\"\"\ndef taskOne():";
-    const secondComment = "\"\"\"\nMagnus wants you to learn the different data types in\nprogramming! Create a variable of the following dataypes in order:\n\nBoolean, Integer, String, Float\n\nOnce you have created them, print each of their types\nto the console.\n\"\"\""; 
-    const thirdComment = "\"\"\"\nElowen wants you to learn how to write conditional coding\nstatements. Write an if statement that will cast either the \nspell Hackius Computerus, or the spell Frogiation Convertium,\ndepending on the type of enemy you encounter!\n\"\"\"\ndef logicalStatements(enemyType):"; 
-    const fourthComment = "\"\"\"\nQuick! Write an if statement that divides the number of flames by two. If that number \n\"\"\"";
+    const secondComment = "\"\"\"\nMagnus wants you to learn the different data types in\nprogramming! Create a variable of the following dataypes in order:\n\nBoolean, Integer, String, Float\n\nOnce you have created them, print each of their types\nto the console.\n\"\"\"\ndef taskTwo():"; 
+    const thirdComment = "\"\"\"\nElowen wants you to learn how to write conditional coding\nstatements. Write an if statement that will cast either the \nspell Hackius Computerus, or the spell Frogiation Convertium,\ndepending on the type of enemy you encounter!\n\"\"\"\ndef taskThree():"; 
+    const fourthComment = "\"\"\"\nPrint the fire spell \"pyralight\"\n\"\"\"\ndef taskFour():";
+    const fifthComment = "\"\"\"\nCreate a variable called spell and set its value to \n\"pyralight\" and print out the variable. Then set the variable \nto the water spell \"hydrovortex\" and print out the variable a \nsecond time.\n\"\"\"\ndef taskFive():";
+    const sixthComment = "\"\"\"\nChange the spell to \"invisicloak\" then use concatenation \nto print out your name and the spell\n\"\"\"\ndef taskSix():";
 
-    const firstEvaluationFunction = null;
-    const secondEvaluationFunction = null;
-    const thirdEvaluationFunction = (string) => {
-
-    };
-    const fourthEvaluationFunction = null;
     return {
-        messages: [firstMessage, secondMessage, thirdMessage, fourthMessage],
-        comments: [firstComment, secondComment, thirdComment, fourthComment],
-        images: ["img/module1/Wizard.jpg", "img/module1/Wizard2.jpg", "img/module3/Witch.png", "img/module1/Dragon.jpg"],
-        evaluationFunctions: [firstEvaluationFunction, secondEvaluationFunction, thirdEvaluationFunction, fourthEvaluationFunction],
+        messages: [firstMessage, secondMessage, thirdMessage, fourthMessage, fifthMessage, sixthMessage],
+        comments: [firstComment, secondComment, thirdComment, fourthComment, fifthComment, sixthComment],
+        images: ["img/module1/Wizard.jpg", "img/module1/Wizard2.jpg", "img/module3/Witch.png", "img/module1/Dragon.jpg", "img/module1/Dragon.jpg", "img/module1/Dragon.jpg"],
+        totalTasks: 6,
     };
 }
 
@@ -82,6 +88,7 @@ function module2() {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment],
         images: ["img/module2/Dwarf.jpg", "img/module2/Elf.jpg", "img/module2/Ogre.jpg", "img/module2/Pegasus.jpg"],
+        totalTasks: 4,
     };
 }
 
@@ -114,6 +121,7 @@ function module3() {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment],
         images: ["img/module3/Knight.png", "img/module3/Minotaur.png", "img/module3/Witch.png", "img/module3/Gorgon.png"],
+        totalTasks: 4,
     };
 }
 
@@ -146,6 +154,7 @@ function module4() {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment],
         images: ["img/module4/Griffin.jpg", "img/module4/Werewolf.png", "img/module4/Fairy.png", "img/module4/Vampire.png"],
+        totalTasks: 4,
     };
 }
 

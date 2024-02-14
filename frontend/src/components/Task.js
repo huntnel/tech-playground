@@ -94,13 +94,13 @@ const Task = memo((props) => {
             </Col>
           </Row>
         </Col>
+        <h4 className='center level-headings'>Levels</h4>
+        <div className="level-progress-container">
+          <Button className='custom-btn' style={{ marginBottom: "5px" }} onClick={() => navigate('/modules')}>Home</Button>
+          <LevelIndicator totalTasks={totalTasks} currentLevel={currentTask} onTaskClick={handleTaskChange} />
+          <Button className='custom-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) + 1)}>{taskComplete ? "Next Level" : "Skip"}</Button>
+        </div>
       </Row>
-      <h4 className='center level-headings'>Levels</h4>
-      <div className="level-progress-container">
-        <Button className='custom-btn' style={{ marginBottom: "5px" }} onClick={() => navigate('/modules')}>Home</Button>
-        <LevelIndicator totalTasks={totalTasks} currentLevel={currentTask} onTaskClick={handleTaskChange} />
-        <Button className='custom-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) + 1)}>{taskComplete ? "Next Level" : "Skip"}</Button>
-      </div>
     </Container>
   );
 });

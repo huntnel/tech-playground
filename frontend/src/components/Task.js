@@ -7,6 +7,8 @@ import ConsoleLog from './ConsoleLog';
 import LevelIndicator from './LevelIndicator';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const baseUrl = 'https://vorrlgg23auln4chzzlnhk44g40taebi.lambda-url.us-west-1.on.aws/';
 
@@ -35,7 +37,6 @@ const Task = memo((props) => {
     axios.post(baseUrl, requestBody)
       .then((result) => {
         const newArray = [...output, result.data.result];
-        console.log('result: ' + JSON.stringify(result));
         if (result.data.taskComplete) {
           setTaskComplete(true);
         }
@@ -45,13 +46,10 @@ const Task = memo((props) => {
         setOutput(newArray);
       })
       .catch((error) => {
-        console.error('fullError: ' + error);
-        // console.error('error: ', error.response ? error.response.data : error.message);
+        console.error('error: ', error.response ? error.response.data : error.message);
         setOutput([...output, error.response ? error.response.data : error.message]);
       });
   }, [output, moduleNumber, currentTask]);
-
-  
 
   const handleTaskChange = useCallback((task) => {
     if (task > totalTasks) {
@@ -68,7 +66,11 @@ const Task = memo((props) => {
           
           <Row className="flex-fill align-items-center justify-content-center">
             <Col xs={{ xs: 12 }} md={6}>
-              <img className='img-container' src={image} alt='Challenge' />
+              <LazyLoadImage src={image}
+               className='img-container'
+                alt="Challenge"
+                effect="blur"
+              />
             </Col>
           </Row>
           <Row className="flex-fill align-items-center justify-content-center">
@@ -109,5 +111,4 @@ const Task = memo((props) => {
     </Container>
   );
 });
-
 export default Task;

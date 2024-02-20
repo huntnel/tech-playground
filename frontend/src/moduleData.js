@@ -44,17 +44,17 @@ function module1() {
             You want to be able to sneak around in the library. You found the invisibility spell but you need to specify who or what will become invisible.
         </span>
     );
-    const firstComment = "\"\"\"\nUse a print statement to output your wizard name!\n\"\"\"\ndef taskOne():";
-    const secondComment = "\"\"\"\nMagnus wants you to learn the different data types in\nprogramming! Create a variable of the following dataypes in order:\n\nBoolean, Integer, String, Float\n\nOnce you have created them, print each of their types\nto the console.\n\"\"\"\ndef taskTwo():"; 
-    const thirdComment = "\"\"\"\nElowen wants you to learn how to write conditional coding\nstatements. Write an if statement that will cast either the \nspell Hackius Computerus, or the spell Frogiation Convertium,\ndepending on the type of enemy you encounter!\n\"\"\"\ndef taskThree():"; 
-    const fourthComment = "\"\"\"\nPrint the fire spell \"pyralight\"\n\"\"\"\ndef taskFour():";
-    const fifthComment = "\"\"\"\nCreate a variable called spell and set its value to \n\"pyralight\" and print out the variable. Then set the variable \nto the water spell \"hydrovortex\" and print out the variable a \nsecond time.\n\"\"\"\ndef taskFive():";
-    const sixthComment = "\"\"\"\nChange the spell to \"invisicloak\" then use concatenation \nto print out your name and the spell\n\"\"\"\ndef taskSix():";
+    const firstComment = "\"\"\"\nUse a print statement to output your wizard name!\n\"\"\"\ndef taskOne():\n\t# Place your code below this line";
+    const secondComment = "\"\"\"\nMagnus wants you to learn the different data types in\nprogramming! Create a variable of the following dataypes in order:\n\nBoolean, Integer, String, Float\n\nOnce you have created them, print each of their types\nto the console.\n\"\"\"\ndef taskTwo():\n\t# Place your code below this line"; 
+    const thirdComment = "\"\"\"\nElowen wants you to learn how to write conditional coding\nstatements. Write an if statement that will cast either the \nspell Hackius Computerus, or the spell Frogiation Convertium,\ndepending on the type of enemy you encounter!\n\"\"\"\ndef taskThree():\n\t# Place your code below this line"; 
+    const fourthComment = "\"\"\"\nPrint the fire spell \"pyralight\"\n\"\"\"\ndef taskFour():\n\t# Place your code below this line";
+    const fifthComment = "\"\"\"\nCreate a variable called spell and set its value to \n\"pyralight\" and print out the variable. Then set the variable \nto the water spell \"hydrovortex\" and print out the variable a \nsecond time.\n\"\"\"\ndef taskFive():\n\t# Place your code below this line";
+    const sixthComment = "\"\"\"\nChange the spell to \"invisicloak\" then use concatenation \nto print out your name and the spell\n\"\"\"\ndef taskSix():\n\t# Place your code below this line";
 
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage, fifthMessage, sixthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment, fifthComment, sixthComment],
-        images: ["img/module1/Wizard.jpg", "img/module1/Wizard2.jpg", "img/module3/Witch.png", "img/module1/Dragon.jpg", "img/module1/Dragon.jpg", "img/module1/Dragon.jpg"],
+        images: ["img/module1/1-1.webp", "img/module1/1-2.webp", "img/module1/1-3.webp", "img/module1/1-4.webp", "img/module1/1-5.webp", "img/module1/1-6.webp"],
         totalTasks: 6,
     };
 }
@@ -80,15 +80,27 @@ function module2() {
             Module two level 4
         </span>
     );
-    const firstComment = "\"\"\"\n2-1\n\"\"\"";
-    const secondComment = "\"\"\"\n2-2\n\"\"\""; 
-    const thirdComment = "\"\"\"\n2-3\n\"\"\""; 
-    const fourthComment = "\"\"\"\n2-4\n\"\"\"";
+    const fifthMessage = (
+        <span>
+            Module two level 5
+        </span>
+    );
+    const sixthMessage = (
+        <span>
+            Module two level 6
+        </span>
+    );
+    const firstComment = "\"\"\"\n2-1\n\"\"\"\ndef taskOne():\n\t# Place your code below this line";
+    const secondComment = "\"\"\"\n2-2\n\"\"\"\ndef taskTwo():\n\t# Place your code below this line"; 
+    const thirdComment = "\"\"\"\n2-3\n\"\"\"\ndef taskThree():\n\t# Place your code below this line"; 
+    const fourthComment = "\"\"\"\n2-4\n\"\"\"\ndef taskFour():\n\t# Place your code below this line";
+    const fifthComment = "\"\"\"\n2-5\n\"\"\"\ndef taskFive():\n\t# Place your code below this line";
+    const sixthComment = "\"\"\"\n2-6\n\"\"\"\ndef taskSix():\n\t# Place your code below this line";
     return {
-        messages: [firstMessage, secondMessage, thirdMessage, fourthMessage],
-        comments: [firstComment, secondComment, thirdComment, fourthComment],
-        images: ["img/module2/Dwarf.jpg", "img/module2/Elf.jpg", "img/module2/Ogre.jpg", "img/module2/Pegasus.jpg"],
-        totalTasks: 4,
+        messages: [firstMessage, secondMessage, thirdMessage, fourthMessage, fifthMessage, sixthMessage],
+        comments: [firstComment, secondComment, thirdComment, fourthComment, fifthComment, sixthComment],
+        images: ["img/module2/2-1.webp", "img/module2/2-2.webp", "img/module2/2-3.webp", "img/module2/2-4.webp", "img/module2/2-5.webp", "img/module2/2-6.webp"],
+        totalTasks: 6,
     };
 }
 

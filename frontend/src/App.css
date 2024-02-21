@@ -45,14 +45,22 @@
   color: #83c5be;
 }
 
+.logo-color-dark {
+  color: #327C81;
+}
+
 .logo-orange {
   color:#FD5C51;
 }
 
-.background {
-  background-image:  url('../public/img/space.jpg');
+.task-background {
+  background-image: url('../public/img/space.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.modules-background {
+  background-color: black;
 }
 
 .white-background {
@@ -190,4 +198,39 @@
   .line {
     width: .5vw;
   }
+}
+
+.module-card {
+  background-color: #327C81 !important;
+}
+
+.card-img {
+  transition: filter 0.5s ease;
+}
+
+.card-img-overlay {
+  position: relative;
+}
+
+.overlay-text {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.module-card:hover .card-img {
+  filter: brightness(50%);
+}
+
+.module-card:hover .overlay-text {
+  opacity: 1;
+}
+
+.inner-overlay-text {
+  position: absolute;
+  text-align: center !important;
 }

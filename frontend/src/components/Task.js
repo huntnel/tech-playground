@@ -60,7 +60,7 @@ const Task = memo((props) => {
   }, [navigate, totalTasks, changeTask]);
 
   return (
-    <Container className="background" style={{ height: '100vh', overflow: 'auto' }} fluid>
+    <Container className="task-background" style={{ height: '100vh', overflow: 'auto' }} fluid>
       <Row style={{ height: '100vh' }}>
         <Col xs={6} className="d-flex flex-column">
           

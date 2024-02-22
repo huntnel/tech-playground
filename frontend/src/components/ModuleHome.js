@@ -91,7 +91,7 @@ function ModuleHome() {
                     <Col xs={0} sm={0} md={1}>
                         <LazyLoadImage 
                             src='img/blackBackground.png'
-                            className='img-fluid'
+                            className='img-fluid torch'
                             alt="Challenge"
                             effect="blur"/>
                     </Col>
@@ -99,7 +99,7 @@ function ModuleHome() {
                     <Col xs={0} sm={0} md={1}>
                         <LazyLoadImage 
                             src='img/blackBackground.png'
-                            className='img-fluid'
+                            className='img-fluid torch'
                             alt="Challenge"
                             effect="blur"/>
                     </Col>

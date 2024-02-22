@@ -253,7 +253,9 @@
   .card-title.h5{
     font-size: 1.5rem; 
   }
-
+  .torch {
+    display: none;
+  }
 }
 
 @media (max-width: 945px) {

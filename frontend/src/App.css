@@ -222,6 +222,10 @@
   transition: opacity 0.5s ease;
 }
 
+.module-card:hover { 
+  cursor: pointer;
+}
+
 .module-card:hover .card-img {
   filter: brightness(50%);
 }
@@ -233,4 +237,8 @@
 .inner-overlay-text {
   position: absolute;
   text-align: center !important;
+}
+
+.pixel-font {
+  font-family: 'Onesize', sans-serif;
 }

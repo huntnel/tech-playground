@@ -22,9 +22,6 @@ function App() {
             <Route path='/module2' element={<Module moduleNumber={2} />} />
             <Route path='/module3' element={<Module moduleNumber={3} />} />
             <Route path='/module4' element={<Module moduleNumber={4} />} />
-            {/* If any route mismatches the upper 
-            route endpoints then, redirect triggers 
-            and redirects app to home component with to="/" */}
             <Route path="*" element={<Navigate to="/" />}/>
           </Routes>
         </Suspense>

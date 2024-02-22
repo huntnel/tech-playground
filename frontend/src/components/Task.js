@@ -52,7 +52,7 @@ const Task = memo((props) => {
   }, [output, moduleNumber, currentTask]);
 
   const handleTaskChange = useCallback((task) => {
-    if (task > totalTasks) {
+    if (task > totalTasks || task < 1) {
       navigate('/modules');
     }
     setOutput([]);

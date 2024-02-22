@@ -8,7 +8,6 @@ import {
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// const Home = lazy(() => import('./components/Home'));
 const Module = lazy(() => import('./components/Module'));
 const ModuleHome = lazy(() => import('./components/ModuleHome'));
 
@@ -18,9 +17,7 @@ function App() {
       <Router>
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
-            {/* <Route path='/tech-playground' element={<ModuleHome />} /> */}
             <Route path='/' element={<ModuleHome />} />
-            {/* <Route path='/modules' element={<ModuleHome />} /> */}
             <Route path='/module1' element={<Module moduleNumber={1} />} />
             <Route path='/module2' element={<Module moduleNumber={2} />} />
             <Route path='/module3' element={<Module moduleNumber={3} />} />

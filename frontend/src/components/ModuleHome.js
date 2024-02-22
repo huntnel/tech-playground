@@ -19,7 +19,7 @@ function ModuleHome() {
                     </Col>
                 </Row>
                 <Row className='pt-sm-5'>
-                    <Col className="d-flex flex-column">
+                    <Col className="d-flex flex-column custom-z-index">
                         <Container className='d-flex card-module-container'>
                             <Container onClick={() => navigateToModule("/module1")}>
                                 <Card border="light" className='module-card border-0'>
@@ -87,24 +87,20 @@ function ModuleHome() {
                         </Container>
                     </Col>
                 </Row>
-                <Row>
-                    <Col xs={0} sm={0} md={1}>
-                        <LazyLoadImage 
-                            src='img/blackBackground.png'
-                            className='img-fluid torch'
-                            alt="Challenge"
-                            effect="blur"/>
-                    </Col>
-                    <Col></Col>
-                    <Col xs={0} sm={0} md={1}>
-                        <LazyLoadImage 
-                            src='img/blackBackground.png'
-                            className='img-fluid torch'
-                            alt="Challenge"
-                            effect="blur"/>
-                    </Col>
-                </Row>
-                
+                <div className="torch-left torch">
+                    <LazyLoadImage 
+                    src='img/blackBackground.png'
+                    className='img-fluid'
+                    alt="Challenge"
+                    effect="blur"/>
+                </div>
+                <div className="torch-right torch">
+                    <LazyLoadImage 
+                    src='img/blackBackground.png'
+                    className='img-fluid'
+                    alt="Challenge"
+                    effect="blur"/>
+                </div>
             </Container>
         </div>
     );

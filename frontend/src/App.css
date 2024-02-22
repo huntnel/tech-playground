@@ -218,6 +218,23 @@
   font-family: 'Onesize', sans-serif;
 }
 
+.torch-left {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 25vh;
+}
+.torch-right {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 25vh;
+}
+
+.custom-z-index{
+  z-index: 1;
+}
+
 @media (max-width: 1000px) {
   p {
     font-size: 12px; 
@@ -227,7 +244,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 770px) {
   p {
     font-size: 10px; 
   }

@@ -16,7 +16,7 @@ function getModuleData(moduleNumber){
 function module1() {
     const firstMessage = (
         <span>
-            In order to access the library, you must tell the guardian your wizard name.
+            In order to access the library, you must tell the guardian your wizard name!
         </span>
     );
     const secondMessage = (

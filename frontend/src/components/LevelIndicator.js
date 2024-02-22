@@ -23,7 +23,7 @@ const LevelIndicator = ({ currentLevel, totalTasks, onTaskClick }) => {
       }
     }
   
-    return <div className="level-progress">{circles}</div>;
+    return <div className="level-progress pixel-font">{circles}</div>;
   };
 
 export default LevelIndicator;

@@ -21,12 +21,12 @@ function module1() {
     );
     const secondMessage = (
         <span>
-            In order to access the library, you must tell the guardian your wizard name.
+            Missing Storyline
         </span>
     );
     const thirdMessage = (
         <span>
-            Now that you've worked with Magnus, you next meet Elowen Mistwood. A master witch, she is capable of writing code and spells that could hack the pentagon and turn her enemies into a frog at the same time! Fortunately for you, her days of converting people to toads are long gone. Now she specializes in sharing her knowledge with others!
+            Missing Storyline
         </span>
     );
     const fourthMessage = (
@@ -45,8 +45,8 @@ function module1() {
         </span>
     );
     const firstComment = "\"\"\"\nUse a print statement to output your wizard name!\n\"\"\"\ndef taskOne():\n\t# Place your code below this line";
-    const secondComment = "\"\"\"\nMagnus wants you to learn the different data types in\nprogramming! Create a variable of the following dataypes in order:\n\nBoolean, Integer, String, Float\n\nOnce you have created them, print each of their types\nto the console.\n\"\"\"\ndef taskTwo():\n\t# Place your code below this line"; 
-    const thirdComment = "\"\"\"\nElowen wants you to learn how to write conditional coding\nstatements. Write an if statement that will cast either the \nspell Hackius Computerus, or the spell Frogiation Convertium,\ndepending on the type of enemy you encounter!\n\"\"\"\ndef taskThree():\n\t# Place your code below this line"; 
+    const secondComment = "\"\"\"\nMissing code comment\n\"\"\"\ndef taskTwo():\n\t# Place your code below this line"; 
+    const thirdComment = "\"\"\"\nMissing code comment\n\"\"\"\ndef taskThree():\n\t# Place your code below this line"; 
     const fourthComment = "\"\"\"\nPrint the fire spell \"pyralight\"\n\"\"\"\ndef taskFour():\n\t# Place your code below this line";
     const fifthComment = "\"\"\"\nCreate a variable called spell and set its value to \n\"pyralight\" and print out the variable. Then set the variable \nto the water spell \"hydrovortex\" and print out the variable a \nsecond time.\n\"\"\"\ndef taskFive():\n\t# Place your code below this line";
     const sixthComment = "\"\"\"\nChange the spell to \"invisicloak\" then use concatenation \nto print out your name and the spell\n\"\"\"\ndef taskSix():\n\t# Place your code below this line";
@@ -62,40 +62,40 @@ function module1() {
 function module2() {
     const firstMessage = (
         <span>
-            Module two level 1
+            Now you must decide if you'd like to accept this quest! If you accept you must begin your journey.
         </span>
     );
     const secondMessage = (
         <span>
-            Module two level 2
+            As you journey into the forest, the path splits into three directions, you must choose if you will follow the talking fox, the fairies, or the mermaid.
         </span>
     );
     const thirdMessage = (
         <span>
-            Module two level 3
+            After traveling for many hours through the enchanted forest, you arrive at a bridge with a troll guarding it. You have 2 choices, if you want to cross and have your wand then you can fight the troll, otherwise you'll need to take a different path. 
         </span>
     );
     const fourthMessage = (
         <span>
-            Module two level 4
+            After fighting the troll you continue through the forest until you find a cottage in a clearing.
         </span>
     );
     const fifthMessage = (
         <span>
-            Module two level 5
+            You stumble inside the cottage of the potions master, Witch Lily Brewbubble. Many of these potions could aid you along your quest! You need to quickly grab some, but be very quiet so you don't wake the witch.
         </span>
     );
     const sixthMessage = (
         <span>
-            Module two level 6
+            Oh no, the witch has entered the room! You need to escape before she grabs you! You've grabbed several potions from the shelves, maybe you can use them to help escape.
         </span>
     );
-    const firstComment = "\"\"\"\n2-1\n\"\"\"\ndef taskOne():\n\t# Place your code below this line";
-    const secondComment = "\"\"\"\n2-2\n\"\"\"\ndef taskTwo():\n\t# Place your code below this line"; 
-    const thirdComment = "\"\"\"\n2-3\n\"\"\"\ndef taskThree():\n\t# Place your code below this line"; 
-    const fourthComment = "\"\"\"\n2-4\n\"\"\"\ndef taskFour():\n\t# Place your code below this line";
-    const fifthComment = "\"\"\"\n2-5\n\"\"\"\ndef taskFive():\n\t# Place your code below this line";
-    const sixthComment = "\"\"\"\n2-6\n\"\"\"\ndef taskSix():\n\t# Place your code below this line";
+    const firstComment = "\"\"\"\nCreate an if statement that will check if the variable quest is True. If it is true then print out \"Quest accepted\". Otherwise print out \"Quest not accepted\"\n\"\"\"\ndef taskOne():\n\t# Place your code below this line";
+    const secondComment = "\"\"\"\nCreate an if else statement. If the variable decision equals fox,\nthen print out \"I will follow the fox\", if the variable decision\nequals fairies then print out \"I will follow the fairies\", if the\nvariable decision equals mermaid, then print out \"I will follow\nthe mermaid.\"\n\"\"\"\ndef taskTwo():\n\t# Place your code below this line"; 
+    const thirdComment = "\"\"\"\nUsing the keyword \"and\", write an if statement so that if\n\"haveWand\" is true and the path = across then print out \"cross\nthe bridge and fight the troll\" otherwise print out \"take a new\npath.\"\n\"\"\"\ndef taskThree():\n\t# Place your code below this line"; 
+    const fourthComment = "\"\"\"\nUsing your knowledge about if statements, write one that\nsatisfies the following: If cauldron boiling is true then\nenter the cottage. If cauldron boiling is false, then knock.\n\"\"\"\ndef taskFour():\n\t# Place your code below this line";
+    const fifthComment = "\"\"\"\nWrite an if statement for gathering potions with the following\ncriteria:\nIf the potion is blue, grab it and put it in your bag.\nIf the potion is yellow, throw it in the fire.\nIf the potion is green, you get to choose what you would like\nto do with it.\nIf you don't like any of the other potions, you are forced to\nleave empty handed.\n\"\"\"\ndef taskFive():\n\t# Place your code below this line";
+    const sixthComment = "\"\"\"\nWrite another if statement to escape the cottage. If you grabbed\nthe fire potion and the protection potion then throw the fire at\nthe witch and protect yourself to escape. If you grabbed either\nan invisibility or a shape shifting position then use the potion\nto escape. If you didn't grab any potions you'll need to climb\nout through the window.\n\"\"\"\ndef taskSix():\n\t# Place your code below this line";
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage, fifthMessage, sixthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment, fifthComment, sixthComment],

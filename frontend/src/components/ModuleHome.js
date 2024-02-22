@@ -33,7 +33,7 @@ function ModuleHome() {
                                     <Card.Body>
                                         <Card.Title className='text-white pixel-font card-title text-center'>Module 1</Card.Title>
                                     </Card.Body>
-                                    <Card.Img className='card-img' variant="bottom" src="img/module1/Wizard.jpg" />
+                                    <Card.Img className='card-img' variant="bottom" src="img/module4/Griffin.jpg" />
                                     <div className='card-img-overlay'>
                                         <div className="overlay-text">
                                             <Card.Text className='text-center pixel-font'>

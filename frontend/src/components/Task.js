@@ -52,7 +52,7 @@ const Task = memo((props) => {
   }, [output, moduleNumber, currentTask]);
 
   const handleTaskChange = useCallback((task) => {
-    if (task > totalTasks) {
+    if (task > totalTasks || task < 1) {
       navigate('/modules');
     }
     setOutput([]);
@@ -82,9 +82,10 @@ const Task = memo((props) => {
             <Col xs={{ xs: 12 }} md={6} className="flex-fill">
               <h4 className='center level-headings'>Levels</h4>
               <div className="level-progress-container">
-                <Button className='custom-btn' style={{ marginBottom: "5px" }} onClick={() => navigate('/modules')}>Home</Button>
+                <Button className='custom-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => navigate('/modules')}>Home</Button>
                 <LevelIndicator totalTasks={totalTasks} currentLevel={currentTask} onTaskClick={handleTaskChange} />
-                <Button className='custom-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) + 1)}>{taskComplete ? "Next Level" : "Skip"}</Button>
+                <Button className='custom-btn previous-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) - 1)}>{"Previous"}</Button>
+                <Button className='custom-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) + 1)}>{taskComplete ? "Next Level" : "Skip"}</Button>
               </div>
             </Col>
           </Row>

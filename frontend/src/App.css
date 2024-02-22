@@ -119,7 +119,7 @@
 }
 
 .level-progress-container > * {
-  margin: 0 10px; /* Adjust the margin as needed */
+  margin: 0.5REM 1REM; /* Adjust the margin as needed */
 }
 
 .custom-btn {
@@ -168,6 +168,9 @@
   border-color: #285A5C !important; /* Optional: change border color on hover */
 }
 
+.smaller-margin-btn {
+  margin: .5rem;
+}
 
 .console-text {
   padding-left: 10px;
@@ -176,36 +179,13 @@
   margin-bottom: 0;
 }
 
-@media (max-width: 1000px) {
-  p {
-    font-size: 12px; /* Smaller font size on small screens */
-  }
-}
-
-@media (max-width: 767px) {
-  p {
-    font-size: 10px; /* Smaller font size on small screens */
-  }
-}
-
-@media (max-width: 1000px) {
-  .line {
-    width: 1vw;
-  }
-}
-
-@media (max-width: 767px) {
-  .line {
-    width: .5vw;
-  }
-}
-
 .module-card {
   background-color: #327C81 !important;
 }
 
 .card-img {
   transition: filter 0.5s ease;
+  border-radius: 0% !important;
 }
 
 .card-img-overlay {
@@ -227,18 +207,84 @@
 }
 
 .module-card:hover .card-img {
-  filter: brightness(50%);
+  filter: brightness(20%);
 }
 
 .module-card:hover .overlay-text {
   opacity: 1;
 }
 
-.inner-overlay-text {
-  position: absolute;
-  text-align: center !important;
-}
-
 .pixel-font {
   font-family: 'Onesize', sans-serif;
 }
+
+@media (max-width: 1000px) {
+  p {
+    font-size: 12px; 
+  }
+  .line {
+    width: 1vw;
+  }
+}
+
+@media (max-width: 767px) {
+  p {
+    font-size: 10px; 
+  }
+  .line {
+    width: .5vw;
+  }
+
+  .card-body{
+    padding: .5rem !important; 
+  }
+
+  .card-module-container {
+    flex-direction: column;
+  }
+  .module-card {
+    margin-bottom: 2REM;
+  }
+
+  .overlay-text p {
+    font-size: 1.2REM; 
+  }
+
+  .card-title.h5{
+    font-size: 1.5rem; 
+  }
+
+}
+
+@media (max-width: 945px) {
+  .level-progress {
+    display: none;
+  }
+}
+
+@media (min-width: 945px) {
+  .previous-btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 660px) {
+  .smaller-margin-btn {
+    margin: .1rem;
+  }
+}
+
+@media (max-width: 465px) {
+  .level-progress-container {
+    flex-direction: column;
+  }
+}
+
+/* @media (max-width: 500px) {
+  .card-module-container {
+    flex-direction: column;
+  }
+  .module-card {
+    margin-bottom: 20px;
+  }
+} */

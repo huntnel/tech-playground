@@ -18,7 +18,8 @@ function App() {
       <Router>
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
-            <Route path='/tech-playground' element={<ModuleHome />} />
+            {/* <Route path='/tech-playground' element={<ModuleHome />} /> */}
+            <Route path='/' element={<ModuleHome />} />
             {/* <Route path='/modules' element={<ModuleHome />} /> */}
             <Route path='/module1' element={<Module moduleNumber={1} />} />
             <Route path='/module2' element={<Module moduleNumber={2} />} />
@@ -27,7 +28,7 @@ function App() {
             {/* If any route mismatches the upper 
             route endpoints then, redirect triggers 
             and redirects app to home component with to="/" */}
-            <Route path="*" element={<Navigate to="/tech-playground" />}/>
+            <Route path="*" element={<Navigate to="/" />}/>
           </Routes>
         </Suspense>
       </Router>      

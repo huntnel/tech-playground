@@ -7,17 +7,17 @@ function ModuleHome() {
             <Container style={{ height: '100vh', overflow: 'auto', backgroundColor: "#000000" }} fluid>
                 <h1 className='logo-color-dark text-center'>Python Quests</h1>
                 
-                <Container className='d-flex'>
+                <Container className='d-flex card-module-container'>
                     <Container>
                         <Card border="light" className='module-card border-0'>
                             <Card.Body>
-                                <Card.Title className='text-white'>Module 1</Card.Title>
+                                <Card.Title className='text-white card-title text-center'>Module 1</Card.Title>
                             </Card.Body>
                             <Card.Img className='card-img' variant="top" src="img/module1/Wizard.jpg" />
                             <div className='card-img-overlay'>
                                 <div className="overlay-text">
-                                    <Card.Text className='position-absolute text-center'>
-                                        Learn about print statements and data types!
+                                    <Card.Text className='text-center'>
+                                        <br></br>Learn about print statements and data types!
                                     </Card.Text>
                                 </div>
                             </div>
@@ -27,13 +27,13 @@ function ModuleHome() {
                     <Container>
                         <Card border="light" className='module-card border-0'>
                             <Card.Body>
-                                <Card.Title className='text-white'>Module 2</Card.Title>
+                                <Card.Title className='text-white card-title text-center'>Module 2</Card.Title>
                             </Card.Body>
                             <Card.Img className='card-img' variant="top" src="img/module4/Werewolf.png" />
                             <div className='card-img-overlay'>
                                 <div className="overlay-text">
-                                    <Card.Text className='position-absolute text-center'>
-                                        Learn about if statements!
+                                    <Card.Text className='text-center'>
+                                        <br></br>Learn about if statements!
                                     </Card.Text>
                                 </div>
                             </div>
@@ -43,13 +43,13 @@ function ModuleHome() {
                     <Container>
                         <Card border="light" className='module-card border-0'>
                             <Card.Body>
-                                <Card.Title className='text-white'>Module 3</Card.Title>
+                                <Card.Title className='text-white card-title text-center'>Module 3</Card.Title>
                             </Card.Body>
                             <Card.Img className='card-img' variant="top" src="img/module3/Witch.png" />
                             <div className='card-img-overlay'>
                                 <div className="overlay-text">
-                                    <Card.Text className='inner-overlay-text'>
-                                        Learn about loops!
+                                    <Card.Text className='text-center'>
+                                        <br></br>Learn about loops!
                                     </Card.Text>
                                 </div>
                             </div>
@@ -59,13 +59,13 @@ function ModuleHome() {
                     <Container>
                         <Card border="light" className='module-card border-0'>
                             <Card.Body>
-                                <Card.Title className='text-white'>Module 4</Card.Title>
+                                <Card.Title className='text-white card-title text-center'>Module 4</Card.Title>
                             </Card.Body>
                             <Card.Img className='card-img' variant="top" src="img/module4/Vampire.png" />
                             <div className='card-img-overlay'>
                                 <div className="overlay-text">
-                                    <Card.Text className='position-absolute text-center'>
-                                        Advanced Topics!
+                                    <Card.Text className='text-center'>
+                                        <br></br>Advanced Topics!
                                     </Card.Text>
                                 </div>
                             </div>

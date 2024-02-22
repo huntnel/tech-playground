@@ -13,6 +13,13 @@ function ModuleHome() {
     return (
         <div>
             <Container style={{ height: '100vh', overflow: 'auto', backgroundColor: "#000000" }} fluid>
+                <div className='logo'>
+                    <LazyLoadImage 
+                        src='img/logolight.png'
+                        className='img-fluid'
+                        alt="Challenge"
+                        effect="blur"/>
+                </div>
                 <Row className='pb-sm-5'>
                     <Col>
                         <h1 className='logo-color-dark text-center pixel-font'>Python Quests</h1>

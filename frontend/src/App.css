@@ -224,6 +224,14 @@
   left: 0;
   width: 25vh;
 }
+
+.logo {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 25vh;
+}
+
 .torch-right {
   position: fixed;
   bottom: 0;
@@ -271,6 +279,9 @@
     font-size: 1.5rem; 
   }
   .torch {
+    display: none;
+  }
+  .logo {
     display: none;
   }
 }

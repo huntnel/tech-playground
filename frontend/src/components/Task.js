@@ -75,17 +75,17 @@ const Task = memo((props) => {
           </Row>
           <Row className="flex-fill align-items-center justify-content-center">
             <Col xs={{ xs: 12 }} md={6} className="flex-fill white-background">
-              <p>{message}</p>
+              <p className='pixel-font'>{message}</p>
             </Col>
           </Row>
           <Row className="align-items-center justify-content-center">
             <Col xs={{ xs: 12 }} md={6} className="flex-fill">
-              <h4 className='center level-headings'>Levels</h4>
+              <h4 className='center level-headings pixel-font'>Levels</h4>
               <div className="level-progress-container">
-                <Button className='custom-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => navigate('/modules')}>Home</Button>
+                <Button className='custom-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => navigate('/modules')}><span className='pixel-font'>Home</span></Button>
                 <LevelIndicator totalTasks={totalTasks} currentLevel={currentTask} onTaskClick={handleTaskChange} />
-                <Button className='custom-btn previous-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) - 1)}>{"Previous"}</Button>
-                <Button className='custom-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) + 1)}>{taskComplete ? "Next Level" : "Skip"}</Button>
+                <Button className='custom-btn previous-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) - 1)}><span className='pixel-font'>{"Previous"}</span></Button>
+                <Button className='custom-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) + 1)}><span className='pixel-font'>{taskComplete ? "Next Level" : "Skip"}</span></Button>
               </div>
             </Col>
           </Row>
@@ -94,7 +94,7 @@ const Task = memo((props) => {
           <Row className="flex-fill align-items-center justify-content-center">
             <Col xs={{ xs: 12 }} md={6} className="flex-fill">
               <CodeMirror height='50vh' style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleCodeSubmission} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
-              <Button className='mt-2 custom-btn-orange w-100' onClick={() => handleCodeSubmission(value)}>Run Code</Button>
+              <Button className='mt-2 custom-btn-orange w-100' onClick={() => handleCodeSubmission(value)}><span className='pixel-font'>Run Code</span></Button>
             </Col>
           </Row>
           <Row className="flex-fill align-items-center justify-content-center">
@@ -104,7 +104,7 @@ const Task = memo((props) => {
               ) : (
                 <span></span>
               )}
-              <Button className='mt-2 custom-btn w-100' onClick={() => setOutput([])}>Clear Console</Button>
+              <Button className='mt-2 custom-btn w-100' onClick={() => setOutput([])}><span  className='pixel-font'>Clear Console</span></Button>
             </Col>
           </Row>
         </Col>

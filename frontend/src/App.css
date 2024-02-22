@@ -310,6 +310,15 @@
   }
 }
 
+@media (max-height: 600px) {
+  .torch-left {
+    display: none;
+  }
+  .torch-right {
+    display: none;
+  }
+}
+
 /* @media (max-width: 500px) {
   .card-module-container {
     flex-direction: column;

@@ -12,7 +12,7 @@ function ModuleHome() {
 
     return (
         <div>
-            <Container style={{ height: '100vh', overflow: 'auto', backgroundColor: "#000000" }} fluid>
+            <Container style={{ display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'auto', backgroundColor: "#000000" }} fluid>
                 <div className='logo'>
                     <LazyLoadImage 
                         src='img/logolight.png'
@@ -22,10 +22,10 @@ function ModuleHome() {
                 </div>
                 <Row className='pb-sm-5'>
                     <Col>
-                        <h1 className='logo-color-dark text-center pixel-font'>Python Quests</h1>
+                        <h1 className='pt-sm-5 logo-color-dark text-center pixel-font'>Python Quests</h1>
                     </Col>
                 </Row>
-                <Row className='pt-sm-5'>
+                <Row className='pt-sm-3'>
                     <Col className="d-flex flex-column custom-z-index">
                         <Container className='d-flex card-module-container'>
                             <Container onClick={() => navigateToModule("/module1")}>

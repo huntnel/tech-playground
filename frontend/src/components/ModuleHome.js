@@ -29,7 +29,7 @@ function ModuleHome() {
                                     <Card.Img className='card-img' variant="bottom" src="img/module1/Wizard.jpg" />
                                     <div className='card-img-overlay'>
                                         <div className="overlay-text">
-                                            <Card.Text className='position-absolute text-center pixel-font'>
+                                            <Card.Text className='text-center pixel-font'>
                                                 <br></br>Learn about print statements and data types!
                                             </Card.Text>
                                         </div>
@@ -45,7 +45,7 @@ function ModuleHome() {
                                     <Card.Img className='card-img' variant="bottom" src="img/module4/Werewolf.png" />
                                     <div className='card-img-overlay'>
                                         <div className="overlay-text">
-                                            <Card.Text className='position-absolute text-center pixel-font'>
+                                            <Card.Text className='text-center pixel-font'>
                                                 <br></br>Learn about if statements!
                                             </Card.Text>
                                         </div>
@@ -61,7 +61,7 @@ function ModuleHome() {
                                     <Card.Img className='card-img' variant="bottom" src="img/module3/Witch.png" />
                                     <div className='card-img-overlay'>
                                         <div className="overlay-text">
-                                            <Card.Text className='inner-overlay-text pixel-font'>
+                                            <Card.Text className='text-center pixel-font'>
                                                 <br></br>Learn about loops!
                                             </Card.Text>
                                         </div>
@@ -77,7 +77,7 @@ function ModuleHome() {
                                     <Card.Img className='card-img' variant="bottom" src="img/module4/Vampire.png" />
                                     <div className='card-img-overlay'>
                                         <div className="overlay-text">
-                                            <Card.Text className='position-absolute text-center pixel-font'>
+                                            <Card.Text className='text-center pixel-font'>
                                                 <br></br>Advanced Topics!
                                             </Card.Text>
                                         </div>

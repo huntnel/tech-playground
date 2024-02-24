@@ -65,89 +65,71 @@ const Test = memo((props) => {
   const [showFirstPanel, setShowFirstPanel] = useState(true);
   const [showLastPanel, setShowLastPanel] = useState(true);
 
-  return (<div>
-      <div className="TopRow">
-        <p>
+  return (
+  <div className="task-background" style={{ height: '100vh', flexWrap: 'wrap', display: 'flex' }}>
+    <PanelGroup style={{ height: '85vh' }} direction='horizontal'>
+      {showFirstPanel && (
+        <Panel className="storyline-panel" collapsible={true} order={1}>
+            <div>
+              <LazyLoadImage src={image}
+                className='img-container'
+                  alt="Challenge"
+                  effect="blur"
+                />
+            </div>
+            <div className="white-background text-center">
+              <span className='pixel-font'>In order to access the library, you must tell the guardian your wizard name.</span>
+            </div>
+        </Panel>
+      )}
+      <PanelResizeHandle className="blur" style={{ width: '.65vw' }} />
+      {showLastPanel && (
+        <Panel className="code-panel" collapsible={true} order={2}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
+            <div style={{ width: '45vw' }}>
+              <CodeMirror height='42.5vh' style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleCodeSubmission} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
+              <Button className='mt-2 custom-btn-orange w-100' onClick={() => handleCodeSubmission(value)}><span className='pixel-font'>Run Code</span></Button>
+            </div>
+            <div style={{ width: '45vw' }}>
+              {output !== null ? (
+                  <ConsoleLog module={moduleNumber} task={currentTask} logs={output} />
+                ) : (
+                  <span></span>
+                )}
+              <Button className='mt-2 custom-btn w-100' onClick={() => setOutput([])}><span  className='pixel-font'>Clear Console</span></Button>
+            </div>
+          </div>
+        </Panel>
+      )}
+    </PanelGroup>
+    <div>
+      <h4 className='center level-headings pixel-font'>Levels</h4>
+      
+      <div className="level-progress-container">
+        <div>
           <button
             className="Button"
             onClick={() => setShowFirstPanel(!showFirstPanel)}
           >
             {showFirstPanel ? "hide" : "show"} top panel
           </button>
-          &nbsp;
+        </div>
+        <div className="d-flex">
+          <Button className='custom-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => navigate('/')}><span className='pixel-font'>Home</span></Button>
+          <LevelIndicator totalTasks={totalTasks} currentLevel={currentTask} onTaskClick={handleTaskChange} />
+          <Button className='custom-btn previous-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) - 1)}><span className='pixel-font'>{"Previous"}</span></Button>
+          <Button className='custom-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) + 1)}><span className='pixel-font'>{taskComplete ? "Next Level" : "Skip"}</span></Button>
+        </div>
+        <div>
           <button
             className="Button"
             onClick={() => setShowLastPanel(!showLastPanel)}
           >
             {showLastPanel ? "hide" : "show"} bottom panel
           </button>
-        </p>
+        </div>
       </div>
-    <PanelGroup direction='horizontal'>
-      {showFirstPanel && (
-        <Panel className="panel" collapsible={true} order={1}>
-          <Container className="task-background" style={{ height: '100vh', overflow: 'auto' }} fluid>
-            <Row style={{ height: '100vh' }}>
-              <Col xs={6} className="d-flex flex-column">
-                
-                <Row className="flex-fill align-items-center justify-content-center">
-                  <Col xs={{ xs: 12 }} md={6}>
-                    <LazyLoadImage src={image}
-                    className='img-container'
-                      alt="Challenge"
-                      effect="blur"
-                    />
-                  </Col>
-                </Row>
-                <Row className="flex-fill align-items-center justify-content-center">
-                  <Col xs={{ xs: 12 }} md={6} className="flex-fill white-background">
-                    <p className='pixel-font'>Hi</p>
-                  </Col>
-                </Row>
-                <Row className="align-items-center justify-content-center">
-                  <Col xs={{ xs: 12 }} md={6} className="flex-fill">
-                    <h4 className='center level-headings pixel-font'>Levels</h4>
-                    <div className="level-progress-container">
-                      <Button className='custom-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => navigate('/')}><span className='pixel-font'>Home</span></Button>
-                      <LevelIndicator totalTasks={totalTasks} currentLevel={currentTask} onTaskClick={handleTaskChange} />
-                      <Button className='custom-btn previous-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) - 1)}><span className='pixel-font'>{"Previous"}</span></Button>
-                      <Button className='custom-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) + 1)}><span className='pixel-font'>{taskComplete ? "Next Level" : "Skip"}</span></Button>
-                    </div>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Container>
-        </Panel>
-      )}
-      <PanelResizeHandle />
-      {showLastPanel && (
-        <Panel className="panel" collapsible={true} order={2}>
-          <Container>
-            <Row>
-              <Col xs={6} className="d-flex flex-column">
-                <Row className="flex-fill align-items-center justify-content-center">
-                  <Col xs={{ xs: 12 }} md={6} className="flex-fill">
-                    <CodeMirror height='50vh' style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleCodeSubmission} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
-                    <Button className='mt-2 custom-btn-orange w-100' onClick={() => handleCodeSubmission(value)}><span className='pixel-font'>Run Code</span></Button>
-                  </Col>
-                </Row>
-                <Row className="flex-fill align-items-center justify-content-center">
-                  <Col xs={{ xs: 12 }} md={6} className="flex-fill">
-                    {output !== null ? (
-                      <ConsoleLog module={moduleNumber} task={currentTask} logs={output} />
-                    ) : (
-                      <span></span>
-                    )}
-                    <Button className='mt-2 custom-btn w-100' onClick={() => setOutput([])}><span  className='pixel-font'>Clear Console</span></Button>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Container>
-        </Panel>
-      )}
-    </PanelGroup>
+    </div>
   </div>
   );
 });

@@ -14,7 +14,7 @@
   font-family: 'Courier New', Courier, monospace;
   overflow-y: scroll;
   white-space: pre-wrap;
-  height: 42.5vh;
+  height: 30.5vh;
   border-radius: 10px;
 }
 
@@ -119,9 +119,9 @@
   width: 100vw;
 }
 
-.level-progress-container > * {
-  margin: 0.5REM 1REM; /* Adjust the margin as needed */
-}
+/* .level-progress-container > * {
+  margin: 0.5REM 1REM;
+} */
 
 .custom-btn {
   background-color: #327C81 !important;
@@ -256,6 +256,7 @@
 .code-panel {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   /* backdrop-filter: blur(1px); */
 }
 .storyline-panel {
@@ -284,8 +285,8 @@
   color: var(--color-default);
   background-color: red;
   border: 1px solid red;
-  border-radius: 0.25rem;
-  padding: 0.25rem 0.5rem;
+  /* border-radius: 0.25rem; */
+  /* padding: 0.25rem 0.5rem; */
   cursor: pointer;
 }
 .Button:hover {
@@ -370,6 +371,12 @@
   }
   .torch-right {
     display: none;
+  }
+}
+
+@media (max-height: 889px) {
+  .console-log {
+    height: 25vh;
   }
 }
 

@@ -21,6 +21,7 @@ const Test = memo((props) => {
   const [value, setValue] = useState(initialComment);
   const [output, setOutput] = useState([]);
   const [taskComplete, setTaskComplete] = useState(false);
+  const [codeMirrorHeight, setCodeMirrorHeight] = useState('auto');
 
   useEffect(() => {
     setValue(initialComment);
@@ -65,8 +66,26 @@ const Test = memo((props) => {
   const [showFirstPanel, setShowFirstPanel] = useState(true);
   const [showLastPanel, setShowLastPanel] = useState(true);
 
+  useEffect(() => {
+    const codeMirrorDiv = document.getElementById('codeMirrorDiv');
+    const codeMirrorButton = document.getElementById('codeMirrorButton');
+
+    const observer = new ResizeObserver(entries => {
+      const newCodeMirrorHeight = (codeMirrorDiv.offsetHeight - codeMirrorButton.offsetHeight - 15);
+      setCodeMirrorHeight(newCodeMirrorHeight + 'px');
+    });
+
+    observer.observe(codeMirrorDiv);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  //Once the width of the codePanel reaches 90vw, make the vh of each component 85vh.
+
   return (
-  <div className="task-background" style={{ height: '100vh', flexWrap: 'wrap', display: 'flex' }}>
+  <div className="task-background" style={{ height: '100vh', flexWrap: 'wrap', display: 'flex', overflow: 'hidden' }}>
     <PanelGroup style={{ height: '85vh' }} direction='horizontal'>
       {showFirstPanel && (
         <Panel className="storyline-panel" collapsible={true} order={1}>
@@ -84,13 +103,13 @@ const Test = memo((props) => {
       )}
       <PanelResizeHandle className="blur" style={{ width: '.65vw' }} />
       {showLastPanel && (
-        <Panel className="code-panel" collapsible={true} order={2}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }}>
-            <div style={{ width: '45vw' }}>
-              <CodeMirror height='42.5vh' style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleCodeSubmission} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
-              <Button className='mt-2 custom-btn-orange w-100' onClick={() => handleCodeSubmission(value)}><span className='pixel-font'>Run Code</span></Button>
+        <Panel className="code-panel" collapsible={true} order={2} id="codePanel">
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }} id="codeDiv">
+            <div style={{ width: '45vw', height: '42.5vh' }} id="codeMirrorDiv">
+              <CodeMirror id="codeMirror" height={codeMirrorHeight} style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleCodeSubmission} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
+              <Button id="codeMirrorButton" style={{ marginBottom: '.5rem' }} className='mt-2 custom-btn-orange w-100' onClick={() => handleCodeSubmission(value)}><span className='pixel-font'>Run Code</span></Button>
             </div>
-            <div style={{ width: '45vw' }}>
+            <div style={{ width: '45vw', height: '42.5vh' }}>
               {output !== null ? (
                   <ConsoleLog module={moduleNumber} task={currentTask} logs={output} />
                 ) : (
@@ -102,7 +121,7 @@ const Test = memo((props) => {
         </Panel>
       )}
     </PanelGroup>
-    <div>
+    <div style={{ height: '15vh' }}>
       <h4 className='center level-headings pixel-font'>Levels</h4>
       
       <div className="level-progress-container">

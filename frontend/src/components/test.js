@@ -88,7 +88,7 @@ const Test = memo((props) => {
   <div className="task-background" style={{ height: '100vh', flexWrap: 'wrap', display: 'flex', overflow: 'hidden' }}>
     <PanelGroup style={{ height: '85vh' }} direction='horizontal'>
       {showFirstPanel && (
-        <Panel className="storyline-panel" collapsible={true} order={1}>
+        <Panel className="storyline-panel" minSize={25} collapsible={true} order={1}>
             <div>
               <LazyLoadImage src={image}
                 className='img-container'
@@ -99,11 +99,18 @@ const Test = memo((props) => {
             <div className="white-background text-center">
               <span className='pixel-font'>In order to access the library, you must tell the guardian your wizard name.</span>
             </div>
+            {!showLastPanel && (
+              <button
+              className="custom-btn Button center level-headings pixel-font"
+              onClick={() => setShowLastPanel(!showLastPanel)}>
+              {showLastPanel ? "" : "Begin Task"}
+            </button>
+            )}
         </Panel>
       )}
       <PanelResizeHandle className="blur" style={{ width: '.65vw' }} />
       {showLastPanel && (
-        <Panel className="code-panel" collapsible={true} order={2} id="codePanel">
+        <Panel className="code-panel" minSize={25} collapsible={true} order={2} id="codePanel">
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }} id="codeDiv">
             <div style={{ width: '45vw', height: '42.5vh' }} id="codeMirrorDiv">
               <CodeMirror id="codeMirror" height={codeMirrorHeight} style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleCodeSubmission} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
@@ -142,9 +149,8 @@ const Test = memo((props) => {
         <div>
           <button
             className="Button"
-            onClick={() => setShowLastPanel(!showLastPanel)}
-          >
-            {showLastPanel ? "hide" : "show"} bottom panel
+            onClick={() => setShowLastPanel(!showLastPanel)}>
+            {showLastPanel ? "hide" : "show"} right panel
           </button>
         </div>
       </div>

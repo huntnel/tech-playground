@@ -281,18 +281,6 @@
   backdrop-filter: blur(5px);
 }
 
-.Button {
-  color: var(--color-default);
-  background-color: red;
-  border: 1px solid red;
-  /* border-radius: 0.25rem; */
-  /* padding: 0.25rem 0.5rem; */
-  cursor: pointer;
-}
-.Button:hover {
-  background-color: red;
-}
-
 .resizeHandle {
   background-color: blue;
 }

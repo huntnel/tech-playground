@@ -28,18 +28,6 @@ const Test = memo((props) => {
     setValue(initialComment);
   }, [initialComment]);
 
-  // useEffect(() => {
-  //   if(!showFirstPanel){
-  //     const codeMirrorDiv = document.getElementById('codeMirrorDiv');
-  //     const codeMirrorButton = document.getElementById('codeMirrorButton');
-
-  //     setCodeMirrorHeight('400px')
-  //     codeMirrorDiv.style.justifyContent = 'center';
-  //     codeMirrorDiv.style.height = '100%';
-  //     // codeMirrorButton.style.height = '85vh';
-  //   }
-  // }, [showFirstPanel]);
-
   useEffect(() => {
     const targetNode = document.getElementById("mainContainer");
     const config = { attributes: true, childList: true, subtree: true };
@@ -57,7 +45,7 @@ const Test = memo((props) => {
 
     const observer = new MutationObserver(callback);
     observer.observe(targetNode, config);
-  }, []);
+  });
 
   const onChange = useCallback((val) => {
     setValue(val);
@@ -114,9 +102,6 @@ const Test = memo((props) => {
     };
   }, []);
 
-
-  //Once the width of the codePanel reaches 90vw, make the vh of each component 85vh.
-
   return (
   <div className="task-background">
     <div id="mainContainer" className='mainContainer'>
@@ -131,7 +116,7 @@ const Test = memo((props) => {
             </div>
             <div className='storylineContainer'>
               <div className="white-background text-center">
-                <span className='pixel-font'>In order to access the library, you must tell the guardian your wizard name.</span>
+                <span className='pixel-font'>{message}</span>
               </div>
               {!showLastPanel && (
                 <button

@@ -22,7 +22,7 @@ const Test = memo((props) => {
   const [taskComplete, setTaskComplete] = useState(false);
   const [codeMirrorHeight, setCodeMirrorHeight] = useState('auto');
   const [showFirstPanel, setShowFirstPanel] = useState(true);
-  const [showLastPanel, setShowLastPanel] = useState(true);
+  const [showLastPanel, setShowLastPanel] = useState(false);
 
   useEffect(() => {
     setValue(initialComment);
@@ -31,7 +31,6 @@ const Test = memo((props) => {
   useEffect(() => {
     const targetNode = document.getElementById("mainContainer");
     const config = { attributes: true, childList: true, subtree: true };
-    observeCodeMirror();
     const callback = (mutationList) => {
       for (const mutation of mutationList) {
         if (mutation.type === "childList" 
@@ -156,19 +155,19 @@ const Test = memo((props) => {
         </div> 
         <div className="row">
           <div className="col d-flex align-items-center">
-            <button
+            {showLastPanel && (<button
               className="instructions-btn custom-btn center level-headings pixel-font"
               onClick={() => setShowFirstPanel(!showFirstPanel)}
             >
               {showFirstPanel ? "Hide Instructions" : "Show Instructions"}
-            </button>
+            </button>)}
           </div>
           <div className="col">
             <div className="d-flex">
               <Button className='custom-btn smaller-margin-btn' onClick={() => navigate('/')}><span className='pixel-font'>Home</span></Button>
               <LevelIndicator totalTasks={totalTasks} currentLevel={currentTask} onTaskClick={handleTaskChange} />
               <Button className='custom-btn previous-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) - 1)}><span className='pixel-font'>{"Previous"}</span></Button>
-              <Button className='custom-btn smaller-margin-btn' onClick={() => handleTaskChange(parseInt(currentTask) + 1)}><span className='pixel-font'>{taskComplete ? "Next Level" : "Skip"}</span></Button>
+              <Button className='custom-btn smaller-margin-btn' onClick={() => handleTaskChange(parseInt(currentTask) + 1)}><span className='pixel-font'>{taskComplete ? "Next" : "Skip"}</span></Button>
             </div>
           </div>
           <div className="col">

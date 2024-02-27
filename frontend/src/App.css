@@ -352,11 +352,11 @@
   }
 }
 
-@media (max-height: 889px) {
+/*@media (max-height: 889px) {
   .console-log {
     height: 25vh;
   }
-}
+}*/
 
 /* @media (max-width: 500px) {
   .card-module-container {

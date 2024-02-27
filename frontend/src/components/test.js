@@ -152,7 +152,7 @@ const Test = memo((props) => {
               <CodeMirror id="codeMirror" height={codeMirrorHeight} style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleCodeSubmission} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
               <Button id="codeMirrorButton" style={{ marginBottom: '.5rem' }} className='mt-2 custom-btn-orange w-100' onClick={() => handleCodeSubmission(value)}><span className='pixel-font'>Run Code</span></Button>
             </div>
-            <div style={{ width: '45vw', height: '42.5vh' }}>
+            <div style={{ width: '45vw', height: '42.5vh', display: 'flex', flexDirection: 'column' }}>
               {output !== null ? (
                   <ConsoleLog module={moduleNumber} task={currentTask} logs={output} />
                 ) : (

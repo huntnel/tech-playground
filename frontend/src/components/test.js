@@ -21,10 +21,43 @@ const Test = memo((props) => {
   const [output, setOutput] = useState([]);
   const [taskComplete, setTaskComplete] = useState(false);
   const [codeMirrorHeight, setCodeMirrorHeight] = useState('auto');
+  const [showFirstPanel, setShowFirstPanel] = useState(true);
+  const [showLastPanel, setShowLastPanel] = useState(true);
 
   useEffect(() => {
     setValue(initialComment);
   }, [initialComment]);
+
+  // useEffect(() => {
+  //   if(!showFirstPanel){
+  //     const codeMirrorDiv = document.getElementById('codeMirrorDiv');
+  //     const codeMirrorButton = document.getElementById('codeMirrorButton');
+
+  //     setCodeMirrorHeight('400px')
+  //     codeMirrorDiv.style.justifyContent = 'center';
+  //     codeMirrorDiv.style.height = '100%';
+  //     // codeMirrorButton.style.height = '85vh';
+  //   }
+  // }, [showFirstPanel]);
+
+  useEffect(() => {
+    const targetNode = document.getElementById("mainContainer");
+    const config = { attributes: true, childList: true, subtree: true };
+    observeCodeMirror();
+    const callback = (mutationList) => {
+      for (const mutation of mutationList) {
+        if (mutation.type === "childList" 
+        && mutation.addedNodes.length > 0 
+        && typeof mutation.addedNodes[0] === 'object'
+        && mutation.addedNodes[0].id === 'codePanel'){
+          observeCodeMirror();
+        }
+      }
+    };
+
+    const observer = new MutationObserver(callback);
+    observer.observe(targetNode, config);
+  }, []);
 
   const onChange = useCallback((val) => {
     setValue(val);
@@ -62,8 +95,6 @@ const Test = memo((props) => {
     changeTask(task);
   }, [navigate, totalTasks, changeTask]);
   
-  const [showFirstPanel, setShowFirstPanel] = useState(true);
-  const [showLastPanel, setShowLastPanel] = useState(true);
 
   const observeCodeMirror = useCallback(() => {
     const codeMirrorDiv = document.getElementById('codeMirrorDiv');
@@ -80,38 +111,15 @@ const Test = memo((props) => {
 
     return () => {
       codeMirrorObserver.disconnect();
-      console.log('i disconnected');
     };
   }, []);
 
-  useEffect(() => {
-
-  const targetNode = document.getElementById("mainContainer");
-  const config = { attributes: true, childList: true, subtree: true };
-
-  observeCodeMirror();
-    
-
-  const callback = (mutationList, observer) => {
-    for (const mutation of mutationList) {
-      if (mutation.type === "childList" 
-      && mutation.addedNodes.length > 0 
-      && typeof mutation.addedNodes[0] === 'object'
-      && mutation.addedNodes[0].id === 'codePanel'){
-        observeCodeMirror();
-      }
-    }
-  };
-
-  const observer = new MutationObserver(callback);
-  observer.observe(targetNode, config);
-  }, []);
 
   //Once the width of the codePanel reaches 90vw, make the vh of each component 85vh.
 
   return (
   <div className="task-background" style={{ height: '100vh', flexWrap: 'wrap', display: 'flex', overflow: 'hidden' }}>
-    <div id="mainContainer" style={{ height: '85vh', display:'flex', alignItems: 'center', width: '100%'  }}>
+    <div id="mainContainer" style={{ height: '85vh', display:'flex', alignItems: 'center', width: '100%', justifyContent:'center'  }}>
       {showFirstPanel && (
         <div className="storyline-panel">
             <div>

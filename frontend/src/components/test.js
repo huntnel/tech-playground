@@ -138,7 +138,7 @@ const Test = memo((props) => {
       )}
       
       {showLastPanel && (
-        <div className="code-panel" id="codePanel">
+        <div className="code-panel" id="codePanel" style={{ width: showFirstPanel ? '50%' : '100%' }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }} id="codeDiv">
             <div style={{ width: '45vw', height: '42.5vh' }} id="codeMirrorDiv">
               <CodeMirror id="codeMirror" height={codeMirrorHeight} style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleCodeSubmission} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />

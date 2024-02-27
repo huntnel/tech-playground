@@ -118,8 +118,8 @@ const Test = memo((props) => {
   //Once the width of the codePanel reaches 90vw, make the vh of each component 85vh.
 
   return (
-  <div className="task-background" style={{ height: '100vh', flexWrap: 'wrap', display: 'flex', overflow: 'hidden' }}>
-    <div id="mainContainer" style={{ height: '85vh', display:'flex', alignItems: 'center', width: '100%', justifyContent:'center'  }}>
+  <div className="task-background">
+    <div id="mainContainer" className='mainContainer'>
       {showFirstPanel && (
         <div className="storyline-panel">
             <div>
@@ -129,7 +129,7 @@ const Test = memo((props) => {
                   effect="blur"
                 />
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+            <div className='storylineContainer'>
               <div className="white-background text-center">
                 <span className='pixel-font'>In order to access the library, you must tell the guardian your wizard name.</span>
               </div>
@@ -147,7 +147,7 @@ const Test = memo((props) => {
       
       {showLastPanel && (
         <div className="code-panel" id="codePanel" style={{ width: showFirstPanel ? '50%' : '100%' }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly', height: '85vh', alignContent: 'center' }} id="codeDiv">
+          <div id="codeDiv" className='codeContainer'>
             <div className={`codeEditorButtonContainer ${showFirstPanel ? 'codeEditorButtonContainerPartHeight' : 'codeEditorButtonContainerFullHeight'}`} id="codeMirrorDiv">
               <CodeMirror id="codeMirror" height={codeMirrorHeight} style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleCodeSubmission} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
               <Button id="codeMirrorButton" className='mt-2 custom-btn-orange w-100' onClick={() => handleCodeSubmission(value)}><span className='pixel-font'>Run Code</span></Button>

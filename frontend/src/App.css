@@ -1,3 +1,9 @@
+:root {
+  --main-container-height: 85vh;
+  --code-editor-height-ratio: .65; 
+}
+
+
 .center {
   text-align: center;
 }
@@ -57,6 +63,10 @@
   background-image: url('../public/img/space.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100vh;
+  flex-wrap: wrap;
+  display: flex;
+  overflow: hidden;
 }
 
 .modules-background {
@@ -275,6 +285,7 @@
   border-radius: 0.5rem;
 }
 
+
 .consoleButtonContainer {
   width: 45vw;
   display: flex;
@@ -283,11 +294,11 @@
 }
 
 .consoleButtonContainerFullHeight {
-  height: 80vh;
+  height: var(--main-container-height);
 }
 
 .consoleButtonContainerPartHeight {
-  height: 35vh;
+  height: calc((1 - var(--code-editor-height-ratio)) * var(--main-container-height));
 }
 
 .codeEditorButtonContainer {
@@ -299,14 +310,35 @@
 
 /* May need to change id=codeMirror height settings to prevent issues if these heights are changed */
 .codeEditorButtonContainerFullHeight {
-  height: 80vh;
+  height: var(--main-container-height);
 }
 
 /* May need to change id=codeMirror height settings to prevent issues if these heights are changed */
 .codeEditorButtonContainerPartHeight {
-  height: 50vh;
+  height: calc(var(--code-editor-height-ratio) * var(--main-container-height));
 }
 
+.mainContainer{
+  height: var(--main-container-height);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.storylineContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.codeContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: var(--main-container-height);
+  align-content: center;
+}
 
 
 

@@ -183,6 +183,12 @@
   margin: .5rem;
 }
 
+
+.instructions-btn {
+  padding: .5rem;
+  border-radius: .3rem;
+}
+
 .console-text {
   padding-left: 10px;
   padding-right: 10px;
@@ -340,7 +346,10 @@
   align-content: center;
 }
 
-
+.bottomContainer{
+  height: 15vh;
+  width: 100vw;
+}
 
 
 

@@ -164,32 +164,36 @@ const Test = memo((props) => {
         </div>
       )}
     </div>
-    <div style={{ height: '15vh' }}>
-      <h4 className='center level-headings pixel-font'>Levels</h4>
-      
-      <div className="level-progress-container">
-        <div>
-          <button
-            className="custom-btn Button center level-headings pixel-font"
-            onClick={() => setShowFirstPanel(!showFirstPanel)}
-          >
-            {showFirstPanel ? "Hide Instructions" : "Show Instructions"}
-          </button>
-        </div>
-        <div className="d-flex">
-          <Button className='custom-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => navigate('/')}><span className='pixel-font'>Home</span></Button>
-          <LevelIndicator totalTasks={totalTasks} currentLevel={currentTask} onTaskClick={handleTaskChange} />
-          <Button className='custom-btn previous-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) - 1)}><span className='pixel-font'>{"Previous"}</span></Button>
-          <Button className='custom-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) + 1)}><span className='pixel-font'>{taskComplete ? "Next Level" : "Skip"}</span></Button>
-        </div>
-        <div>
-          <button
-            className="Button"
-            onClick={() => setShowLastPanel(!showLastPanel)}>
-            {showLastPanel ? "Hide" : "Show"} Hint
-          </button>
+    <div className= 'bottomContainer'>
+      <div className="container">
+        <div className="row">
+          <h4 className='center level-headings pixel-font'>Levels</h4>
+        </div> 
+        <div className="row">
+          <div className="col d-flex align-items-center">
+            <button
+              className="instructions-btn custom-btn center level-headings pixel-font"
+              onClick={() => setShowFirstPanel(!showFirstPanel)}
+            >
+              {showFirstPanel ? "Hide Instructions" : "Show Instructions"}
+            </button>
+          </div>
+          <div className="col">
+            <div className="d-flex">
+              <Button className='custom-btn smaller-margin-btn' onClick={() => navigate('/')}><span className='pixel-font'>Home</span></Button>
+              <LevelIndicator totalTasks={totalTasks} currentLevel={currentTask} onTaskClick={handleTaskChange} />
+              <Button className='custom-btn previous-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) - 1)}><span className='pixel-font'>{"Previous"}</span></Button>
+              <Button className='custom-btn smaller-margin-btn' onClick={() => handleTaskChange(parseInt(currentTask) + 1)}><span className='pixel-font'>{taskComplete ? "Next Level" : "Skip"}</span></Button>
+            </div>
+          </div>
+          <div className="col">
+            {/* Empty */}
+          </div>
         </div>
       </div>
+
+
+
     </div>
   </div>
   );

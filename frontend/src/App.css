@@ -3,7 +3,6 @@
   --code-editor-height-ratio: .65; 
 }
 
-
 .center {
   text-align: center;
 }
@@ -80,19 +79,6 @@
   margin: 1%;
 }
 
-.custom-row {
-  height: 50vh;
-}
-
-.custom-column {
-  width: 50vh;
-}
-
-.custom-container {
-  height: 100vh;
-  overflow: hidden;
-}
-
 .level-progress {
   display: flex;
   align-items: center;
@@ -105,17 +91,17 @@
 }
 
 .filled {
-  background-color: #327C81; /* Filled circle color */
+  background-color: #327C81;
 }
 
 .open {
-  border: 2px solid #327C81; /* Open circle border color */
+  border: 2px solid #327C81;
 }
 
 .line {
   height: 2px;
-  width: 2vw; /* Adjust as needed */
-  background-color: #327C81; /* Line color */
+  width: 2vw; 
+  background-color: #327C81;
   margin: 0 0px;
 }
 
@@ -129,54 +115,50 @@
   width: 100vw;
 }
 
-/* .level-progress-container > * {
-  margin: 0.5REM 1REM;
-} */
-
 .custom-btn {
   background-color: #327C81 !important;
-  border: 2px solid #327C81 !important; /* Example border color */
-  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
+  border: 2px solid #327C81 !important; 
+  transition: background-color 0.3s, border-color 0.3s; 
 }
 
 .custom-btn:hover {
-  background-color: #285A5C !important; /* Darker shade for hover */
-  border-color: #285A5C !important; /* Optional: change border color on hover */
+  background-color: #285A5C !important;
+  border-color: #285A5C !important;
 }
 
 .custom-btn-orange {
   background-color: #FD5C51 !important;
-  border: 2px solid #FD5C51 !important; /* Example border color */
-  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
+  border: 2px solid #FD5C51 !important;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .custom-btn-orange:hover {
-  background-color: #72302C !important; /* Darker shade for hover */
-  border-color: #72302C !important; /* Optional: change border color on hover */
+  background-color: #72302C !important;
+  border-color: #72302C !important;
 }
 
 .custom-btn-transparent {
   background-color: transparent !important;
-  border: 2px solid #327C81 !important; /* Example border color */
-  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
+  border: 2px solid #327C81 !important;
+  transition: background-color 0.3s, border-color 0.3s;
   border-radius: 50% !important;
 }
 
 .custom-btn-transparent:hover {
-  background-color: #285A5C !important; /* Darker shade for hover */
-  border-color: #285A5C !important; /* Optional: change border color on hover */
+  background-color: #285A5C !important;
+  border-color: #285A5C !important;
 }
 
 .custom-btn-round {
   background-color: #327C81 !important;
-  border: 2px solid #327C81 !important; /* Example border color */
-  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover effects */
+  border: 2px solid #327C81 !important;
+  transition: background-color 0.3s, border-color 0.3s;
   border-radius: 50% !important;
 }
 
 .custom-btn-round:hover {
-  background-color: #285A5C !important; /* Darker shade for hover */
-  border-color: #285A5C !important; /* Optional: change border color on hover */
+  background-color: #285A5C !important;
+  border-color: #285A5C !important;
 }
 
 .smaller-margin-btn {
@@ -260,14 +242,6 @@
   z-index: 10;
 }
 
-.testContainer {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
 .code-panel {
   display: flex;
   flex-direction: column;
@@ -280,17 +254,6 @@
   justify-content: space-evenly;
   flex-grow: 1;
 }
-
-.panelContent {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 0.5rem;
-}
-
 
 .consoleButtonContainer {
   width: 45vw;
@@ -350,9 +313,6 @@
   height: 15vh;
   width: 100vw;
 }
-
-
-
 
 @media (max-width: 1000px) {
   p {
@@ -429,18 +389,3 @@
     display: none;
   }
 }
-
-/*@media (max-height: 889px) {
-  .console-log {
-    height: 25vh;
-  }
-}*/
-
-/* @media (max-width: 500px) {
-  .card-module-container {
-    flex-direction: column;
-  }
-  .module-card {
-    margin-bottom: 20px;
-  }
-} */

@@ -111,7 +111,7 @@ const Test = memo((props) => {
   <div className="task-background" style={{ height: '100vh', flexWrap: 'wrap', display: 'flex', overflow: 'hidden' }}>
     <PanelGroup style={{ height: '85vh' }} direction='horizontal'>
       {showFirstPanel && (
-        <Panel className="storyline-panel" collapsible={true} order={1}>
+        <Panel className="storyline-panel" minSize={25} collapsible={true} order={1}>
             <div>
               <LazyLoadImage src={image}
                 className='img-container'
@@ -119,12 +119,26 @@ const Test = memo((props) => {
                   effect="blur"
                 />
             </div>
-            <div className="white-background text-center">
-              <span className='pixel-font'>In order to access the library, you must tell the guardian your wizard name.</span>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+              <div className="white-background text-center">
+                <span className='pixel-font'>In order to access the library, you must tell the guardian your wizard name.</span>
+              </div>
+              {!showLastPanel && (
+                <button
+                className="custom-btn-orange Button center level-headings pixel-font" style={{ padding: ".75rem", borderRadius: '10px', width: '10rem'}}
+                onClick={() => setShowLastPanel(!showLastPanel)}>
+                {showLastPanel ? "" : "Begin Task"}
+              </button>
+              )}
             </div>
+            
         </Panel>
       )}
-      <PanelResizeHandle className="blur" style={{ width: '.65vw' }} />
+      {/* <div style={{ display: 'flex', flexDirection: 'column', width: '.65vw', height: '85vh', alignItems: 'center' }}>
+        <div className="blur" style={{ height: '83vh', width: '1rem'}}></div>
+        <PanelResizeHandle className="double-arrow" />
+      </div> */}
+      
       {showLastPanel && (
         <div className="code-panel" collapsible={true} order={2} id="codePanel">
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }} id="codeDiv">
@@ -150,10 +164,10 @@ const Test = memo((props) => {
       <div className="level-progress-container">
         <div>
           <button
-            className="Button"
+            className="custom-btn Button center level-headings pixel-font"
             onClick={() => setShowFirstPanel(!showFirstPanel)}
           >
-            {showFirstPanel ? "hide" : "show"} top panel
+            {showFirstPanel ? "Hide Instructions" : "Show Instructions"}
           </button>
         </div>
         <div className="d-flex">
@@ -165,9 +179,8 @@ const Test = memo((props) => {
         <div>
           <button
             className="Button"
-            onClick={() => {setShowLastPanel(!showLastPanel); createObserver();}}
-          >
-            {showLastPanel ? "hide" : "show"} code panel
+            onClick={() => setShowLastPanel(!showLastPanel)}>
+            {showLastPanel ? "Hide" : "Show"} Hint
           </button>
         </div>
       </div>

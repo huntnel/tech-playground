@@ -67,7 +67,7 @@
   background-color: white;
   border-radius: 10px;
   padding: 1%;
-  margin: 5%;
+  margin: 1%;
 }
 
 .custom-row {
@@ -281,20 +281,54 @@
   backdrop-filter: blur(5px);
 }
 
-.Button {
-  color: var(--color-default);
-  background-color: red;
-  border: 1px solid red;
-  /* border-radius: 0.25rem; */
-  /* padding: 0.25rem 0.5rem; */
-  cursor: pointer;
-}
-.Button:hover {
-  background-color: red;
-}
-
 .resizeHandle {
   background-color: blue;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid white;
+}
+
+.double-arrow {
+  position: relative;
+  width: 50px; /* Adjust width as needed */
+  height: 20px; /* Adjust height as needed */
+  backdrop-filter: blur(5px);
+}
+
+.double-arrow:before,
+.double-arrow:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.double-arrow:before {
+  left: 0;
+  border-right: 10px solid white;
+}
+
+.double-arrow:after {
+  right: 0;
+  border-left: 10px solid white;
+}
+
+.double-arrow .line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px; /* Adjust width of the line */
+  height: 2px; /* Adjust height of the line */
+  background-color: white; /* Adjust line color */
 }
 
 

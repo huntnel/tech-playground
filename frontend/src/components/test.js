@@ -96,19 +96,26 @@ const Test = memo((props) => {
                   effect="blur"
                 />
             </div>
-            <div className="white-background text-center">
-              <span className='pixel-font'>In order to access the library, you must tell the guardian your wizard name.</span>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+              <div className="white-background text-center">
+                <span className='pixel-font'>In order to access the library, you must tell the guardian your wizard name.</span>
+              </div>
+              {!showLastPanel && (
+                <button
+                className="custom-btn-orange Button center level-headings pixel-font" style={{ padding: ".75rem", borderRadius: '10px', width: '10rem'}}
+                onClick={() => setShowLastPanel(!showLastPanel)}>
+                {showLastPanel ? "" : "Begin Task"}
+              </button>
+              )}
             </div>
-            {!showLastPanel && (
-              <button
-              className="custom-btn Button center level-headings pixel-font"
-              onClick={() => setShowLastPanel(!showLastPanel)}>
-              {showLastPanel ? "" : "Begin Task"}
-            </button>
-            )}
+            
         </Panel>
       )}
-      <PanelResizeHandle className="blur" style={{ width: '.65vw' }} />
+      {/* <div style={{ display: 'flex', flexDirection: 'column', width: '.65vw', height: '85vh', alignItems: 'center' }}>
+        <div className="blur" style={{ height: '83vh', width: '1rem'}}></div>
+        <PanelResizeHandle className="double-arrow" />
+      </div> */}
+      
       {showLastPanel && (
         <Panel className="code-panel" minSize={25} collapsible={true} order={2} id="codePanel">
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }} id="codeDiv">

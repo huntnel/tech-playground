@@ -101,7 +101,7 @@ const Test = memo((props) => {
     const codeMirrorButton = document.getElementById('codeMirrorButton');
 
     const codeMirrorObserver = new ResizeObserver(entries => {
-    const newCodeMirrorHeight = (codeMirrorDiv.offsetHeight - codeMirrorButton.offsetHeight - 15);
+    const newCodeMirrorHeight = (codeMirrorDiv.offsetHeight - codeMirrorButton.offsetHeight - 25.16);
       if(newCodeMirrorHeight > 0){
         setCodeMirrorHeight(newCodeMirrorHeight + 'px');
       }
@@ -147,12 +147,12 @@ const Test = memo((props) => {
       
       {showLastPanel && (
         <div className="code-panel" id="codePanel" style={{ width: showFirstPanel ? '50%' : '100%' }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }} id="codeDiv">
-            <div style={{ width: '45vw', height: '42.5vh' }} id="codeMirrorDiv">
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly', height: '85vh', alignContent: 'center' }} id="codeDiv">
+            <div className={`codeEditorButtonContainer ${showFirstPanel ? 'codeEditorButtonContainerPartHeight' : 'codeEditorButtonContainerFullHeight'}`} id="codeMirrorDiv">
               <CodeMirror id="codeMirror" height={codeMirrorHeight} style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleCodeSubmission} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
-              <Button id="codeMirrorButton" style={{ marginBottom: '.5rem' }} className='mt-2 custom-btn-orange w-100' onClick={() => handleCodeSubmission(value)}><span className='pixel-font'>Run Code</span></Button>
+              <Button id="codeMirrorButton" className='mt-2 custom-btn-orange w-100' onClick={() => handleCodeSubmission(value)}><span className='pixel-font'>Run Code</span></Button>
             </div>
-            <div style={{ width: '45vw', height: '42.5vh', display: 'flex', flexDirection: 'column' }}>
+            <div className={`consoleButtonContainer ${showFirstPanel ? 'consoleButtonContainerPartHeight' : 'consoleButtonContainerFullHeight'}`}>
               {output !== null ? (
                   <ConsoleLog module={moduleNumber} task={currentTask} logs={output} />
                 ) : (

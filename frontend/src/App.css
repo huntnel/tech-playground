@@ -275,6 +275,43 @@
   border-radius: 0.5rem;
 }
 
+.consoleButtonContainer {
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem
+}
+
+.consoleButtonContainerFullHeight {
+  height: 80vh;
+}
+
+.consoleButtonContainerPartHeight {
+  height: 35vh;
+}
+
+.codeEditorButtonContainer {
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  padding-top: 1rem
+}
+
+/* May need to change id=codeMirror height settings to prevent issues if these heights are changed */
+.codeEditorButtonContainerFullHeight {
+  height: 80vh;
+}
+
+/* May need to change id=codeMirror height settings to prevent issues if these heights are changed */
+.codeEditorButtonContainerPartHeight {
+  height: 50vh;
+}
+
+
+
+
+
+
 
 @media (max-width: 1000px) {
   p {

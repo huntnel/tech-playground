@@ -134,27 +134,28 @@ const Test = memo((props) => {
         <div className="code-panel" id="codePanel" style={{ width: showFirstPanel ? '50%' : '100%' }}>
           <div id="codeDiv" className='codeContainer'>
             <div className={`codeEditorButtonContainer ${showFirstPanel ? 'codeEditorButtonContainerPartHeight' : 'codeEditorButtonContainerFullHeight'}`} id="codeMirrorDiv">
-              <CodeMirror
-                id="codeMirror"
-                height={codeMirrorHeight}
-                style={{ overflowY: 'auto', borderRadius: '10px' }}
-                onSubmit={handleCodeSubmission}
-                theme={vscodeDarkInit({
-                  settings: {
-                    background: '#23262E',
-                    gutterBackground: '#23262E',
-                    caret: '#c6c6c6',
-                    fontFamily: 'monospace',
-                  },
-                  styles: [
-                    { tag: [t.string, t.special(t.brace)], color: '#fff' },
-                    { tag: t.comment, color: '#5c6166' }
-                  ]
-                })}
-                value={value}
-                extensions={[langs.python()]}
-                onChange={onChange}
-              />
+            <CodeMirror
+              id="codeMirror"
+              height={codeMirrorHeight}
+              style={{ overflowY: 'auto', borderRadius: '10px' }}
+              onSubmit={handleCodeSubmission}
+              theme={vscodeDarkInit({
+                settings: {
+                  background: '#23262E',
+                  gutterBackground: '#23262E',
+                  caret: '#c6c6c6',
+                  fontFamily: 'monospace',
+                },
+                styles: [
+                  { tag: [t.string, t.special(t.brace)], color: '#fff' },
+                  { tag: t.comment, color: '#5c6166' }
+                ]
+              })}
+              value={value}
+              extensions={[langs.python()]}
+              onChange={onChange}
+            />
+
               <Button id="codeMirrorButton" className='mt-2 custom-btn-orange w-100' onClick={() => handleCodeSubmission(value)}><span className='pixel-font'>Run Code</span></Button>
             </div>
             <div className={`consoleButtonContainer ${showFirstPanel ? 'consoleButtonContainerPartHeight' : 'consoleButtonContainerFullHeight'}`}>
@@ -196,6 +197,9 @@ const Test = memo((props) => {
           </div>
         </div>
       </div>
+
+
+
     </div>
   </div>
   );

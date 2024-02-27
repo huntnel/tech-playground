@@ -1,3 +1,9 @@
+:root {
+  --main-container-height: 85vh;
+  --code-editor-height-ratio: .65; 
+}
+
+
 .center {
   text-align: center;
 }
@@ -14,7 +20,7 @@
   font-family: 'Courier New', Courier, monospace;
   overflow-y: scroll;
   white-space: pre-wrap;
-  height: 30vh;
+  height: 30.5vh;
   border-radius: 10px;
 }
 
@@ -57,6 +63,10 @@
   background-image: url('../public/img/space.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100vh;
+  flex-wrap: wrap;
+  display: flex;
+  overflow: hidden;
 }
 
 .modules-background {
@@ -67,7 +77,7 @@
   background-color: white;
   border-radius: 10px;
   padding: 1%;
-  margin: 5%;
+  margin: 1%;
 }
 
 .custom-row {
@@ -112,15 +122,16 @@
 .level-progress-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 0%;
   padding-top: 0%;
   margin-bottom: 15px;
+  width: 100vw;
 }
 
-.level-progress-container > * {
-  margin: 0.5REM 1REM; /* Adjust the margin as needed */
-}
+/* .level-progress-container > * {
+  margin: 0.5REM 1REM;
+} */
 
 .custom-btn {
   background-color: #327C81 !important;
@@ -170,6 +181,12 @@
 
 .smaller-margin-btn {
   margin: .5rem;
+}
+
+
+.instructions-btn {
+  padding: .5rem;
+  border-radius: .3rem;
 }
 
 .console-text {
@@ -240,8 +257,102 @@
 }
 
 .custom-z-index{
-  z-index: 1;
+  z-index: 10;
 }
+
+.testContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.code-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.storyline-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-grow: 1;
+}
+
+.panelContent {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+
+.consoleButtonContainer {
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem
+}
+
+.consoleButtonContainerFullHeight {
+  height: var(--main-container-height);
+}
+
+.consoleButtonContainerPartHeight {
+  height: calc((1 - var(--code-editor-height-ratio)) * var(--main-container-height));
+}
+
+.codeEditorButtonContainer {
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  padding-top: 1rem
+}
+
+/* May need to change id=codeMirror height settings to prevent issues if these heights are changed */
+.codeEditorButtonContainerFullHeight {
+  height: var(--main-container-height);
+}
+
+/* May need to change id=codeMirror height settings to prevent issues if these heights are changed */
+.codeEditorButtonContainerPartHeight {
+  height: calc(var(--code-editor-height-ratio) * var(--main-container-height));
+}
+
+.mainContainer{
+  height: var(--main-container-height);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.storylineContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.codeContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: var(--main-container-height);
+  align-content: center;
+}
+
+.bottomContainer{
+  height: 15vh;
+  width: 100vw;
+}
+
+
+
 
 @media (max-width: 1000px) {
   p {
@@ -318,6 +429,12 @@
     display: none;
   }
 }
+
+/*@media (max-height: 889px) {
+  .console-log {
+    height: 25vh;
+  }
+}*/
 
 /* @media (max-width: 500px) {
   .card-module-container {

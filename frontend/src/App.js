@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Module = lazy(() => import('./components/Module'));
 const ModuleHome = lazy(() => import('./components/ModuleHome'));
 
+
 function App() {
   return (
     <>

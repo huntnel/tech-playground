@@ -175,9 +175,6 @@ const Test = memo((props) => {
           </div>
         </div>
       </div>
-
-
-
     </div>
   </div>
   );

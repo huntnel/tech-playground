@@ -141,10 +141,10 @@ const Test = memo((props) => {
       <div className="level-progress-container">
         <div>
           <button
-            className="Button"
+            className="custom-btn Button center level-headings pixel-font"
             onClick={() => setShowFirstPanel(!showFirstPanel)}
           >
-            {showFirstPanel ? "hide" : "show"} top panel
+            {showFirstPanel ? "Hide Instructions" : "Show Instructions"}
           </button>
         </div>
         <div className="d-flex">
@@ -157,7 +157,7 @@ const Test = memo((props) => {
           <button
             className="Button"
             onClick={() => setShowLastPanel(!showLastPanel)}>
-            {showLastPanel ? "hide" : "show"} right panel
+            {showLastPanel ? "Hide" : "Show"} Hint
           </button>
         </div>
       </div>

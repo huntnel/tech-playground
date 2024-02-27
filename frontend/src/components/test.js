@@ -67,19 +67,42 @@ const Test = memo((props) => {
   const [showLastPanel, setShowLastPanel] = useState(true);
 
   useEffect(() => {
+
+    // Select the node that will be observed for mutations
+  const targetNode = document.getElementById("some-id");
+
+  // Options for the observer (which mutations to observe)
+  const config = { attributes: true, childList: true, subtree: true };
+    // const codeMirrorDiv = document.getElementById('codeMirrorDiv');
+    // const codeMirrorButton = document.getElementById('codeMirrorButton');
+
+    // const observer = new ResizeObserver(entries => {
+    //   const newCodeMirrorHeight = (codeMirrorDiv.offsetHeight - codeMirrorButton.offsetHeight - 15);
+    //   if(newCodeMirrorHeight > 0){
+    //     setCodeMirrorHeight(newCodeMirrorHeight + 'px');
+    //   }
+    // });
+
+    // observer.observe(codeMirrorDiv);
+
+    // return () => {
+    //   observer.disconnect();
+    //   console.log('i disconnected');
+    // };
+  }, []);
+
+  const createObserver = useCallback(() => {
     const codeMirrorDiv = document.getElementById('codeMirrorDiv');
     const codeMirrorButton = document.getElementById('codeMirrorButton');
 
     const observer = new ResizeObserver(entries => {
       const newCodeMirrorHeight = (codeMirrorDiv.offsetHeight - codeMirrorButton.offsetHeight - 15);
-      setCodeMirrorHeight(newCodeMirrorHeight + 'px');
+      if(newCodeMirrorHeight > 0){
+        setCodeMirrorHeight(newCodeMirrorHeight + 'px');
+      }
     });
 
     observer.observe(codeMirrorDiv);
-
-    return () => {
-      observer.disconnect();
-    };
   }, []);
 
   //Once the width of the codePanel reaches 90vw, make the vh of each component 85vh.
@@ -103,7 +126,7 @@ const Test = memo((props) => {
       )}
       <PanelResizeHandle className="blur" style={{ width: '.65vw' }} />
       {showLastPanel && (
-        <Panel className="code-panel" collapsible={true} order={2} id="codePanel">
+        <div className="code-panel" collapsible={true} order={2} id="codePanel">
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-evenly' }} id="codeDiv">
             <div style={{ width: '45vw', height: '42.5vh' }} id="codeMirrorDiv">
               <CodeMirror id="codeMirror" height={codeMirrorHeight} style={{ overflowY: 'auto', borderRadius: '10px' }} onSubmit={handleCodeSubmission} theme={andromeda} value={value} extensions={[langs.python()]} onChange={onChange} />
@@ -118,7 +141,7 @@ const Test = memo((props) => {
               <Button className='mt-2 custom-btn w-100' onClick={() => setOutput([])}><span  className='pixel-font'>Clear Console</span></Button>
             </div>
           </div>
-        </Panel>
+        </div>
       )}
     </PanelGroup>
     <div style={{ height: '15vh' }}>
@@ -142,9 +165,9 @@ const Test = memo((props) => {
         <div>
           <button
             className="Button"
-            onClick={() => setShowLastPanel(!showLastPanel)}
+            onClick={() => {setShowLastPanel(!showLastPanel); createObserver();}}
           >
-            {showLastPanel ? "hide" : "show"} bottom panel
+            {showLastPanel ? "hide" : "show"} code panel
           </button>
         </div>
       </div>

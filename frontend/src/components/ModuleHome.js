@@ -33,7 +33,7 @@ function ModuleHome() {
                                     <Card.Body>
                                         <Card.Title className='text-white pixel-font card-title text-center'>Module 1</Card.Title>
                                     </Card.Body>
-                                    <Card.Img className='card-img' variant="bottom" src="img/module1/1-1.webp" />
+                                    <Card.Img className='card-img' variant="bottom" src="img/module4/Griffin.jpg" />
                                     <div className='card-img-overlay'>
                                         <div className="overlay-text">
                                             <Card.Text className='text-center pixel-font'>
@@ -49,7 +49,7 @@ function ModuleHome() {
                                     <Card.Body>
                                         <Card.Title className='text-white pixel-font card-title text-center'>Module 2</Card.Title>
                                     </Card.Body>
-                                    <Card.Img className='card-img' variant="bottom" src="img/module2/2-1.webp" />
+                                    <Card.Img className='card-img' variant="bottom" src="img/module4/Werewolf.png" />
                                     <div className='card-img-overlay'>
                                         <div className="overlay-text">
                                             <Card.Text className='text-center pixel-font'>
@@ -65,7 +65,7 @@ function ModuleHome() {
                                     <Card.Body>
                                         <Card.Title className='text-white pixel-font card-title text-center'>Module 3</Card.Title>
                                     </Card.Body>
-                                    <Card.Img className='card-img' variant="bottom" src="img/module3/3-1.webp" />
+                                    <Card.Img className='card-img' variant="bottom" src="img/module3/Witch.png" />
                                     <div className='card-img-overlay'>
                                         <div className="overlay-text">
                                             <Card.Text className='text-center pixel-font'>

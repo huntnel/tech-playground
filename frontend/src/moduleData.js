@@ -66,30 +66,30 @@ function module2() {
     );
     const thirdMessage = (
         <span>
-            After traveling for many hours through the enchanted forest, you arrive at a bridge with a troll guarding it. You have 2 choices, if you want to cross and have your wand then you can fight the troll, otherwise you'll need to take a different path. 
+            After traveling for many hours through the enchanted forest, you arrive at a bridge with a troll guarding it. "I AM GRYNDELGRUNG THE TERRIFYING BRIDGE TROLL!", he bellows. "IN ORDER TO USE THIS BRIDGE, YOU MUST BEST ME IN A BATTLE OF MAGIC AND MOCKERY!" You examine the magical map and realize there is no other way to continue the quest, so you decide step up and face GryndelGrung the Terrible.
         </span>
     );
     const fourthMessage = (
         <span>
-            After fighting the troll you continue through the forest until you find a cottage in a clearing. You decided to investigate the cottage and see if it has anything that can aid you in your quest. Before entering, you decide to call out to see if anyone is home.
+            After defeating GryndelGrung the Terrible, you continue walking through the forest. Eventually, you find a cottage in a clearing. The cottage looks warm and cozy from the outside, so you decided to investigate and see if it has anything that can aid you in your quest. Before entering, you call out to see if the owner is home.
         </span>
     );
     const fifthMessage = (
         <span>
-            You stumble inside the cottage of the potions master, Witch Lily Brewbubble. Many of these potions could aid you along your quest! You need to quickly grab some, but be very quiet so you don't wake the witch.
+            As the cottage door closes behind you, you see a sign on the wall that says "Witch Lily Brewbubble's Potion and Jerky Shop." You look around and see shelves lined with all different types of potions and beef jerky. Amazing! These items could help you on your quest! Can grab some and sneak out before Witch Lily comes back?
         </span>
     );
     const sixthMessage = (
         <span>
-            Oh no, the witch has entered the room! You need to escape before she grabs you! You've grabbed several potions from the shelves, maybe you can use them to help escape.
+            Just as you turn to leave the cottage, the door opens in front of you. Witch Lily Brewbubble has returned and caught you looting her cottage! Her green face quickly turns red with anger. Can you escape before she turns you into a frog?
         </span>
     );
     const firstComment = "\"\"\"\nWrite an if statement that will check if\n|teacherThinksYouAreReady| is True.\nIf it is, print out |teacherResponse|.\nOtherwise, print out |whyAmINotReady|.\n\"\"\"\ndef taskOne(teacherThinksYouAreReady, teachersResponse, whyAmINotReady):\n  # Place your code below this line\n  if():\n  else:";
     const secondComment = "\"\"\"\n- Complete the if and elif statement to check the value\nof |magicalMap|.\n- If |magicalMap| is \"Follow Fairy\", assign |path| to\n|fairy|.\n- If |magicalMap| is \"Follow Fox\", assign |path| to |fox|.\n- If |magicalMap| is \"Follow Mermaid\", assign |path| to\n|mermaid|.\n- Print |path| at the end.\n\"\"\"\ndef taskTwo(magicalMap, fairy, fox, mermaid):\n  path = None\n  if():\n  elif():\n  elif():"; 
     const thirdComment = "\"\"\"\n- Write an if statement that prints |fightOutcome| if\n|trollIsWeak| and |spellWorks| are True.\n- If they aren't both true, print |trollInsults|\n\"\"\"\ndef taskThree(trollIsWeak, spellWorks, fightOutcome, trollInsults):\n  # Place your code below this line\n  if(and):\n  else:"; 
     const fourthComment = "\"\"\"\n- If |someoneAnswers| is False, print |youEnterTheCottage|.\n- If |someoneAnswers| is True, print\n|youCastInvisibilitySpell|.\n\"\"\"\ndef taskFour(someoneAnswers, youEnterTheCottage, youCastInvisibilitySpell):\n  # Place your code below this line\n  ";
-    const fifthComment = "\"\"\"\nWrite an if statement for gathering potions with the following\ncriteria:\nIf the potion is blue, grab it and put it in your bag.\nIf the potion is yellow, throw it in the fire.\nIf the potion is green, you get to choose what you would like\nto do with it.\nIf you don't like any of the other potions, you are forced to\nleave empty handed.\n\"\"\"\ndef taskFive():\n  # Place your code below this line\n  ";
-    const sixthComment = "\"\"\"\nWrite another if statement to escape the cottage. If you grabbed\nthe fire potion and the protection potion then throw the fire at\nthe witch and protect yourself to escape. If you grabbed either\nan invisibility or a shape shifting position then use the potion\nto escape. If you didn't grab any potions you'll need to climb\nout through the window.\n\"\"\"\ndef taskSix():\n  # Place your code below this line\n  ";
+    const fifthComment = "\"\"\"\n- If |potionColor| is blue, print |putItInYourBag|.\n- If |potionColor| is brown, it's actually jerky so print\n|grabSomeJerky|.\n- If |potionColor| is yellow, you're unsure if you should\ngrab it so print |shouldIGrabIt|.\n\"\"\"\ndef taskFive(potionColor, putItInYourBag, grabSomeJerky, shouldIGrabIt):\n  # Place your code below this line\n  ";
+    const sixthComment = "\"\"\"\n- If |lilyCastsSpell| and |youCastProtectionSpell| are both\nTrue, print |twoSpellsCollide|.\n- If |lilyCastsSpell| is True and |youCastDefensiveSpell| is\nFalse, print |lilyGotYou|.\n- If neither are true, print |tryTheWindow|.\n\"\"\"\ndef taskSix(lilyCastsSpell, youCastProtectionSpell, twoSpellsCollide, lilyGotYou, tryTheWindow):\n  # Place your code below this line\n  ";
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage, fifthMessage, sixthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment, fifthComment, sixthComment],

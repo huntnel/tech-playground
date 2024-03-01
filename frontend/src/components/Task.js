@@ -6,6 +6,7 @@ import { tags as t } from '@lezer/highlight';
 import { langs } from '@uiw/codemirror-extensions-langs';
 import ConsoleLog from './ConsoleLog';
 import LevelIndicator from './LevelIndicator';
+import Modal from './Modal';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -16,7 +17,7 @@ const baseUrl = 'https://vorrlgg23auln4chzzlnhk44g40taebi.lambda-url.us-west-1.o
 
 const Test = memo((props) => {
 
-  const { totalTasks, changeTask, moduleNumber, currentTask, initialComment, image, message } = props;
+  const { totalTasks, changeTask, moduleNumber, currentTask, initialComment, image, message, codeHint } = props;
   const navigate = useNavigate();
   const [value, setValue] = useState(initialComment);
   const [output, setOutput] = useState([]);
@@ -24,6 +25,7 @@ const Test = memo((props) => {
   const [codeMirrorHeight, setCodeMirrorHeight] = useState('auto');
   const [showFirstPanel, setShowFirstPanel] = useState(true);
   const [showLastPanel, setShowLastPanel] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     setValue(initialComment);
@@ -46,6 +48,14 @@ const Test = memo((props) => {
     const observer = new MutationObserver(callback);
     observer.observe(targetNode, config);
   });
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   const onChange = useCallback((val) => {
     setValue(val);
@@ -104,6 +114,9 @@ const Test = memo((props) => {
 
   return (
   <div className="task-background">
+    <div>
+      <Modal isOpen={isModalOpen} onClose={closeModal} codeHint={codeHint}></Modal>
+    </div>
     <div id="mainContainer" className='mainContainer'>
       {showFirstPanel && (
         <div className="storyline-panel">
@@ -163,7 +176,10 @@ const Test = memo((props) => {
                 ) : (
                   <span></span>
                 )}
-              <Button className='mt-2 custom-btn w-100' onClick={() => setOutput([])}><span  className='pixel-font'>Clear Console</span></Button>
+              <div style={{ display: "flex", justifyContent: 'space-evenly' }}>
+                <Button className='mt-2 console-btn' onClick={() => setOutput([])}><span  className='pixel-font'>Clear Console</span></Button>
+                <Button className='mt-2 console-btn' onClick={openModal}><span className='pixel-font'>Show Hint</span></Button>
+              </div>
             </div>
           </div>
         </div>

@@ -121,6 +121,13 @@
   transition: background-color 0.3s, border-color 0.3s; 
 }
 
+.console-btn {
+  background-color: #327C81 !important;
+  border: 2px solid #327C81 !important; 
+  transition: background-color 0.3s, border-color 0.3s; 
+  width: 49%;
+}
+
 .custom-btn:hover {
   background-color: #285A5C !important;
   border-color: #285A5C !important;
@@ -313,6 +320,74 @@
 .bottomContainer{
   height: 15vh;
   width: 100vw;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  backdrop-filter: blur(3px);
+  z-index: 100;
+}
+
+/* Modal content */
+.testModal {
+  width: 50vw; 
+  height: 50vh; 
+  background-color: #327C81; 
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.modalButton {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  font-size: 2rem;
+  padding: .5rem;
+  border-radius: 50%;
+  border: 2px solid white;
+  
+}
+
+.hintContent {
+  background-color: #23262E;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  overflow-y: scroll;
+  white-space: pre-wrap;
+  height: 30.5vh;
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.modalButton:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+.modalButton p {
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 1000px) {

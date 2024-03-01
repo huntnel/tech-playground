@@ -138,7 +138,7 @@ function module3() {
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage, fifthMessage, sixthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment, fifthComment, sixthComment],
-        images: ["img/module3/Knight.png", "img/module3/Minotaur.png", "img/module3/Witch.png", "img/module3/Gorgon.png"],
+        images: ["img/module3/3-1.webp", "img/module3/3-2.webp", "img/module3/3-3.webp", "img/module3/3-4.webp", "img/module3/3-5.webp", "img/module3/3-6.webp"],
         totalTasks: 6,
     };
 }

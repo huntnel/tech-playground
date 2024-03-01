@@ -96,6 +96,9 @@ function module2() {
     const fourthComment = "\"\"\"\nUsing your knowledge about if statements, write one that\nsatisfies the following: If cauldron boiling is true then\nenter the cottage. If cauldron boiling is false, then knock.\n\"\"\"\ndef taskFour():\n  # Place your code below this line\n  ";
     const fifthComment = "\"\"\"\nWrite an if statement for gathering potions with the following\ncriteria:\nIf the potion is blue, grab it and put it in your bag.\nIf the potion is yellow, throw it in the fire.\nIf the potion is green, you get to choose what you would like\nto do with it.\nIf you don't like any of the other potions, you are forced to\nleave empty handed.\n\"\"\"\ndef taskFive():\n  # Place your code below this line\n  ";
     
+
+
+    
     const sixthComment = "\"\"\"\nWrite another if statement to escape the cottage. If you grabbed\nthe fire potion and the protection potion then throw the fire at\nthe witch and protect yourself to escape. If you grabbed either\nan invisibility or a shape shifting position then use the potion\nto escape. If you didn't grab any potions you'll need to climb\nout through the window.\n\"\"\"\ndef taskSix():\n  # Place your code below this line\n  ";
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage, fifthMessage, sixthMessage],

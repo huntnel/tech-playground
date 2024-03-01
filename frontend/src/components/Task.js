@@ -180,7 +180,7 @@ const Test = memo((props) => {
               className="instructions-btn custom-btn center level-headings pixel-font"
               onClick={() => setShowFirstPanel(!showFirstPanel)}
             >
-              {showFirstPanel ? "Hide Instructions" : "Show Instructions"}
+              {showFirstPanel ? "Hide Story" : "Show Story"}
             </button>)}
           </div>
           <div className="col">

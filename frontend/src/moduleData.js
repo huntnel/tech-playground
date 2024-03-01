@@ -9,7 +9,7 @@ function getModuleData(moduleNumber){
         case 4:
             return module4();
         default:
-            return null; // Or render a default component if needed
+            return null;
     }
 }
 
@@ -107,33 +107,45 @@ function module2() {
 function module3() {
     const firstMessage = (
         <span>
-            Module three level 1
+            You finally arrive at a cave in the mountains. While the cave is sealed, keep casting your spell to open the door to the cave so that you can enter.
         </span>
     );
     const secondMessage = (
         <span>
-            Module three level 2
+            You enter into the cave and it's dark! You need to find a way to get light into the cave. You see torches along the wall but they aren't lit yet.
         </span>
     );
     const thirdMessage = (
         <span>
-            Module three level 3
+            You arrive at the end of the cave but the door is sealed! You must use the correct spell to open the door. The door has different markings that will let you know which spell you should cast to open the door.
         </span>
     );
     const fourthMessage = (
         <span>
-            Module three level 4
+            The door opens and reveals the treasure inside! But in front of the treasure is a sleeping dragon! You need to get around the dragon to get to the treasure but be careful not to wake the dragon.
         </span>
     );
-    const firstComment = "\"\"\"\n3-1\n\"\"\"";
-    const secondComment = "\"\"\"\n3-2\n\"\"\""; 
-    const thirdComment = "\"\"\"\n3-3\n\"\"\""; 
-    const fourthComment = "\"\"\"\n3-4\n\"\"\"";
+    const fifthMessage = (
+        <span>
+            Oh no, as you reach the treasure the dragon wakes up! You need your wand to fight the dragon but you left it near the cave entrance. Dodge around the piles of gold in the room so you can to your wand.
+        </span>
+    );
+    const sixthMessage = (
+        <span>
+            Now that you have your wand you need to fight off the dragon to get the treasure!
+        </span>
+    );
+    const firstComment = "\"\"\"\nWrite a while loop so that while the cave is equal to \"sealed\", castSpell will still be equal to true\n\"\"\"\ndef taskOne():\n  # Place your code below this line\n  ";
+    const secondComment = "\"\"\"\nWrite a for loop so that when the variable i is between 1 and 11 you will light the torch.\n\"\"\"\ndef taskTwo():\n  # Place your code below this line\n  "; 
+    const thirdComment = "\"\"\"\nWhile doorClosed is true, continue trying to open the door. If doorMarkings <10, print the spell \"open\". If door markings are >10, print the spell \"unlock\". Otherwise print the spell \"uncover\"\n\"\"\"\ndef taskThree():\n  # Place your code below this line\n  "; 
+    const fourthComment = "\"\"\"\nCreate a while loop that checks if the dragon is sleeping. While the dragon, keep sneaking around.\n\"\"\"\ndef taskFour():\n  # Place your code below this line\n  ";
+    const fifthComment = "\"\"\"\nCreate a for loop so that when the variable x is between 1 and 7 you will run and dodge behind the different piles of gold until you reach your wand.\n\"\"\"\ndef taskFive():\n  # Place your code below this line\n  ";
+    const sixthComment = "\"\"\"\nCreate a while loop that continues while the dragon is attacking. If the dragon shoots fire at you, cast a spell to shield yourself, if the dragon tries to swipe at you with its tail, dodge away, and if the dragon tries to bite you, cast a spell to take down the dragon.\n\"\"\"\ndef taskSix():\n  # Place your code below this line\n  ";
     return {
-        messages: [firstMessage, secondMessage, thirdMessage, fourthMessage],
-        comments: [firstComment, secondComment, thirdComment, fourthComment],
-        images: ["img/module3/Knight.png", "img/module3/Minotaur.png", "img/module3/Witch.png", "img/module3/Gorgon.png"],
-        totalTasks: 4,
+        messages: [firstMessage, secondMessage, thirdMessage, fourthMessage, fifthMessage, sixthMessage],
+        comments: [firstComment, secondComment, thirdComment, fourthComment, fifthComment, sixthComment],
+        images: ["img/module3/3-1.webp", "img/module3/3-2.webp", "img/module3/3-3.webp", "img/module3/3-4.webp", "img/module3/3-5.webp", "img/module3/3-6.webp"],
+        totalTasks: 6,
     };
 }
 

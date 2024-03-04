@@ -50,6 +50,7 @@ function module1() {
         comments: [firstComment, secondComment, thirdComment, fourthComment, fifthComment],
         images: ["img/module1/1-1.webp", "img/module1/1-5.webp", "img/module1/1-4.webp", "img/module1/1-6.webp", "img/module1/1-3.webp"],
         totalTasks: 5,
+        codeHint: ["whats cookin", "whats cookin", "whats cookin", "whats cookin", "whats cookin", "whats cookin"],
     };
 }
 
@@ -90,11 +91,20 @@ function module2() {
     const fourthComment = "\"\"\"\n- If |someoneAnswers| is False, print |youEnterTheCottage|.\n- If |someoneAnswers| is True, print\n|youCastInvisibilitySpell|.\n\"\"\"\ndef taskFour(someoneAnswers, youEnterTheCottage, youCastInvisibilitySpell):\n  # Place your code below this line\n  ";
     const fifthComment = "\"\"\"\n- If |potionColor| is blue, print |putItInYourBag|.\n- If |potionColor| is brown, it's actually jerky so print\n|grabSomeJerky|.\n- If |potionColor| is yellow, you're unsure if you should\ngrab it so print |shouldIGrabIt|.\n\"\"\"\ndef taskFive(potionColor, putItInYourBag, grabSomeJerky, shouldIGrabIt):\n  # Place your code below this line\n  ";
     const sixthComment = "\"\"\"\n- If |lilyCastsSpell| and |youCastProtectionSpell| are both\nTrue, print |twoSpellsCollide|.\n- If |lilyCastsSpell| is True and |youCastDefensiveSpell| is\nFalse, print |lilyGotYou|.\n- If neither are true, print |tryTheWindow|.\n\"\"\"\ndef taskSix(lilyCastsSpell, youCastProtectionSpell, twoSpellsCollide, lilyGotYou, tryTheWindow):\n  # Place your code below this line\n  ";
+    
+    const firstHint = "if(teacherThinksYouAreReady):\n  print(teachersResponse)\nelse:\n  print(whyAmINotReady)";
+    const secondHint = "";
+    const thirdHint = "";
+    const fourthHint = "";
+    const fifthHint = "";
+    const sixthHint = "";
+    
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage, fifthMessage, sixthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment, fifthComment, sixthComment],
         images: ["img/module2/2-1.webp", "img/module2/2-2.webp", "img/module2/2-3.webp", "img/module2/2-4.webp", "img/module2/2-5.webp", "img/module2/2-6.webp"],
         totalTasks: 6,
+        codeHint: [firstHint, secondHint, thirdHint, fourthHint, fifthHint, sixthHint],
     };
 }
 
@@ -140,6 +150,7 @@ function module3() {
         comments: [firstComment, secondComment, thirdComment, fourthComment, fifthComment, sixthComment],
         images: ["img/module3/3-1.webp", "img/module3/3-2.webp", "img/module3/3-3.webp", "img/module3/3-4.webp", "img/module3/3-5.webp", "img/module3/3-6.webp"],
         totalTasks: 6,
+        codeHint: ["whats cookin", "whats cookin", "whats cookin", "whats cookin", "whats cookin", "whats cookin"],
     };
 }
 
@@ -173,6 +184,7 @@ function module4() {
         comments: [firstComment, secondComment, thirdComment, fourthComment],
         images: ["img/module4/Griffin.jpg", "img/module4/Werewolf.png", "img/module4/Fairy.png", "img/module4/Vampire.png"],
         totalTasks: 4,
+        codeHint: ["whats cookin", "whats cookin", "whats cookin", "whats cookin"],
     };
 }
 

@@ -128,7 +128,7 @@ const Test = memo((props) => {
                 />
             </div>
             <div className='storylineContainer'>
-              <div className="white-background text-center">
+              <div className={`white-background text-center ${showLastPanel ? 'textBoxSmallerMargin' : 'textBoxBiggerMargin'}`}>
                 <span className='pixel-font'>{message}</span>
               </div>
               {!showLastPanel && (

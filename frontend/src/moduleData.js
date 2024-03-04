@@ -56,7 +56,7 @@ function module1() {
 function module2() {
     const firstMessage = (
         <span>
-            Now that you've learned where to go for this quest, you remember the teacher student code that you agreed to when entering Luminara. No student can go on a quest without the approval of their teacher. The next day, you ask the teacher about the quest and ask if he will allow you to embark on this quest.
+            Now that you've learned where to go for this quest, you remember the teacher student code that you agreed to when entering Luminara. No student can go on a quest without the approval of their teacher. The next day, you tell your teacher about the quest and ask if he will allow you to embark on this quest.
         </span>
     );
     const secondMessage = (
@@ -101,7 +101,7 @@ function module2() {
 function module3() {
     const firstMessage = (
         <span>
-            You finally arrive at a cave in the mountains. While the cave is sealed, keep casting your spell to open the door to the cave so that you can enter.
+            After escaping from With Lily Brewbubble, the magical map instructs you to travel towards the Greenwolfe Mountain range. After many days you arrive and find a large stone door with ancient carvings across it's surface. But, how can you open it?
         </span>
     );
     const secondMessage = (

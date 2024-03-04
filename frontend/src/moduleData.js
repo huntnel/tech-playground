@@ -41,16 +41,16 @@ function module1() {
     );
     const firstComment = "\"\"\"\n- Write a print statement to tell the wizard your name.\n\"\"\"\ndef taskOne():\n  # Place your code below this line\n  print()";
     const secondComment = "\"\"\"\n- Assign a boolean value to |youAreAWizard|.\n- Assign a number value to |spellLevel|.\n- Assign a string to |favoriteSpellName|.\n- Print each variables value and type.\n\"\"\"\ndef taskTwo():\n  # Place your code below this line\n  youAreWizard = \n  spellLevel = \n  favoriteSpellName = \n\n  print(youAreWizard)\n  print(type())\n\n  print(spellLevel)\n  print(type())\n\n  print(favoriteSpellName)\n  print(type())"; 
-    const thirdComment = "\"\"\"\n- Concatenate your name onto the print statement to\ncomplete the invisibility spell.\n\"\"\"\ndef taskThree(ancientPhrase):\n  # Place your code below this line\n  print(ancientPhrase)"; 
+    const thirdComment = "\"\"\"\n- Concatenate your name onto the print statement to\ncomplete the invisibility spell.\n\"\"\"\ndef taskThree(invisibilityPassage):\n  # Place your code below this line\n  print(invisibilityPassage)\n  "; 
     const fourthComment = "\"\"\"\n- Concatenate your name onto |ancientPhrase| to\ncomplete the invisibility spell.\n\"\"\"\ndef taskFour():\n  # Place your code below this line\n  ";
-    const fifthComment = "\"\"\"\n- Create the variable |magicIsReal| and give it a boolean\nvalue.\n- Create another variable |spellStrength| and give it a\nnumber value.\n- Create a final variable |ancientPhrase| and assign it a\nstring encantation of your own crafting.\n- Print each variables value and data type to cast a\nspell and read the book!\n\"\"\"\ndef taskSix():\n  # Place your code below this line\n  ";
+    const fifthComment = "\"\"\"\n- Create the variable |magicIsReal| and give it a boolean\nvalue.\n- Create another variable |spellStrength| and give it a\nnumber value.\n- Create a final variable |ancientPhrase| and assign it a\nstring encantation of your own crafting.\n- Print each variables value and data type to cast a\nspell and read the book!\n\"\"\"\ndef taskFive():\n  # Place your code below this line\n  ";
 
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage, fifthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment, fifthComment],
         images: ["img/module1/1-1.webp", "img/module1/1-5.webp", "img/module1/1-4.webp", "img/module1/1-6.webp", "img/module1/1-3.webp"],
         totalTasks: 5,
-        codeHint: ["whats cookin", "whats cookin", "whats cookin", "whats cookin", "whats cookin", "whats cookin"],
+        codeHint: ["print(\"Your Wizard Name\")", "youAreWizard = True\nspellLevel = 100\nfavoriteSpellName = \"Invisibility\"\n\nprint(youAreWizard)\nprint(type(youAreWizard))\n\nprint(spellLevel)\nprint(type(spellLevel))\n\nprint(favoriteSpellName)\nprint(type(favoriteSpellName))", "print(\"Your Wizard Name: \" + invisibilityPassage)", "Need To Update", "magicIsReal = True\nspellStrength = 100\nancientPhrase = \"Write Your Ancient Phrase Here\"\n\nprint(magicIsReal)\nprint(type(magicIsReal))\n\nprint(spellStrength)\nprint(type(spellStrength))\n\nprint(ancientPhrase)\nprint(type(ancientPhrase))"],
     };
 }
 
@@ -86,18 +86,18 @@ function module2() {
         </span>
     );
     const firstComment = "\"\"\"\nWrite an if statement that will check if\n|teacherThinksYouAreReady| is True.\nIf it is, print out |teacherResponse|.\nOtherwise, print out |whyAmINotReady|.\n\"\"\"\ndef taskOne(teacherThinksYouAreReady, teachersResponse, whyAmINotReady):\n  # Place your code below this line\n  if():\n  else:";
-    const secondComment = "\"\"\"\n- Complete the if and elif statement to check the value\nof |magicalMap|.\n- If |magicalMap| is \"Follow Fairy\", assign |path| to\n|fairy|.\n- If |magicalMap| is \"Follow Fox\", assign |path| to |fox|.\n- If |magicalMap| is \"Follow Mermaid\", assign |path| to\n|mermaid|.\n- Print |path| at the end.\n\"\"\"\ndef taskTwo(magicalMap, fairy, fox, mermaid):\n  path = None\n  if():\n  elif():\n  elif():"; 
+    const secondComment = "\"\"\"\n- Complete the if and elif statement to check the value\nof |magicalMap|.\n- If |magicalMap| is \"Follow Fairy\", assign |path| to\n|fairy|.\n- If |magicalMap| is \"Follow Fox\", assign |path| to |fox|.\n- If |magicalMap| is \"Follow Mermaid\", assign |path| to\n|mermaid|.\n- Print |path| at the end.\n\"\"\"\ndef taskTwo(magicalMap, fairy, fox, mermaid):\n  if():\n  elif():\n  elif():\n  "; 
     const thirdComment = "\"\"\"\n- Write an if statement that prints |fightOutcome| if\n|trollIsWeak| and |spellWorks| are True.\n- If they aren't both true, print |trollInsults|\n\"\"\"\ndef taskThree(trollIsWeak, spellWorks, fightOutcome, trollInsults):\n  # Place your code below this line\n  if(and):\n  else:"; 
     const fourthComment = "\"\"\"\n- If |someoneAnswers| is False, print |youEnterTheCottage|.\n- If |someoneAnswers| is True, print\n|youCastInvisibilitySpell|.\n\"\"\"\ndef taskFour(someoneAnswers, youEnterTheCottage, youCastInvisibilitySpell):\n  # Place your code below this line\n  ";
     const fifthComment = "\"\"\"\n- If |potionColor| is blue, print |putItInYourBag|.\n- If |potionColor| is brown, it's actually jerky so print\n|grabSomeJerky|.\n- If |potionColor| is yellow, you're unsure if you should\ngrab it so print |shouldIGrabIt|.\n\"\"\"\ndef taskFive(potionColor, putItInYourBag, grabSomeJerky, shouldIGrabIt):\n  # Place your code below this line\n  ";
     const sixthComment = "\"\"\"\n- If |lilyCastsSpell| and |youCastProtectionSpell| are both\nTrue, print |twoSpellsCollide|.\n- If |lilyCastsSpell| is True and |youCastDefensiveSpell| is\nFalse, print |lilyGotYou|.\n- If neither are true, print |tryTheWindow|.\n\"\"\"\ndef taskSix(lilyCastsSpell, youCastProtectionSpell, twoSpellsCollide, lilyGotYou, tryTheWindow):\n  # Place your code below this line\n  ";
     
     const firstHint = "if(teacherThinksYouAreReady):\n  print(teachersResponse)\nelse:\n  print(whyAmINotReady)";
-    const secondHint = "";
-    const thirdHint = "";
-    const fourthHint = "";
-    const fifthHint = "";
-    const sixthHint = "";
+    const secondHint = "if(magicalMap == \"Follow Fairy\"):\n  path = fairy\nelif(magicalMap == \"Follow Fox\"):\n  path = fox\nelif(magicalMap == \"Follow Mermaid\"):\n  path = mermaid\nprint(path)";
+    const thirdHint = "if(trollIsWeak and spellWorks):\n  print(fightOutcome)\nelse:\n  print(trollInsults)";
+    const fourthHint = "if(not someoneAnswers):\n  print(youEnterTheCottage)\nelse:\n  print(youCastInvisibilitySpell)";
+    const fifthHint = "if(potionColor == \"blue\"):\n  print(putItInYourBag)\nelif(potionColor == \"brown\"):\n  print(grabSomeJerky)\nelif(potionColor == \"yellow\"):\n  print(shouldIGrabIt)";
+    const sixthHint = "if(lilyCastsSpell and youCastProtectionSpell):\n  print(twoSpellsCollide)\nelif(lilyCastsSpell and not youCastDefensiveSpell):\n  print(lilyGotYou)\nelse:\n  print(tryTheWindow)";
     
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage, fifthMessage, sixthMessage],

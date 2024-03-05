@@ -371,13 +371,14 @@
   color: white;
   font-family: 'Courier New', Courier, monospace;
   overflow-y: scroll;
-  white-space: pre-wrap;
+  overflow-x: scroll;
+  white-space: pre;
   height: 30.5vh;
   height: 100%;
   width: 100%;
   padding: 2rem;
   border-radius: 1rem;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .modalButton:hover {

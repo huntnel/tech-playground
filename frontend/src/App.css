@@ -385,7 +385,18 @@
   width: 100%;
   padding: 2rem;
   border-radius: 1rem;
-  
+}
+
+.taskCompletionContent {
+  background-color: #23262E;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre;
+  height: 30.5vh;
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
 .modalButton:hover {

@@ -15,7 +15,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 const baseUrl = 'https://vorrlgg23auln4chzzlnhk44g40taebi.lambda-url.us-west-1.on.aws/';
 
 
-const Test = memo((props) => {
+const Task = memo((props) => {
 
   const { totalTasks, changeTask, moduleNumber, currentTask, initialComment, image, message, codeHint } = props;
   const navigate = useNavigate();
@@ -25,8 +25,9 @@ const Test = memo((props) => {
   const [codeMirrorHeight, setCodeMirrorHeight] = useState('auto');
   const [showFirstPanel, setShowFirstPanel] = useState(true);
   const [showLastPanel, setShowLastPanel] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isHintModalOpen, setIsHintModalOpen] = useState(false);
   const [isCompletionModalOpen, setIsCompletionModalOpen] = useState(false);
+  const [taskCompletionContent, setTaskCompletionContent] = useState(null);
 
   useEffect(() => {
     setValue(initialComment);
@@ -50,27 +51,16 @@ const Test = memo((props) => {
     observer.observe(targetNode, config);
   });
 
-  useEffect(() => {
-    console.log('Task Complete changed:', taskComplete);
-    if (taskComplete) {
-      openCompletionModel();
-    }
-  }, [taskComplete]);
-
-  const openModal = () => {
-    setIsModalOpen(true);
+  const openHintModal = () => {
+    setIsHintModalOpen(true);
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const closeHintModal = () => {
+    setIsHintModalOpen(false);
   };
 
-  const closeCompletionModel = () => {
+  const closeCompletionModal = () => {
     setIsCompletionModalOpen(false);
-  };
-
-  const openCompletionModel = () => {     
-    setIsCompletionModalOpen(true);
   };
 
   const onChange = useCallback((val) => {
@@ -89,6 +79,8 @@ const Test = memo((props) => {
         const newArray = [...output, result.data.result];
         if (result.data.taskComplete) {
           setTaskComplete(true);
+          setIsCompletionModalOpen(true);
+          setTaskCompletionContent(result.data.taskCompletionContent);
         }
         if (result.data.taskComplete && result.data.consoleMessage) {
           newArray.push(result.data.consoleMessage);
@@ -131,28 +123,13 @@ const Test = memo((props) => {
   return (
   <div className="task-background">
     <div>
-      <Modal isOpen={isModalOpen} onClose={closeModal} codeHint={codeHint}></Modal>
+      <Modal isOpen={isHintModalOpen} onClose={closeHintModal}>
+        <div className='hintContent'>{codeHint}</div>
+      </Modal>
 
-      {/* Task Complete */}
-      {isCompletionModalOpen && ( 
-        <div className="modal-overlay" onClick={(event) => {
-          if (event.target === event.currentTarget) {
-            closeCompletionModel(); 
-          }
-        }}>
-          <div className='testModal'>
-            <button className='modalButton' onClick={(event) => {
-              event.stopPropagation(); 
-              closeCompletionModel();
-            }}>
-              <div style={{ width: '2rem', height: '2rem', alignItems: 'center', justifyContent: 'center', display: 'flex', fontFamily: "monospace" }}>
-                &times;
-              </div>
-            </button>
-            <div className='hintContent'><h1>Congrats!</h1></div>
-          </div>
-        </div>
-      )}
+      <Modal isOpen={isCompletionModalOpen} onClose={closeCompletionModal}>
+      <div className='hintContent'>{taskCompletionContent}</div>
+      </Modal>
     </div>
     <div id="mainContainer" className='mainContainer'>
       {showFirstPanel && (
@@ -215,7 +192,7 @@ const Test = memo((props) => {
                 )}
               <div style={{ display: "flex", justifyContent: 'space-evenly' }}>
                 <Button className='mt-2 console-btn' onClick={() => setOutput([])}><span  className='pixel-font'>Clear Console</span></Button>
-                <Button className='mt-2 console-btn' onClick={openModal}><span className='pixel-font'>Show Hint</span></Button>
+                <Button className='mt-2 console-btn' onClick={openHintModal}><span className='pixel-font'>Show Hint</span></Button>
               </div>
             </div>
           </div>
@@ -254,4 +231,4 @@ const Test = memo((props) => {
   );
 });
 
-export default Test;
+export default Task;

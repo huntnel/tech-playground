@@ -57,7 +57,7 @@ function module1() {
 function module2() {
     const firstMessage = (
         <span>
-            Now that you've learned where to go for this quest, you remember the teacher student code that you agreed to when entering Luminara. No student can go on a quest without the approval of their teacher. The next day, you ask the teacher about the quest and ask if he will allow you to embark on this quest.
+            Now that you've learned where to go for this quest, you remember the teacher student code that you agreed to when entering Luminara. No student can go on a quest without the approval of their teacher. The next day, you tell your teacher about the quest and ask if he will allow you to embark on this quest.
         </span>
     );
     const secondMessage = (
@@ -111,46 +111,54 @@ function module2() {
 function module3() {
     const firstMessage = (
         <span>
-            You finally arrive at a cave in the mountains. While the cave is sealed, keep casting your spell to open the door to the cave so that you can enter.
+            After escaping from With Lily Brewbubble, the magical map instructs you to travel towards the Greenwolfe Mountain range. After many days you arrive and find a large stone door with ancient carvings across it's surface. But, how can you open it?
         </span>
     );
     const secondMessage = (
         <span>
-            You enter into the cave and it's dark! You need to find a way to get light into the cave. You see torches along the wall but they aren't lit yet.
+            Now that you're in the cave, you take in your surroundings. It's very dark, but you see ten old torches lining an ominous hallway. If you could cast a spell to light those torches, you would be able to see much better.
         </span>
     );
     const thirdMessage = (
         <span>
-            You arrive at the end of the cave but the door is sealed! You must use the correct spell to open the door. The door has different markings that will let you know which spell you should cast to open the door.
+            As you near the strange door, you can feel its magical energy radiating outwards. The different combination of locks and glyphs on it tell you that a more complex spell will be required to open it.
         </span>
     );
     const fourthMessage = (
         <span>
-            The door opens and reveals the treasure inside! But in front of the treasure is a sleeping dragon! You need to get around the dragon to get to the treasure but be careful not to wake the dragon.
+            As you peer at the glistening treasure, you hear a sound that resembles a fierce, ragged wind. You look to the back of the room and see a large figure covered in scales. The creatures belly gently rises and falls with each forceful breath. Realization hits you...it's a sleeping dragon! It's here to guard the treasure!
         </span>
     );
     const fifthMessage = (
         <span>
-            Oh no, as you reach the treasure the dragon wakes up! You need your wand to fight the dragon but you left it near the cave entrance. Dodge around the piles of gold in the room so you can to your wand.
+            "I AM TYLZAR THE WISE" the dragon booms at you. "WHY HAVE YOU COME TO MY LAIR? DO YOU SEEK THE GREAT TREASURE THAT ANCIENT PROPHESIES HAVE TOLD OF?" Tylzar sees the magical book in your sack and bellows "AHHHH!!! YOU HAVE THE AID OF THE MAGICAL BOOK! THAT'S HOW YOU FOUND ME! WELL, IF YOU HOPE TO GAIN THIS TREASURE, YOU MUST WITHSTAND AN OLD DRAGONS MIND CONTROL!"
         </span>
     );
     const sixthMessage = (
         <span>
-            Now that you have your wand you need to fight off the dragon to get the treasure!
+            Tylzar takes in a humongous breath, pulling you forward and causing you to lose balance. Then, with dramatic flair, he swings his head toward you and erupts a bright orange flame of fire!!! Time seems to slow as you feel its dreaded heat race towards you. The gold around you seems to become soft at the extreme temperature. Can you defend against this attack?
         </span>
     );
-    const firstComment = "\"\"\"\nWrite a while loop so that while the cave is equal to \"sealed\", castSpell will still be equal to true\n\"\"\"\ndef taskOne():\n  # Place your code below this line\n  ";
-    const secondComment = "\"\"\"\nWrite a for loop so that when the variable i is between 1 and 11 you will light the torch.\n\"\"\"\ndef taskTwo():\n  # Place your code below this line\n  "; 
-    const thirdComment = "\"\"\"\nWhile doorClosed is true, continue trying to open the door. If doorMarkings <10, print the spell \"open\". If door markings are >10, print the spell \"unlock\". Otherwise print the spell \"uncover\"\n\"\"\"\ndef taskThree():\n  # Place your code below this line\n  "; 
-    const fourthComment = "\"\"\"\nCreate a while loop that checks if the dragon is sleeping. While the dragon, keep sneaking around.\n\"\"\"\ndef taskFour():\n  # Place your code below this line\n  ";
-    const fifthComment = "\"\"\"\nCreate a for loop so that when the variable x is between 1 and 7 you will run and dodge behind the different piles of gold until you reach your wand.\n\"\"\"\ndef taskFive():\n  # Place your code below this line\n  ";
-    const sixthComment = "\"\"\"\nCreate a while loop that continues while the dragon is attacking. If the dragon shoots fire at you, cast a spell to shield yourself, if the dragon tries to swipe at you with its tail, dodge away, and if the dragon tries to bite you, cast a spell to take down the dragon.\n\"\"\"\ndef taskSix():\n  # Place your code below this line\n  ";
+    const firstComment = "\"\"\"\n- While |doorSpellStrength| is greater than five, print\n|castSpell| and subtract 1 from |doorSpellStrength|.\n- Once the while loop ends, print |doorOpened|.\n\"\"\"\ndef taskOne(doorSpellStrength, castSpell, doorOpened):\n  # Place your code below this line\n  while";
+    const secondComment = "\"\"\"\n- Using the for loop, print |lightTorch| ten times. Print\nthe number that you are on along with |lightTorch|.\n- After the for loop finishes, print |allTorchesLit|.\n\"\"\"\ndef taskTwo(lightTorch, allTorchesLit):\n  # Place your code below this line\n  for in range():"; 
+    const thirdComment = "\"\"\"\nWhile |numOfSymbols| is greater than five, do the following:\n- If the remainder of |numOfSymbols| divided by two is zero, set |symbolsGlow| to True.\n- If the remainder of |numOfSymbols| divided by two is greater than zero, and |numOfSymbols| is less than ten, set |symbolsGlow| to True.\n- Otherwise, set symbolsGlow to False.\n- If symbolsGlow is True, subtract three from |numOfSymbols|.\n- If |symbolsGlow| is False, add one to |numOfSymbols|.\n- Print numOfSymbols each iteration.\n- Once |numOfSymbols| is less than five, print |doorFinallyOpened|.\n\"\"\"\ndef taskThree(numOfSymbols, symbolsGlow, doorFinallyOpened):\n  # Place your code below this line\n  while";
+    const fourthComment = "\"\"\"\n- While |dragonIsAsleep| is True, do the following:\n- Print \"You have taken ___ steps\", where ___ is\nreplaced with the value of |numOfSteps|.\n- If |numOfSteps| is less than five, set dragonIsAsleep to\nFalse.\n- Subtract one from numOfSteps.\n- Once |dragonIsAsleep| is False, print |theDragonAwakes|.\n\"\"\"\ndef taskFour(dragonIsAsleep, numOfSteps, theDragonAwakes):\n  # Place your code below this line\n  ";
+    const fifthComment = "\"\"\"\n- Using a for loop, print |resistMindControl| ten times. Use\nformat() to add the loop counter onto the print statement.\n- After the loop, print |yourMagicIsStrong|.\n\"\"\"\ndef taskFive(resistMindControl, yourMagicIsStrong):\n  # Place your code below this line\n  ";
+    const sixthComment = "\"\"\"\n- While |tylzarBlowsFire| is True, do the following:\n- Write a for loop that uses |numOfFallingRocks| as it's\nrange. For each number in the range, add the value of the\nnumber to |rocksThatHitTylzar|.\n- Print |aRockHitsTylzar| using format() and\n|numOfFallingRocks|.\n- If |rocksThatHitTylzar| is greater than or equal to 20,\nset |tylzarBlowsFire| to False.\n- If |rocksThatTylzarThrowsAtYour| is greather than zero,\nprint |dodgeRocks|.\n- Otherwise, print |castFireProtectionSpell|.\n- After the while loop finishes, print |youDefeatedTylzar|.\n\"\"\"\ndef taskSix(tylzarBlowsFire, numOfFallingRocks, rocksThatHitTylzar, rocksTylzarThrowsAtYou, aRockHitsTylzar, dodgeRocks, castFireProtectionSpell, youDefeatedTylzar):\n  # Place your code below this line\n  ";
+    
+    const firstHint = "while (doorSpellStrength > 5):\n  print(castSpell)\n  doorSpellStrength - 1\n\nprint(doorOpened)";
+    const secondHint = "for i in range(0, 10):\n  print(lightTorch + \" \" + str(i))\n\nprint(allTorchesLit)";
+    const thirdHint = "while(numOfSymbols > 5):\n  if numOfSymbols % 2 == 0:\n    symbolsGlow = True\n  elif (numOfSymbols % 2 > 0) and numOfSymbols < 10:\n    symbolsGlow = True\n  else:\n    symbolsGlow = False\n  if symbolsGlow:\n    numOfSymbols - 3\n  else:\n    numOfSymbols + 1\n  print(numOfSymbols)\n\nprint(doorFinallyOpened)";
+    const fourthHint = "while dragonIsAsleep:\n  print(\"You have taken \" + str(numOfSteps) + \" steps\")\n  if numOfSteps > 5:\n    dragonIsAsleep = False\n  numOfSteps = numOfSteps + 1\n\nprint(theDragonAwakes)";
+    const fifthHint = "for i in range(1, 11):\n  print(resistMindControl.format(i))\nprint(yourMagicIsStrong)";
+    const sixthHint = "while(tylzarBlowsFire):\n  for i in range(0, numOfFallingRocks):\n    rocksThatHitTylzar = rocksThatHitTylzar + i\n  print(aRockHitsTylzar.format(numOfFallingRocks))\n  if(rocksThatHitTylzar >= 20):\n    tylzarBlowsFire = False\n  elif(rocksThatTylzarThrowsAtYou > 0):\n    print(dodgeRocks)\n  else:\n    print(castFireProtectionSpell)\n\nprint(youDefeatedTylzar)";
+
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage, fifthMessage, sixthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment, fifthComment, sixthComment],
         images: ["img/module3/3-1.webp", "img/module3/3-2.webp", "img/module3/3-3.webp", "img/module3/3-4.webp", "img/module3/3-5.webp", "img/module3/3-6.webp"],
         totalTasks: 6,
-        codeHint: ["whats cookin", "whats cookin", "whats cookin", "whats cookin", "whats cookin", "whats cookin"],
+        codeHint: [firstHint, secondHint, thirdHint, fourthHint, fifthHint, sixthHint],
     };
 }
 

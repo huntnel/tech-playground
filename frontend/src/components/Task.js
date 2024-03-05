@@ -205,7 +205,7 @@ const Task = memo((props) => {
           <h4 className='center level-headings pixel-font'>Levels</h4>
         </div> 
         <div className="row">
-          <div className="col d-flex align-items-center">
+          <div className="col d-flex align-items-center justify-content-center">
             {showLastPanel && (<button
               className="instructions-btn custom-btn center level-headings pixel-font"
               onClick={() => setShowFirstPanel(!showFirstPanel)}
@@ -215,14 +215,13 @@ const Task = memo((props) => {
           </div>
           <div className="col">
             <div className="d-flex">
-              <Button className='custom-btn smaller-margin-btn' onClick={() => navigate('/')}><span className='pixel-font'>Home</span></Button>
+              <Button className='custom-btn smaller-margin-btn' onClick={() => handleTaskChange(parseInt(currentTask) - 1)}><span className='pixel-font'>Back</span></Button>
               <LevelIndicator totalTasks={totalTasks} currentLevel={currentTask} onTaskClick={handleTaskChange} />
-              <Button className='custom-btn previous-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) - 1)}><span className='pixel-font'>{"Previous"}</span></Button>
               <Button className='custom-btn smaller-margin-btn' onClick={() => handleTaskChange(parseInt(currentTask) + 1)}><span className='pixel-font'>{taskComplete ? "Next" : "Skip"}</span></Button>
             </div>
           </div>
-          <div className="col">
-            {/* Empty */}
+          <div className="col d-flex align-items-center justify-content-center">
+            <Button className='custom-btn smaller-margin-btn' onClick={() => navigate('/')}><span className='pixel-font'>Home</span></Button>
           </div>
         </div>
       </div>

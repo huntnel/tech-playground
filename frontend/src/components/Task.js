@@ -134,16 +134,16 @@ const Test = memo((props) => {
       <Modal isOpen={isModalOpen} onClose={closeModal} codeHint={codeHint}></Modal>
 
       {/* Task Complete */}
-      {isCompletionModalOpen && ( // Now it checks both conditions
+      {isCompletionModalOpen && ( 
         <div className="modal-overlay" onClick={(event) => {
           if (event.target === event.currentTarget) {
-            closeCompletionModel(); // Use your dedicated function for consistency
+            closeCompletionModel(); 
           }
         }}>
           <div className='testModal'>
             <button className='modalButton' onClick={(event) => {
-              event.stopPropagation(); // Prevents click from reaching the overlay
-              closeCompletionModel(); // Close the modal
+              event.stopPropagation(); 
+              closeCompletionModel();
             }}>
               <div style={{ width: '2rem', height: '2rem', alignItems: 'center', justifyContent: 'center', display: 'flex', fontFamily: "monospace" }}>
                 &times;

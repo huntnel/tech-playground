@@ -26,6 +26,7 @@ const Test = memo((props) => {
   const [showFirstPanel, setShowFirstPanel] = useState(true);
   const [showLastPanel, setShowLastPanel] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCompletionModalOpen, setIsCompletionModalOpen] = useState(false);
 
   useEffect(() => {
     setValue(initialComment);
@@ -49,12 +50,27 @@ const Test = memo((props) => {
     observer.observe(targetNode, config);
   });
 
+  useEffect(() => {
+    console.log('Task Complete changed:', taskComplete);
+    if (taskComplete) {
+      openCompletionModel();
+    }
+  }, [taskComplete]);
+
   const openModal = () => {
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const closeCompletionModel = () => {
+    setIsCompletionModalOpen(false);
+  };
+
+  const openCompletionModel = () => {     
+    setIsCompletionModalOpen(true);
   };
 
   const onChange = useCallback((val) => {
@@ -116,6 +132,27 @@ const Test = memo((props) => {
   <div className="task-background">
     <div>
       <Modal isOpen={isModalOpen} onClose={closeModal} codeHint={codeHint}></Modal>
+
+      {/* Task Complete */}
+      {isCompletionModalOpen && ( // Now it checks both conditions
+        <div className="modal-overlay" onClick={(event) => {
+          if (event.target === event.currentTarget) {
+            closeCompletionModel(); // Use your dedicated function for consistency
+          }
+        }}>
+          <div className='testModal'>
+            <button className='modalButton' onClick={(event) => {
+              event.stopPropagation(); // Prevents click from reaching the overlay
+              closeCompletionModel(); // Close the modal
+            }}>
+              <div style={{ width: '2rem', height: '2rem', alignItems: 'center', justifyContent: 'center', display: 'flex', fontFamily: "monospace" }}>
+                &times;
+              </div>
+            </button>
+            <div className='hintContent'><h1>Congrats!</h1></div>
+          </div>
+        </div>
+      )}
     </div>
     <div id="mainContainer" className='mainContainer'>
       {showFirstPanel && (

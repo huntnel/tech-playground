@@ -148,7 +148,10 @@ const Task = memo((props) => {
               {!showLastPanel && (
                 <button
                 className="custom-btn-orange Button center level-headings pixel-font" style={{ padding: ".75rem", borderRadius: '10px', width: '10rem'}}
-                onClick={() => setShowLastPanel(!showLastPanel)}>
+                onClick={() => {
+                  setShowLastPanel(!showLastPanel);
+                  setShowFirstPanel(!showFirstPanel);
+                }}>
                 {showLastPanel ? "" : "Begin Task"}
               </button>
               )}

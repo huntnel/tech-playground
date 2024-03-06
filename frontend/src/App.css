@@ -342,7 +342,7 @@
 }
 
 /* Modal content */
-.testModal {
+.hintModal {
   width: 50vw; 
   height: 50vh; 
   background-color: #327C81; 
@@ -356,6 +356,23 @@
   border-radius: 1rem;
   padding: 1.5rem;
 }
+
+.completionModal {
+  width: 50vw; 
+  height: 60vh; 
+  background-color: #ffffff; 
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
 
 .modalButton {
   background-color: transparent;
@@ -377,10 +394,8 @@
   background-color: #23262E;
   color: white;
   font-family: 'Courier New', Courier, monospace;
-  overflow-y: scroll;
-  overflow-x: scroll;
+  overflow-y: auto;
   white-space: pre;
-  height: 30.5vh;
   height: 100%;
   width: 100%;
   padding: 2rem;
@@ -388,15 +403,16 @@
 }
 
 .taskCompletionContent {
-  background-color: #23262E;
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Onesize', sans-serif;
+  background-color: #ffffff;
+  color: var(--bs-body-color);
+  overflow-y: auto;
+  overflow-x: auto;
   white-space: pre;
-  height: 30.5vh;
   height: 100%;
   width: 100%;
-  padding: 2rem;
-  border-radius: 1rem;
+  overflow-wrap: break-word; /* Ensures words can break and wrap to the next line */
+  word-wrap: break-word; /* Older browsers */
 }
 
 .modalButton:hover {

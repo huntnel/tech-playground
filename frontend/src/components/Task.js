@@ -81,6 +81,7 @@ const Task = memo((props) => {
           setTaskComplete(true);
           setIsCompletionModalOpen(true);
           setTaskCompletionContent(result.data.taskCompletionContent);
+          console.log('taskCompletionContent: ', result.data.taskCompletionContent);
         }
         if (result.data.taskComplete && result.data.consoleMessage) {
           newArray.push(result.data.consoleMessage);
@@ -123,12 +124,12 @@ const Task = memo((props) => {
   return (
   <div className="task-background">
     <div>
-      <Modal isOpen={isHintModalOpen} onClose={closeHintModal}>
+      <Modal isOpen={isHintModalOpen} onClose={closeHintModal} isHint={isHintModalOpen}>
         <div className='hintContent'>{codeHint}</div>
       </Modal>
 
-      <Modal isOpen={isCompletionModalOpen} onClose={closeCompletionModal}>
-      <div className='hintContent'>{taskCompletionContent}</div>
+      <Modal isOpen={isCompletionModalOpen} onClose={closeCompletionModal} isHint={!isCompletionModalOpen}>
+      <div className='taskCompletionContent'>{taskCompletionContent}</div>
       </Modal>
     </div>
     <div id="mainContainer" className='mainContainer'>

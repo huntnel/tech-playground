@@ -403,7 +403,7 @@
 }
 
 .taskCompletionContent {
-  font-family: 'Onesize', sans-serif;
+  /* font-family: 'Onesize', sans-serif; */
   background-color: #ffffff;
   color: var(--bs-body-color);
   overflow-y: auto;
@@ -411,8 +411,7 @@
   white-space: pre;
   height: 100%;
   width: 100%;
-  overflow-wrap: break-word; /* Ensures words can break and wrap to the next line */
-  word-wrap: break-word; /* Older browsers */
+  white-space: pre-wrap
 }
 
 .modalButton:hover {

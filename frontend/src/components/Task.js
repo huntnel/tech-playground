@@ -15,7 +15,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 const baseUrl = 'https://vorrlgg23auln4chzzlnhk44g40taebi.lambda-url.us-west-1.on.aws/';
 
 
-const Test = memo((props) => {
+const Task = memo((props) => {
 
   const { totalTasks, changeTask, moduleNumber, currentTask, initialComment, image, message, codeHint } = props;
   const navigate = useNavigate();
@@ -25,7 +25,9 @@ const Test = memo((props) => {
   const [codeMirrorHeight, setCodeMirrorHeight] = useState('auto');
   const [showFirstPanel, setShowFirstPanel] = useState(true);
   const [showLastPanel, setShowLastPanel] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isHintModalOpen, setIsHintModalOpen] = useState(false);
+  const [isCompletionModalOpen, setIsCompletionModalOpen] = useState(false);
+  const [taskCompletionContent, setTaskCompletionContent] = useState(null);
 
   useEffect(() => {
     setValue(initialComment);
@@ -49,12 +51,16 @@ const Test = memo((props) => {
     observer.observe(targetNode, config);
   });
 
-  const openModal = () => {
-    setIsModalOpen(true);
+  const openHintModal = () => {
+    setIsHintModalOpen(true);
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const closeHintModal = () => {
+    setIsHintModalOpen(false);
+  };
+
+  const closeCompletionModal = () => {
+    setIsCompletionModalOpen(false);
   };
 
   const onChange = useCallback((val) => {
@@ -73,6 +79,9 @@ const Test = memo((props) => {
         const newArray = [...output, result.data.result];
         if (result.data.taskComplete) {
           setTaskComplete(true);
+          setIsCompletionModalOpen(true);
+          setTaskCompletionContent(result.data.taskCompletionContent);
+          console.log('taskCompletionContent: ', result.data.taskCompletionContent);
         }
         if (result.data.taskComplete && result.data.consoleMessage) {
           newArray.push(result.data.consoleMessage);
@@ -115,7 +124,13 @@ const Test = memo((props) => {
   return (
   <div className="task-background">
     <div>
-      <Modal isOpen={isModalOpen} onClose={closeModal} codeHint={codeHint}></Modal>
+      <Modal isOpen={isHintModalOpen} onClose={closeHintModal} isHint={isHintModalOpen}>
+        <div className='hintContent'>{codeHint}</div>
+      </Modal>
+
+      <Modal isOpen={isCompletionModalOpen} onClose={closeCompletionModal} isHint={!isCompletionModalOpen}>
+      <div className='taskCompletionContent'>{taskCompletionContent}</div>
+      </Modal>
     </div>
     <div id="mainContainer" className='mainContainer'>
       {showFirstPanel && (
@@ -134,7 +149,10 @@ const Test = memo((props) => {
               {!showLastPanel && (
                 <button
                 className="custom-btn-orange Button center level-headings pixel-font" style={{ padding: ".75rem", borderRadius: '10px', width: '10rem'}}
-                onClick={() => setShowLastPanel(!showLastPanel)}>
+                onClick={() => {
+                  setShowLastPanel(!showLastPanel);
+                  setShowFirstPanel(!showFirstPanel);
+                }}>
                 {showLastPanel ? "" : "Begin Task"}
               </button>
               )}
@@ -178,7 +196,7 @@ const Test = memo((props) => {
                 )}
               <div style={{ display: "flex", justifyContent: 'space-evenly' }}>
                 <Button className='mt-2 console-btn' onClick={() => setOutput([])}><span  className='pixel-font'>Clear Console</span></Button>
-                <Button className='mt-2 console-btn' onClick={openModal}><span className='pixel-font'>Show Hint</span></Button>
+                <Button className='mt-2 console-btn' onClick={openHintModal}><span className='pixel-font'>Show Hint</span></Button>
               </div>
             </div>
           </div>
@@ -191,7 +209,7 @@ const Test = memo((props) => {
           <h4 className='center level-headings pixel-font'>Levels</h4>
         </div> 
         <div className="row">
-          <div className="col d-flex align-items-center">
+          <div className="col d-flex align-items-center justify-content-center">
             {showLastPanel && (<button
               className="instructions-btn custom-btn center level-headings pixel-font"
               onClick={() => setShowFirstPanel(!showFirstPanel)}
@@ -201,14 +219,13 @@ const Test = memo((props) => {
           </div>
           <div className="col">
             <div className="d-flex">
-              <Button className='custom-btn smaller-margin-btn' onClick={() => navigate('/')}><span className='pixel-font'>Home</span></Button>
+              <Button className='custom-btn smaller-margin-btn' onClick={() => handleTaskChange(parseInt(currentTask) - 1)}><span className='pixel-font'>Back</span></Button>
               <LevelIndicator totalTasks={totalTasks} currentLevel={currentTask} onTaskClick={handleTaskChange} />
-              <Button className='custom-btn previous-btn smaller-margin-btn' style={{ marginBottom: "5px" }} onClick={() => handleTaskChange(parseInt(currentTask) - 1)}><span className='pixel-font'>{"Previous"}</span></Button>
               <Button className='custom-btn smaller-margin-btn' onClick={() => handleTaskChange(parseInt(currentTask) + 1)}><span className='pixel-font'>{taskComplete ? "Next" : "Skip"}</span></Button>
             </div>
           </div>
-          <div className="col">
-            {/* Empty */}
+          <div className="col d-flex align-items-center justify-content-center">
+            <Button className='custom-btn smaller-margin-btn' onClick={() => navigate('/')}><span className='pixel-font'>Home</span></Button>
           </div>
         </div>
       </div>
@@ -217,4 +234,4 @@ const Test = memo((props) => {
   );
 });
 
-export default Test;
+export default Task;

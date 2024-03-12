@@ -186,7 +186,7 @@ const Task = memo((props) => {
                 extensions={[langs.python()]}
                 onChange={onChange}
               />
-              <Button id="codeMirrorButton" className='mt-2 custom-btn-orange w-100' onClick={() => handleCodeSubmission(value)}><span className='pixel-font'>Run Code</span></Button>
+              <Button id="codeMirrorButton" className={`mt-2 w-100 ${taskComplete ? 'custom-btn' : 'custom-btn-orange'}`} onClick={() => handleCodeSubmission(value)}><span className='pixel-font'>Run Code</span></Button>
             </div>
             <div className={`consoleButtonContainer ${showFirstPanel ? 'consoleButtonContainerPartHeight' : 'consoleButtonContainerFullHeight'}`}>
               {output !== null ? (
@@ -221,7 +221,7 @@ const Task = memo((props) => {
             <div className="d-flex">
               <Button className='custom-btn smaller-margin-btn' onClick={() => handleTaskChange(parseInt(currentTask) - 1)}><span className='pixel-font'>Back</span></Button>
               <LevelIndicator totalTasks={totalTasks} currentLevel={currentTask} onTaskClick={handleTaskChange} />
-              <Button className='custom-btn smaller-margin-btn' onClick={() => handleTaskChange(parseInt(currentTask) + 1)}><span className='pixel-font'>{taskComplete ? "Next" : "Skip"}</span></Button>
+              <Button className={`custom-btn smaller-margin-btn ${taskComplete ? 'custom-btn-orange' : 'custom-btn'}`} onClick={() => handleTaskChange(parseInt(currentTask) + 1)}><span className='pixel-font'>{taskComplete ? "Next" : "Skip"}</span></Button>
             </div>
           </div>
           <div className="col d-flex align-items-center justify-content-center">

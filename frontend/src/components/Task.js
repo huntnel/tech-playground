@@ -195,8 +195,8 @@ const Task = memo((props) => {
                   <span></span>
                 )}
               <div style={{ display: "flex", justifyContent: 'space-evenly' }}>
-                <Button className='mt-2 console-btn' onClick={() => setOutput([])}><span  className='pixel-font'>Clear Console</span></Button>
-                <Button className='mt-2 console-btn' onClick={openHintModal}><span className='pixel-font'>Show Hint</span></Button>
+                <Button className='mt-2 console-btn custom-btn' onClick={() => setOutput([])}><span  className='pixel-font'>Clear Console</span></Button>
+                <Button className='mt-2 console-btn custom-btn' onClick={openHintModal}><span className='pixel-font'>Show Hint</span></Button>
               </div>
             </div>
           </div>

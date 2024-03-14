@@ -81,11 +81,11 @@ function ModuleHome() {
                                     <Card.Body>
                                         <Card.Title className='text-white pixel-font card-title text-center'>Module 4</Card.Title>
                                     </Card.Body>
-                                    <Card.Img className='card-img' variant="bottom" src="img/module4/Vampire.png" />
+                                    <Card.Img className='card-img' variant="bottom" src="img/module4/4-3.jpg" />
                                     <div className='card-img-overlay'>
                                         <div className="overlay-text">
                                             <Card.Text className='text-center pixel-font'>
-                                                <br></br>Advanced Topics!
+                                                <br></br>Learn to write functions!
                                             </Card.Text>
                                         </div>
                                     </div>

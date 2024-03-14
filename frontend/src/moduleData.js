@@ -16,7 +16,7 @@ function getModuleData(moduleNumber){
 function module1() {
     const firstMessage = (
         <span>
-            The day is finally here! You have arrived at Luminara, the best wizard school on the planet. You are so excited to enter it's doors and learn the knowledge others have sought for centuries. A wizard greets you at the door, and requests that you say your new wizard name to enter the school.
+            The day is finally here! You have arrived at Luminara, the best wizard school on the planet. You are so excited to enter its doors and learn the knowledge others have sought for centuries. A wizard greets you at the door, and requests that you say your new wizard name to enter the school.
         </span>
     );
     const secondMessage = (
@@ -165,34 +165,32 @@ function module3() {
 function module4() {
     const firstMessage = (
         <span>
-            Module four level 1
+            Now that you've finished your quest, you travel back to your teacher and tell him everything that's happened. "What an amazing journey! You've learned so much!" he says. "However, in order to STAY a powerful coding guru, you need to keep practicing your magic. I have a few things I could teach you to help you stay sharp."
         </span>
     );
     const secondMessage = (
         <span>
-            Module four level 2
+            "Excellent!" you teacher says. "Now that you've learned the magic of creating a function, let's practice creating AND calling a function."
         </span>
     );
     const thirdMessage = (
         <span>
-            Module four level 3
+            "Awesome! Now that you've learned the magic of creating and calling a function, let's practice it one more time! Remember that any great coding guru must practice their spells lots of times in order to truly master them."
         </span>
     );
-    const fourthMessage = (
-        <span>
-            Module four level 4
-        </span>
-    );
-    const firstComment = "\"\"\"\n4-1\n\"\"\"";
-    const secondComment = "\"\"\"\n4-2\n\"\"\""; 
-    const thirdComment = "\"\"\"\n4-3\n\"\"\""; 
-    const fourthComment = "\"\"\"\n4-4\n\"\"\"";
+    const firstComment = "\"\"\"\n- Create a function called |printMessage|.\n- Inside the function, print \"You must always keep learning!\".\n\"\"\"\n# Place your code below this line\ndef";
+    const secondComment = "\"\"\"\n- Inside of the |taskTwo| function, create another function\ncalled |addNumbers|.\n- Inside |addNumbers|, take in a number as a parameter. Add\nthree to it, and return the value.\n- Once you've finished |addNumbers|, create a for loop\nthat runs five times. Use |addNumbers| to increase the\nvalue of |wizardSkillLevel| each iteration.\n\"\"\"\ndef taskTwo(wizardSkillLevel):\n  # Place your code below this line\n  \n  return wizardSkillLevel"; 
+    const thirdComment = "\"\"\"\n- Create a function called |taskThree|. Give it a parameter\ncalled |spellStrength|.\n- Inside of the |taskThree| function, create another function\ncalled |computeResult|. Give |computeResult| a parameter.\n- In |computeResult| take the parameter and, add three,\nmultiply by four, and divide by two. Return the result.\n- Pass |spellStrength| into |computeResult| three times and\nreturn the result.\n\"\"\""; 
+
+    const firstHint = "def printMessage():\n  print(\"You must always keep learning!\")";
+    const secondHint = "def taskTwo(wizardSkillLevel):\n  def addNumbers(number):\n    return number + 3\n  for i in range(0, 5):\n    wizardSkillLevel = addNumbers(wizardSkillLevel)\n  return wizardSkillLevel";
+    const thirdHint = "def taskThree(spellStrength):\n  def computeResult(number):\n    return ((number + 3) * 4)/2\n  for i in range(0,3):\n    spellStrength = computeResult(spellStrength)\n  return spellStrength";
     return {
-        messages: [firstMessage, secondMessage, thirdMessage, fourthMessage],
-        comments: [firstComment, secondComment, thirdComment, fourthComment],
-        images: ["img/module4/Griffin.jpg", "img/module4/Werewolf.png", "img/module4/Fairy.png", "img/module4/Vampire.png"],
-        totalTasks: 4,
-        codeHint: ["whats cookin", "whats cookin", "whats cookin", "whats cookin"],
+        messages: [firstMessage, secondMessage, thirdMessage],
+        comments: [firstComment, secondComment, thirdComment],
+        images: ["img/module4/4-1.jpg", "img/module4/4-2.jpg", "img/module4/4-3.jpg", "img/module4/Vampire.png"],
+        totalTasks: 3,
+        codeHint: [firstHint, secondHint, thirdHint],
     };
 }
 

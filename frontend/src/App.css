@@ -339,6 +339,7 @@
   background: transparent;
   backdrop-filter: blur(3px);
   z-index: 100;
+
 }
 
 /* Modal content */
@@ -373,7 +374,6 @@
   padding: 1.5rem;
 }
 
-
 .modalButton {
   background-color: transparent;
   border: none;
@@ -400,10 +400,13 @@
   width: 100%;
   padding: 2rem;
   border-radius: 1rem;
+  user-select: text;
 }
 
 .taskCompletionContent {
-  /* font-family: 'Onesize', sans-serif; */
+  font-family: 'Onesize', sans-serif;
+  text-align: center;
+  padding-top: 1rem;
   background-color: #ffffff;
   color: var(--bs-body-color);
   overflow-y: auto;

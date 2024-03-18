@@ -16,7 +16,7 @@ function getModuleData(moduleNumber){
 function module1() {
     const firstMessage = (
         <span>
-            The day is finally here! You have arrived at Luminara, the best wizard school on the planet. You are so excited to enter its doors and learn the knowledge others have sought for centuries. A wizard greets you at the door, and requests that you say your new wizard name to enter the school.
+            The day is finally here! You have arrived at Luminara, the best wizard school on the planet. You are so excited to enter its doors and learn the knowledge others have sought for centuries. A wizard greets you at the door and requests that you say your new wizard name to enter the school.
         </span>
     );
     const secondMessage = (
@@ -31,53 +31,53 @@ function module1() {
     );
     const fourthMessage = (
         <span>
-            After concluding instruction for the day, your teacher sends you to your room. However, you can't stop thinking about your teachers magical book! You decided to head back to the library and read it. As you arrive at the library, a voice calls out "Who's there?" Oh no, your teacher is still in the library! What will happen if he catches you trying to sneak in?
+            After concluding instruction for the day, your teacher sends you to your room. However, you can't stop thinking about your teacher's magical book! You decide to head back to the library and read it. As you arrive at the library, a voice calls out "Who's there?" Oh no, your teacher is still in the library! What will happen if he catches you trying to sneak in?
         </span>
     );
     const fifthMessage = (
         <span>
-            As you mutter the last phrase of the invisibility spell, you turn invisible and are able to sneak past your teacher. You find his book, begin reading, and learn of a very ancient quest. The book says that any who complete the quest will become powerful coding GURUS. The rest of the quest details are hidden by magic, so you must cast another spell in order to read them.
+            As you mutter the last phrase of the invisibility spell, you turn invisible and can sneak past your teacher. You find his book, begin reading, and learn of a very ancient quest. The book says that any who completes the quest will become powerful coding GURUS. The rest of the quest details are hidden by magic, so you must cast another spell to read them.
         </span>
     );
     const firstComment = "\"\"\"\n- Write a print statement to tell the wizard your name.\n\"\"\"\ndef taskOne():\n  # Place your code below this line\n  print()";
-    const secondComment = "\"\"\"\n- Assign a boolean value to |youAreAWizard|.\n- Assign a number value to |spellLevel|.\n- Assign a string to |favoriteSpellName|.\n- Print each variables value and type.\n\"\"\"\ndef taskTwo():\n  # Place your code below this line\n  youAreWizard = \n  spellLevel = \n  favoriteSpellName = \n\n  print(youAreWizard)\n  print(type())\n\n  print(spellLevel)\n  print(type())\n\n  print(favoriteSpellName)\n  print(type())"; 
+    const secondComment = "\"\"\"\n- Assign a boolean value to |youAreAWizard|.\n- Assign a number value to |spellLevel|.\n- Assign a string to |favoriteSpellName|.\n- Print each variables value and data type.\n\"\"\"\ndef taskTwo():\n  # Place your code below this line\n  youAreWizard = \n  spellLevel = \n  favoriteSpellName = \n\n  print(youAreWizard)\n  print(type(youAreWizard))\n\n  print(spellLevel)\n  print(type(spellLevel))\n\n  print(favoriteSpellName)\n  print(type(favoriteSpellName))"; 
     const thirdComment = "\"\"\"\n- Concatenate your name onto the print statement to\ncomplete the invisibility spell.\n\"\"\"\ndef taskThree(invisibilityPassage):\n  # Place your code below this line\n  print(invisibilityPassage)\n  "; 
-    const fourthComment = "\"\"\"\n- Concatenate your name onto |ancientPhrase| to\ncomplete the invisibility spell.\n\"\"\"\ndef taskFour():\n  # Place your code below this line\n  ";
-    const fifthComment = "\"\"\"\n- Create the variable |magicIsReal| and give it a boolean\nvalue.\n- Create another variable |spellStrength| and give it a\nnumber value.\n- Create a final variable |ancientPhrase| and assign it a\nstring encantation of your own crafting.\n- Print each variables value and data type to cast a\nspell and read the book!\n\"\"\"\ndef taskFive():\n  # Place your code below this line\n  ";
+    const fourthComment = "\"\"\"\n- Concatenate your name onto |ancientPhrase| again\nto complete the invisibility spell.\n\"\"\"\ndef taskFour(ancientPhrase):\n  # Place your code below this line\n  ";
+    const fifthComment = "\"\"\"\n- Create the variable |magicIsReal| and give it a boolean\nvalue.\n- Create another variable |spellStrength| and give it a\nnumber value.\n- Create a final variable |ancientPhrase| and assign it a\nstring incantation of your own crafting.\n- Print each variables value and data type\n- Once everything is printed out correctly, you will be\nsent on your quest!\n\"\"\"\ndef taskFive():\n  # Place your code below this line\n  ";
 
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage, fifthMessage],
         comments: [firstComment, secondComment, thirdComment, fourthComment, fifthComment],
         images: ["img/module1/1-1.webp", "img/module1/1-5.webp", "img/module1/1-4.webp", "img/module1/1-6.webp", "img/module1/1-3.webp"],
         totalTasks: 5,
-        codeHint: ["print(\"Your Wizard Name\")", "youAreWizard = True\nspellLevel = 100\nfavoriteSpellName = \"Invisibility\"\n\nprint(youAreWizard)\nprint(type(youAreWizard))\n\nprint(spellLevel)\nprint(type(spellLevel))\n\nprint(favoriteSpellName)\nprint(type(favoriteSpellName))", "print(\"Your Wizard Name: \" + invisibilityPassage)", "Need To Update", "magicIsReal = True\nspellStrength = 100\nancientPhrase = \"Write Your Ancient Phrase Here\"\n\nprint(magicIsReal)\nprint(type(magicIsReal))\n\nprint(spellStrength)\nprint(type(spellStrength))\n\nprint(ancientPhrase)\nprint(type(ancientPhrase))"],
+        codeHint: ["print(\"Your Wizard Name\")", "youAreWizard = True\nspellLevel = 100\nfavoriteSpellName = \"Invisibility\"\n\nprint(youAreWizard)\nprint(type(youAreWizard))\n\nprint(spellLevel)\nprint(type(spellLevel))\n\nprint(favoriteSpellName)\nprint(type(favoriteSpellName))", "print(\"Your Wizard Name: \" + invisibilityPassage)", "print(\"Your Wizard Name: \" + ancientPhrase)", "magicIsReal = True\nspellStrength = 100\nancientPhrase = \"Write Your Ancient Phrase Here\"\n\nprint(magicIsReal)\nprint(type(magicIsReal))\n\nprint(spellStrength)\nprint(type(spellStrength))\n\nprint(ancientPhrase)\nprint(type(ancientPhrase))"],
     };
 }
 
 function module2() {
     const firstMessage = (
         <span>
-            Now that you've learned where to go for this quest, you remember the teacher student code that you agreed to when entering Luminara. No student can go on a quest without the approval of their teacher. The next day, you tell your teacher about the quest and ask if he will allow you to embark on this quest.
+            Now that you've learned where to go for this quest, you remember the teacher-student code that you agreed to when entering Luminara. No student can go on a quest without the approval of their teacher. The next day, you tell your teacher about the quest and ask if he will allow you to embark on this quest.
         </span>
     );
     const secondMessage = (
         <span>
-            After getting your teacher's approval, he gives you a magical map that will aid you on the quest. You begin your journey into the forest and arrive at a crossroad. The magical map mentioned taking a different path according to the time of day, so you decided to cast an if statement to see which path you should take.
+            After getting your teacher's approval, he gives you a magical map that will aid you on the quest. You begin your journey into the forest and arrive at a crossroads. The magical map mentioned taking a different path according to the time of day, so you decided to cast an if statement to see which path you should take.
         </span>
     );
     const thirdMessage = (
         <span>
-            After traveling for many hours through the enchanted forest, you arrive at a bridge with a troll guarding it. "I AM GRYNDELGRUNG THE TERRIFYING BRIDGE TROLL!", he bellows. "IN ORDER TO USE THIS BRIDGE, YOU MUST BEST ME IN A BATTLE OF MAGIC AND MOCKERY!" You examine the magical map and realize there is no other way to continue the quest, so you decide step up and face GryndelGrung the Terrible.
+            After traveling for many hours through the enchanted forest, you arrive at a bridge with a troll guarding it. "I AM GRYNDELGRUNG THE TERRIFYING BRIDGE TROLL!", he bellows. "TO USE THIS BRIDGE, YOU MUST BEST ME IN A BATTLE OF MAGIC AND MOCKERY!" You examine the magical map and realize there is no other way to continue the quest, so you decide to step up and face GryndelGrung the Terrible.
         </span>
     );
     const fourthMessage = (
         <span>
-            After defeating GryndelGrung the Terrible, you continue walking through the forest. Eventually, you find a cottage in a clearing. The cottage looks warm and cozy from the outside, so you decided to investigate and see if it has anything that can aid you in your quest. Before entering, you call out to see if the owner is home.
+            After defeating GryndelGrung the Terrible, you continue walking through the forest. Eventually, you find a cottage in a clearing. The cottage looks warm and cozy from the outside, so you decide to investigate and see if it has anything that can aid you in your quest. Before entering, you call out to see if the owner is home.
         </span>
     );
     const fifthMessage = (
         <span>
-            As the cottage door closes behind you, you see a sign on the wall that says "Witch Lily Brewbubble's Potion and Jerky Shop." You look around and see shelves lined with all different types of potions and beef jerky. Amazing! These items could help you on your quest! Can grab some and sneak out before Witch Lily comes back?
+            As the cottage door closes behind you, you see a sign on the wall that says "Witch Lily Brewbubble's Potion and Jerky Shop." You look around and see shelves lined with all different types of potions and beef jerky. Amazing! These items could help you on your quest! Can you grab some and sneak out before Witch Lily comes back?
         </span>
     );
     const sixthMessage = (
@@ -85,12 +85,12 @@ function module2() {
             Just as you turn to leave the cottage, the door opens in front of you. Witch Lily Brewbubble has returned and caught you looting her cottage! Her green face quickly turns red with anger. Can you escape before she turns you into a frog?
         </span>
     );
-    const firstComment = "\"\"\"\nWrite an if statement that will check if\n|teacherThinksYouAreReady| is True.\nIf it is, print out |teacherResponse|.\nOtherwise, print out |whyAmINotReady|.\n\"\"\"\ndef taskOne(teacherThinksYouAreReady, teachersResponse, whyAmINotReady):\n  # Place your code below this line\n  if():\n  else:";
-    const secondComment = "\"\"\"\n- Complete the if and elif statement to check the value\nof |magicalMap|.\n- If |magicalMap| is \"Follow Fairy\", assign |path| to\n|fairy|.\n- If |magicalMap| is \"Follow Fox\", assign |path| to |fox|.\n- If |magicalMap| is \"Follow Mermaid\", assign |path| to\n|mermaid|.\n- Print |path| at the end.\n\"\"\"\ndef taskTwo(magicalMap, fairy, fox, mermaid):\n  if():\n  elif():\n  elif():\n  "; 
-    const thirdComment = "\"\"\"\n- Write an if statement that prints |fightOutcome| if\n|trollIsWeak| and |spellWorks| are True.\n- If they aren't both true, print |trollInsults|\n\"\"\"\ndef taskThree(trollIsWeak, spellWorks, fightOutcome, trollInsults):\n  # Place your code below this line\n  if(and):\n  else:"; 
+    const firstComment = "\"\"\"\n- Write an if statement that will check if\n|teacherThinksYouAreReady| is True.\n- If it is, print out |teachersResponse|.\n- Otherwise, print out |whyAmINotReady|.\n- Keep running your code until your teacher\nthinks you are ready.\n\"\"\"\ndef taskOne(teacherThinksYouAreReady, teachersResponse, whyAmINotReady):\n  # Place your code below this line\n  if():\n  else:";
+    const secondComment = "\"\"\"\n- Complete the if and elif statement to check the value\nof |magicalMap|.\n- If |magicalMap| is \"Follow Fairy\", assign |path| to\n|fairy|.\n- If |magicalMap| is \"Follow Fox\", assign |path| to |fox|.\n- If |magicalMap| is \"Follow Mermaid\", assign |path| to\n|mermaid|.\n- Print |path| at the end.\n\"\"\"\ndef taskTwo(magicalMap, fairy, fox, mermaid):\n  # Place your code below this line\n  if():\n    # Check if magicalMap is \"Follow Fairy\"\n  elif():\n    # Check if magicalMap is \"Follow Fox\"\n  elif():\n    # Check if magicalMap is \"Follow Mermaid\"\n  # Remember your print statement!\n  "; 
+    const thirdComment = "\"\"\"\n- Write an if statement that prints |fightOutcome| if\n|trollIsWeak| and |spellWorks| are True.\n- If they aren't both true, print |trollInsults|\n- Keep running your code until you defeat the troll.\n\"\"\"\ndef taskThree(trollIsWeak, spellWorks, fightOutcome, trollInsults):\n  # Place your code below this line\n  if(and):\n  else:"; 
     const fourthComment = "\"\"\"\n- If |someoneAnswers| is False, print |youEnterTheCottage|.\n- If |someoneAnswers| is True, print\n|youCastInvisibilitySpell|.\n\"\"\"\ndef taskFour(someoneAnswers, youEnterTheCottage, youCastInvisibilitySpell):\n  # Place your code below this line\n  ";
     const fifthComment = "\"\"\"\n- If |potionColor| is blue, print |putItInYourBag|.\n- If |potionColor| is brown, it's actually jerky so print\n|grabSomeJerky|.\n- If |potionColor| is yellow, you're unsure if you should\ngrab it so print |shouldIGrabIt|.\n\"\"\"\ndef taskFive(potionColor, putItInYourBag, grabSomeJerky, shouldIGrabIt):\n  # Place your code below this line\n  ";
-    const sixthComment = "\"\"\"\n- If |lilyCastsSpell| and |youCastProtectionSpell| are both\nTrue, print |twoSpellsCollide|.\n- If |lilyCastsSpell| is True and |youCastDefensiveSpell| is\nFalse, print |lilyGotYou|.\n- If neither are true, print |tryTheWindow|.\n\"\"\"\ndef taskSix(lilyCastsSpell, youCastProtectionSpell, twoSpellsCollide, lilyGotYou, tryTheWindow):\n  # Place your code below this line\n  ";
+    const sixthComment = "\"\"\"\n- If |lilyCastsSpell| and |youCastProtectionSpell| are both\nTrue, print |twoSpellsCollide|.\n- If |lilyCastsSpell| is True and |youCastDefensiveSpell| is\nFalse, print |lilyGotYou|.\n- If neither is true, print |tryTheWindow|.\n\"\"\"\ndef taskSix(lilyCastsSpell, youCastProtectionSpell, youCastDefensiveSpell, twoSpellsCollide, lilyGotYou, tryTheWindow):\n  # Place your code below this line\n  ";
     
     const firstHint = "if(teacherThinksYouAreReady):\n  print(teachersResponse)\nelse:\n  print(whyAmINotReady)";
     const secondHint = "if(magicalMap == \"Follow Fairy\"):\n  path = fairy\nelif(magicalMap == \"Follow Fox\"):\n  path = fox\nelif(magicalMap == \"Follow Mermaid\"):\n  path = mermaid\nprint(path)";
@@ -111,7 +111,7 @@ function module2() {
 function module3() {
     const firstMessage = (
         <span>
-            After escaping from With Lily Brewbubble, the magical map instructs you to travel towards the Greenwolfe Mountain range. After many days you arrive and find a large stone door with ancient carvings across it's surface. But, how can you open it?
+            After escaping from With Lily Brewbubble, the magical map instructs you to travel towards the Greenwolfe Mountain range. After many days you arrive and find a large stone door with ancient carvings across its surface. But, how can you open it?
         </span>
     );
     const secondMessage = (
@@ -121,12 +121,12 @@ function module3() {
     );
     const thirdMessage = (
         <span>
-            As you near the strange door, you can feel its magical energy radiating outwards. The different combination of locks and glyphs on it tell you that a more complex spell will be required to open it.
+            As you near the strange door, you can feel its magical energy radiating outwards. The different combinations of locks and glyphs on it tell you that a more complex spell will be required to open it.
         </span>
     );
     const fourthMessage = (
         <span>
-            As you peer at the glistening treasure, you hear a sound that resembles a fierce, ragged wind. You look to the back of the room and see a large figure covered in scales. The creatures belly gently rises and falls with each forceful breath. Realization hits you...it's a sleeping dragon! It's here to guard the treasure!
+            As you peer at the glistening treasure, you hear a sound that resembles a fierce, ragged wind. You look to the back of the room and see a large figure covered in scales. The creature's belly gently rises and falls with each forceful breath. Realization hits you...it's a sleeping dragon! It's here to guard the treasure!
         </span>
     );
     const fifthMessage = (
@@ -165,17 +165,17 @@ function module3() {
 function module4() {
     const firstMessage = (
         <span>
-            Now that you've finished your quest, you travel back to your teacher and tell him everything that's happened. "What an amazing journey! You've learned so much!" he says. "However, in order to STAY a powerful coding guru, you need to keep practicing your magic. I have a few things I could teach you to help you stay sharp."
+            Now that you've finished your quest, you travel back to your teacher and tell him everything that's happened. "What an amazing journey! You've learned so much!" he says. "However, to STAY a powerful coding guru, you need to keep practicing your magic. I have a few things I could teach you to help you stay sharp."
         </span>
     );
     const secondMessage = (
         <span>
-            "Excellent!" you teacher says. "Now that you've learned the magic of creating a function, let's practice creating AND calling a function."
+            "Excellent!" your teacher says. "Now that you've learned the magic of creating a function, let's practice creating AND calling a function."
         </span>
     );
     const thirdMessage = (
         <span>
-            "Awesome! Now that you've learned the magic of creating and calling a function, let's practice it one more time! Remember that any great coding guru must practice their spells lots of times in order to truly master them."
+            "Awesome! Now that you've learned the magic of creating and calling a function, let's practice it one more time! Remember that any great coding guru must practice their spells lots of times to truly master them."
         </span>
     );
     const firstComment = "\"\"\"\n- Create a function called |printMessage|.\n- Inside the function, print \"You must always keep learning!\".\n\"\"\"\n# Place your code below this line\ndef";

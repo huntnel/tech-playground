@@ -12,7 +12,7 @@ const Module = memo((props) => {
     }
 
     return (
-        <div>
+        <div style={{userSelect: 'none'}}>
             <Task key={currentTask} changeTask={handleTaskChange} image={data.images[currentTask - 1]} moduleNumber={moduleNumber} totalTasks={data.totalTasks} currentTask={currentTask} initialComment={data.comments[currentTask - 1]} message={data.messages[currentTask - 1]} codeHint={data.codeHint[currentTask - 1]} />
         </div>
     );

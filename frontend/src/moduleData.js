@@ -111,47 +111,47 @@ function module2() {
 function module3() {
     const firstMessage = (
         <span>
-            After escaping from With Lily Brewbubble, the magical map instructs you to travel towards the Greenwolfe Mountain range. After many days you arrive and find a large stone door with ancient carvings across its surface. But, how can you open it?
+            After escaping from the Witch Lily Brewbubble, the magical map instructs you to travel towards the Greenwolfe Mountain range. After many days you arrive and find a large stone door with ancient carvings across its surface. But, how can you open it?
         </span>
     );
     const secondMessage = (
         <span>
-            Now that you're in the cave, you take in your surroundings. It's very dark, but you see ten old torches lining an ominous hallway. If you could cast a spell to light those torches, you would be able to see much better.
+            Now that you’re in the cave, you take in your surroundings. It’s very dark but you see ten torches lining the hallway. You need to cast a spell to light the torches so you can see.
         </span>
     );
     const thirdMessage = (
         <span>
-            As you near the strange door, you can feel its magical energy radiating outwards. The different combinations of locks and glyphs on it tell you that a more complex spell will be required to open it.
+            As you approach the sealed door, you can feel its magic radiating. The different symbols on the door tell you that it will require a complex spell to open.
         </span>
     );
     const fourthMessage = (
         <span>
-            As you peer at the glistening treasure, you hear a sound that resembles a fierce, ragged wind. You look to the back of the room and see a large figure covered in scales. The creature's belly gently rises and falls with each forceful breath. Realization hits you...it's a sleeping dragon! It's here to guard the treasure!
+            As you peer into the cave full of treasure, you hear loud snoring. At the back of the room lies a sleeping dragon! It’s here to guard the treasure!
         </span>
     );
     const fifthMessage = (
         <span>
-            "I AM TYLZAR THE WISE" the dragon booms at you. "WHY HAVE YOU COME TO MY LAIR? DO YOU SEEK THE GREAT TREASURE THAT ANCIENT PROPHESIES HAVE TOLD OF?" Tylzar sees the magical book in your sack and bellows "AHHHH!!! YOU HAVE THE AID OF THE MAGICAL BOOK! THAT'S HOW YOU FOUND ME! WELL, IF YOU HOPE TO GAIN THIS TREASURE, YOU MUST WITHSTAND AN OLD DRAGONS MIND CONTROL!"
+            "I AM TYZAR THE WISE" the dragon booms at you. "WHY HAVE YOU COME TO MY LAIR? DO YOU SEEK THE GREAT TREASURE THAT ANCIENT PROPHESIES HAVE TOLD OF?" Tyzar sees the magical book in your sack and bellows "AHHHH!!! YOU HAVE THE AID OF THE MAGICAL BOOK! THAT'S HOW YOU FOUND ME! WELL, IF YOU HOPE TO GAIN THIS TREASURE, YOU MUST WITHSTAND AN OLD DRAGON'S POWERS!"
         </span>
     );
     const sixthMessage = (
         <span>
-            Tylzar takes in a humongous breath, pulling you forward and causing you to lose balance. Then, with dramatic flair, he swings his head toward you and erupts a bright orange flame of fire!!! Time seems to slow as you feel its dreaded heat race towards you. The gold around you seems to become soft at the extreme temperature. Can you defend against this attack?
+            Tyzar takes a humongous breath and challenges you to a duel. As you reach for the book and your magic wand, Tylzar spits an orange flame of fire at you. You must defend yourself and defeat him!
         </span>
     );
     const firstComment = "\"\"\"\n- While |doorSpellStrength| is greater than five, print\n|castSpell| and subtract 1 from |doorSpellStrength|.\n- Once the while loop ends, print |doorOpened|.\n\"\"\"\ndef taskOne(doorSpellStrength, castSpell, doorOpened):\n  # Place your code below this line\n  while";
     const secondComment = "\"\"\"\n- Using the for loop, print |lightTorch| ten times. Print\nthe number that you are on along with |lightTorch|.\n- After the for loop finishes, print |allTorchesLit|.\n\"\"\"\ndef taskTwo(lightTorch, allTorchesLit):\n  # Place your code below this line\n  for in range():"; 
-    const thirdComment = "\"\"\"\nWhile |numOfSymbols| is greater than five, do the following:\n- If the remainder of |numOfSymbols| divided by two is zero, set |symbolsGlow| to True.\n- If the remainder of |numOfSymbols| divided by two is greater than zero, and |numOfSymbols| is less than ten, set |symbolsGlow| to True.\n- Otherwise, set symbolsGlow to False.\n- If symbolsGlow is True, subtract three from |numOfSymbols|.\n- If |symbolsGlow| is False, add one to |numOfSymbols|.\n- Print numOfSymbols each iteration.\n- Once |numOfSymbols| is less than five, print |doorFinallyOpened|.\n\"\"\"\ndef taskThree(numOfSymbols, symbolsGlow, doorFinallyOpened):\n  # Place your code below this line\n  while";
-    const fourthComment = "\"\"\"\n- While |dragonIsAsleep| is True, do the following:\n- Print \"You have taken ___ steps\", where ___ is\nreplaced with the value of |numOfSteps|.\n- If |numOfSteps| is less than five, set dragonIsAsleep to\nFalse.\n- Subtract one from numOfSteps.\n- Once |dragonIsAsleep| is False, print |theDragonAwakes|.\n\"\"\"\ndef taskFour(dragonIsAsleep, numOfSteps, theDragonAwakes):\n  # Place your code below this line\n  ";
-    const fifthComment = "\"\"\"\n- Using a for loop, print |resistMindControl| ten times. Use\nformat() to add the loop counter onto the print statement.\n- After the loop, print |yourMagicIsStrong|.\n\"\"\"\ndef taskFive(resistMindControl, yourMagicIsStrong):\n  # Place your code below this line\n  ";
-    const sixthComment = "\"\"\"\n- While |tylzarBlowsFire| is True, do the following:\n- Write a for loop that uses |numOfFallingRocks| as it's\nrange. For each number in the range, add the value of the\nnumber to |rocksThatHitTylzar|.\n- Print |aRockHitsTylzar| using format() and\n|numOfFallingRocks|.\n- If |rocksThatHitTylzar| is greater than or equal to 20,\nset |tylzarBlowsFire| to False.\n- If |rocksThatTylzarThrowsAtYour| is greather than zero,\nprint |dodgeRocks|.\n- Otherwise, print |castFireProtectionSpell|.\n- After the while loop finishes, print |youDefeatedTylzar|.\n\"\"\"\ndef taskSix(tylzarBlowsFire, numOfFallingRocks, rocksThatHitTylzar, rocksTylzarThrowsAtYou, aRockHitsTylzar, dodgeRocks, castFireProtectionSpell, youDefeatedTylzar, rocksThatTylzarThrowsAtYou):\n  # Place your code below this line\n  ";
+    const thirdComment = "\"\"\"\nWhile |numOfSymbols| is greater than five, do the following:\n- If the remainder of |numOfSymbols| divided by two is zero,\nset |symbolsGlow| to True.\n- If the remainder of |numOfSymbols| divided by two is\ngreater than zero, and |numOfSymbols| is less than ten, set\n|symbolsGlow| to True.\n- Otherwise, set symbolsGlow to False.\n- If symbolsGlow is True, subtract three from |numOfSymbols|.\n- If |symbolsGlow| is False, add one to |numOfSymbols|.\n- Print numOfSymbols each iteration.\n- Once |numOfSymbols| is less than five, print\n|doorFinallyOpened|.\n\"\"\"\ndef taskThree(numOfSymbols, symbolsGlow, doorFinallyOpened):\n  # Place your code below this line\n  while";
+    const fourthComment = "\"\"\"\n- While |dragonIsAsleep| is True, do the following:\n- Print \"You have taken ___ steps\", where ___ is\nreplaced with the value of |numOfSteps|.\n- If |numOfSteps| is greater than five, set dragonIsAsleep to\nFalse.\n- Subtract one from numOfSteps.\n- Once |dragonIsAsleep| is False, print |theDragonAwakes|.\n\"\"\"\ndef taskFour(dragonIsAsleep, numOfSteps, theDragonAwakes):\n  # Place your code below this line\n  ";
+    const fifthComment = "\"\"\"\n- Using a for loop, print |dodgeFireAttack| ten times. Use\nformat() to add the loop counter onto the print statement.\n- After the loop, print |yourMagicIsStrong|.\n\"\"\"\ndef taskFive(dodgeFireAttack, yourMagicIsStrong):\n  # Place your code below this line\n  ";
+    const sixthComment = "\"\"\"\n- While |tyzarStrength| is greater than 1, do the following:\n- If |tyzarAttack[attackType]| is equal to \"Fire\", print\n|blockFireSpell|.\n- If |tyzarAttack[attackType]| is equal to \"Hit\", print\n|shieldSpell|.\n- Otherwise, using a for loop, print |castSpell| 3 times.\n- Set |tyzarStrength| to |tyzarStrength| minus 1.\n- Set |attackType| to |attackType| minus 1.\n- After the while loop finishes, print |youDefeatedTyzar|.\n\"\"\"\ndef taskSix(tyzarStrength, tyzarAttack, blockFireSpell, shieldSpell, castSpell, youDefeatedTyzar, attackType):\n  # Place your code below this line\n  ";
     
     const firstHint = "while (doorSpellStrength > 5):\n  print(castSpell)\n  doorSpellStrength = doorSpellStrength - 1\n\nprint(doorOpened)";
     const secondHint = "for i in range(0, 10):\n  print(lightTorch + \" \" + str(i))\n\nprint(allTorchesLit)";
     const thirdHint = "while(numOfSymbols > 5):\n  if numOfSymbols % 2 == 0:\n    symbolsGlow = True\n  elif (numOfSymbols % 2 > 0) and numOfSymbols < 10:\n    symbolsGlow = True\n  else:\n    symbolsGlow = False\n  if symbolsGlow:\n    numOfSymbols = numOfSymbols - 3\n  else:\n    numOfSymbols = numOfSymbols + 1\n  print(numOfSymbols)\n\nprint(doorFinallyOpened)";
     const fourthHint = "while dragonIsAsleep:\n  print(\"You have taken \" + str(numOfSteps) + \" steps\")\n  if numOfSteps > 5:\n    dragonIsAsleep = False\n  numOfSteps = numOfSteps + 1\n\nprint(theDragonAwakes)";
-    const fifthHint = "for i in range(1, 11):\n  print(resistMindControl.format(i))\nprint(yourMagicIsStrong)";
-    const sixthHint = "while(tylzarBlowsFire):\n  for i in range(0, numOfFallingRocks):\n    rocksThatHitTylzar = rocksThatHitTylzar + i\n  print(aRockHitsTylzar.format(numOfFallingRocks))\n  if(rocksThatHitTylzar >= 20):\n    tylzarBlowsFire = False\n  elif(rocksThatTylzarThrowsAtYou > 0):\n    print(dodgeRocks)\n  else:\n    print(castFireProtectionSpell)\n\nprint(youDefeatedTylzar)";
+    const fifthHint = "for i in range(1, 11):\n  print(dodgeFireAttack.format(i))\nprint(yourMagicIsStrong)";
+    const sixthHint = "while(tyzarStrength > 1):\n  if tyzarAttack[attackType] == \"Fire\":\n    print(blockFireSpell)\n  elif tyzarAttack[attackType] == \"Hit\":\n    print(shieldSpell)\n  else:\n    for i in range(1,4):\n      print(castSpell)\n  tyzarStrength = tyzarStrength - 1\n  attackType = attackType - 1\n\nprint(youDefeatedTyzar)";
 
     return {
         messages: [firstMessage, secondMessage, thirdMessage, fourthMessage, fifthMessage, sixthMessage],

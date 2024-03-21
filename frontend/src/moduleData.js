@@ -8,6 +8,8 @@ function getModuleData(moduleNumber){
             return module3();
         case 4:
             return module4();
+        case 5:
+            return module5();
         default:
             return null;
     }
@@ -189,6 +191,38 @@ function module4() {
         messages: [firstMessage, secondMessage, thirdMessage],
         comments: [firstComment, secondComment, thirdComment],
         images: ["img/module4/4-1.jpg", "img/module4/4-2.jpg", "img/module4/4-3.jpg", "img/module4/Vampire.png"],
+        totalTasks: 3,
+        codeHint: [firstHint, secondHint, thirdHint],
+    };
+}
+
+function module5() {
+    const firstMessage = (
+        <span>
+            Nice job! If you've made it this far, you have become quite the magic and coding guru! You understand how important it is to keep learning new spells and code that comes your way. Speaking of new code, its time to learn about object oriented programming! Watch <a href="https://www.youtube.com/watch?v=q2SGW2VgwAM" target="_blank">this</a> video to learn more!
+        </span>
+    );
+    const secondMessage = (
+        <span>
+            Nice job! Don't worry if classes and object oriented programming isn't making sense yet, it will come with time and practice! This next task will help you add onto the wizard class we made. 
+        </span>
+    );
+    const thirdMessage = (
+        <span>
+            Good job working through the basics of object oriented programming! This last task will help you practice everything you learned to make sure that it stays with you.
+        </span>
+    );
+    const firstComment = "\"\"\"\n- Create a new class called |Wizard|.\n- In the constructor, set the class property |wizardName|\nusing a parameter.\n- Create a class function called |printWizardName| that\nprints the name of the Wizard object like so: My name is\n|wizardName|.\n- Create a new |Wizard| object with the name Gandalf, and\nprint its name using the class method.\n\"\"\"\ndef taskOne():\n  # Place your code below this line\n";
+    const secondComment = "\"\"\"\n- Set a new class property in the constructor called\n|wizardStrength|. Set it to zero.\n- Add a method onto the |Wizard| class called\n|castRandomSpell|.\n- Inside |castRandomSpell|, use a for loop that runs ten\ntimes. Each loop, add a new random number between 1 and 10\nonto the current value of |wizardStrength|. Use this line\nof code to do so:\nself.wizardStrength = self.wizardStrength + random.randint(1, 10)\n- Add another method called |didTheWizardWin|.\n- Inside |didTheWizardWin|, if the class property\n|wizardStrength| is 0, print 'I haven't cast a spell\nyet!'. If it's greater than 45, print True. If not,\nthen print False\n- Create a new wizard object and run the |castRandomSpell|\nand |didTheWizardWin| methods.\n\"\"\"\ndef taskTwo():\n  # Place your code below this line\n  \n  class Wizard:\n    def __init__(self, wizardName):\n      self.wizardName = wizardName\n\n    def printWizardName(self):\n      print('My name is ' + str(self.wizardName))"; 
+    const thirdComment = "\"\"\"\n- Create a new class called |Spell|.\n- In the constructor, set the class property |spellName| and\n|spellStrength| using parameters. Make |spellName| a string\nand |spellStrength| an integer.\n- Add a method called |castSpell| that prints out the\nfollowing message: The |spellName| spell was cast at level\n|spellStrength|!\n\"\"\"\ndef taskThree():\n  # Place your code below this line\n  "; 
+
+    const firstHint = "def taskOne():\n  class Wizard:\n    def __init__(self, wizardName):\n      self.wizardName = wizardName\n\n    def printWizardName(self):\n      print('My name is ' + str(self.wizardName))\n\n  newWizard = Wizard('Gandalf')\n  newWizard.printWizardName()";
+    const secondHint = "def taskTwo():\n  import random\n\n  class Wizard:\n    def __init__ (self, wizardName):\n      self.wizardName = wizardName\n      self.wizardStrength = 0\n\n    def printWizardName(self):\n      print(\"My name is \" + str(self.wizardName))\n\n    def castRandomSpell(self):\n      for i in range(0, 10):\n        self.wizardStrength = self.wizardStrength + random.randint(1, 10)\n\n    def didTheWizardWin(self):\n      if(self.wizardStrength == 0):\n        print(\"I haven't cast a spell yet!\")\n      elif(self.wizardStrength > 45):\n        print(True)\n      else:\n        print(False)\n\n  newWizard = Wizard('Gandalf')\n  newWizard.castRandomSpell()\n  newWizard.didTheWizardWin()";
+    const thirdHint = "def taskThree():\n  class Spell:\n    def __init__(self, spellName, spellStrength):\n      self.spellName = spellName\n      self.spellStrength = spellStrength\n\n    def castSpell(self):\n      print('The ' + str(self.spellName) + ' spell was cast at level ' + str(self.spellStrength) + '!')\n\n  newSpell = Spell('fireSpell', 100)\n  newSpell.castSpell()";
+    return {
+        messages: [firstMessage, secondMessage, thirdMessage],
+        comments: [firstComment, secondComment, thirdComment],
+        images: ["img/module5/5-1.jpg", "img/module5/5-2.jpg", "img/module5/5-3.jpg"],
         totalTasks: 3,
         codeHint: [firstHint, secondHint, thirdHint],
     };

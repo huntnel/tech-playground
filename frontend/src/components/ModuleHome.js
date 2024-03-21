@@ -91,6 +91,22 @@ function ModuleHome() {
                                     </div>
                                 </Card>
                             </Container>
+
+                            <Container onClick={() => navigateToModule("/module5")}>
+                                <Card border="light" className='module-card border-0'>
+                                    <Card.Body>
+                                        <Card.Title className='text-white pixel-font card-title text-center'>Module 5</Card.Title>
+                                    </Card.Body>
+                                    <Card.Img className='card-img' variant="bottom" src="img/module5/5-Home.jpg" />
+                                    <div className='card-img-overlay'>
+                                        <div className="overlay-text">
+                                            <Card.Text className='text-center pixel-font'>
+                                                <br></br>Learn about classes!
+                                            </Card.Text>
+                                        </div>
+                                    </div>
+                                </Card>
+                            </Container>
                         </Container>
                     </Col>
                 </Row>

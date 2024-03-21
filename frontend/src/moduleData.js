@@ -167,7 +167,7 @@ function module3() {
 function module4() {
     const firstMessage = (
         <span>
-            Now that you've finished your quest, you travel back to your teacher and tell him everything that's happened. "What an amazing journey! You've learned so much!" he says. "However, to STAY a powerful coding guru, you need to keep practicing your magic. I have a few things I could teach you to help you stay sharp."
+            Now that you've finished your quest, you travel back to your teacher and tell him everything that's happened. "What an amazing journey! You've learned so much!" he says. "However, to STAY a powerful coding guru, you need to learn about functions. Watch <a href="https://www.youtube.com/watch?v=89cGQjB5R4M"  target="_blank" rel="noreferrer">this</a> video to learn about functions."
         </span>
     );
     const secondMessage = (
@@ -199,7 +199,7 @@ function module4() {
 function module5() {
     const firstMessage = (
         <span>
-            Nice job! If you've made it this far, you have become quite the magic and coding guru! You understand how important it is to keep learning new spells and code that comes your way. Speaking of new code, its time to learn about object oriented programming! Watch <a href="https://www.youtube.com/watch?v=q2SGW2VgwAM" target="_blank">this</a> video to learn more!
+            Nice job! If you've made it this far, you have become quite the magic and coding guru! You understand how important it is to keep learning new spells and code that comes your way. Speaking of new code, its time to learn about object oriented programming! Watch <a href="https://www.youtube.com/watch?v=q2SGW2VgwAM" target="_blank" rel="noreferrer">this</a> video to learn more!
         </span>
     );
     const secondMessage = (

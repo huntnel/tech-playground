@@ -23,6 +23,7 @@ function App() {
             <Route path='/module2' element={<Module moduleNumber={2} />} />
             <Route path='/module3' element={<Module moduleNumber={3} />} />
             <Route path='/module4' element={<Module moduleNumber={4} />} />
+            <Route path='/module5' element={<Module moduleNumber={5} />} />
             <Route path="*" element={<Navigate to="/" />}/>
           </Routes>
         </Suspense>
